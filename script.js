@@ -23,6 +23,7 @@ filterButtons.forEach(function (button) {
         projectCards.forEach(function (card) {
             const category = card.dataset.category;
             const visible = filter === "todos" || category === filter;
+
             card.classList.toggle("is-hidden", !visible);
         });
     });
@@ -42,6 +43,7 @@ function openProjectModal(modal, trigger) {
     if (!modal) return;
 
     lastProjectTrigger = trigger;
+
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("project-modal-open");
@@ -106,6 +108,7 @@ document.querySelectorAll(".project-modal").forEach(function (modal) {
 
 const briefingModal = document.querySelector("#pre-briefing");
 const openBriefing = document.querySelector("#open-prebriefing");
+
 const closeBriefingButton = briefingModal
     ? briefingModal.querySelector(".prebriefing-close")
     : null;
@@ -134,10 +137,13 @@ function hideBriefing() {
 
 if (openBriefing && briefingModal && closeBriefingButton) {
     openBriefing.addEventListener("click", showBriefing);
+
     closeBriefingButton.addEventListener("click", hideBriefing);
 
     briefingModal.addEventListener("click", function (event) {
-        if (event.target === briefingModal) hideBriefing();
+        if (event.target === briefingModal) {
+            hideBriefing();
+        }
     });
 }
 
@@ -154,72 +160,36 @@ document.addEventListener("keydown", function (event) {
 
     const openProject = document.querySelector(".project-modal.is-open");
 
-    if (openProject) closeProjectModal(openProject);
+    if (openProject) {
+        closeProjectModal(openProject);
+    }
 });
 
 
-/* 06 — PREPARAR O PEDIDO POR E-MAIL */
+/* 06 — FORMULÁRIO DE PRÉ-BRIEFING COM FORMSUBMIT */
 
 const prebriefingForm = document.querySelector("#prebriefing-form");
+const formFeedback = document.querySelector("#form-feedback");
 
 if (prebriefingForm) {
     prebriefingForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+        /*
+         * Não usamos preventDefault() nem mailto.
+         * O navegador envia o formulário para o FormSubmit
+         * através do action e do method definidos no HTML.
+         */
 
-        if (!prebriefingForm.reportValidity()) return;
-
-        const dados = new FormData(prebriefingForm);
-
-        const campos = [
-            ["Nome", "nome"],
-            ["E-mail", "email"],
-            ["Marca/empresa", "marca"],
-            ["Serviço", "servico"],
-            ["Fase do projeto", "fase"],
-            ["Objetivo do projeto", "objetivo"],
-            ["Público-alvo", "publico"],
-            ["Estilo visual e referências", "estilo"],
-            ["Materiais/aplicações", "materiais"],
-            ["Prazo pretendido", "prazo"],
-            ["Orçamento previsto", "orcamento"],
-            ["Informações adicionais", "adicionais"]
-        ];
-
-        const corpo = campos.map(function ([titulo, chave]) {
-            const valor = String(dados.get(chave) || "").trim();
-            return titulo + ":\n" + (valor || "Não indicado");
-        }).join("\n\n");
-
-        const destinatario = "janine.consultor@outlook.pt";
-
-        const assunto = encodeURIComponent(
-            "Pré-briefing | Novo pedido de projeto"
-        );
-
-        const mensagem = encodeURIComponent(
-            "PRÉ-BRIEFING\n" +
-            "Waldênia Silva — Estúdio Criativo\n\n" +
-            corpo
-        );
-
-        const feedback = document.querySelector("#form-feedback");
-
-        if (feedback) {
-            feedback.textContent =
-                "O teu pedido foi preparado com sucesso. Para concluir o envio, " +
-                "confirma e envia a mensagem no teu programa de e-mail. " +
-                "Após receber o teu e-mail, responderei no prazo de 3 dias úteis " +
-                "para confirmar a receção e indicar os próximos passos. " +
-                "Obrigada pelo interesse no meu trabalho. — Waldênia Silva, " +
-                "Estúdio Criativo";
-
-            feedback.setAttribute("role", "status");
-            feedback.setAttribute("aria-live", "polite");
+        if (!prebriefingForm.reportValidity()) {
+            event.preventDefault();
+            return;
         }
 
-        window.location.href =
-            "mailto:" + destinatario +
-            "?subject=" + assunto +
-            "&body=" + mensagem;
+        if (formFeedback) {
+            formFeedback.textContent =
+                "O formulário está a ser enviado. Aguarde a confirmação antes de fechar a página.";
+
+            formFeedback.setAttribute("role", "status");
+            formFeedback.setAttribute("aria-live", "polite");
+        }
     });
 }
