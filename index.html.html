@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waldênia Silva — Designer Gráfica</title>
+    <meta name="description" content="Portefólio de Waldênia Silva, designer gráfica em formação. Identidade visual, design editorial, packaging e comunicação.">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+<header class="site-header">
+    <a href="#hero" class="logo">
+        <span class="logo-name">Waldênia Silva</span>
+        <span class="logo-description">Estúdio Criativo</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#processo-criativo">Processo</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#inspiracoes">Inspirações</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="language-switch" aria-label="Idioma">
+        <button class="language-button active" type="button" aria-pressed="true">PT</button>
+        <span>/</span>
+        <button class="language-button" type="button" aria-pressed="false">EN</button>
+    </div>
+</header>
+
+<main>
+    <!-- 01 — APRESENTAÇÃO -->
+    <section id="hero">
+        <div class="hero-content">
+            <p class="eyebrow">DESIGN GRÁFICO</p>
+            <h1>Waldênia<br><span>Silva</span></h1>
+            <p class="hero-description">
+                Sou designer gráfica em formação e exploro formas
+                de transformar ideias em soluções visuais claras,
+                coerentes e intencionais.
+            </p>
+            <a href="#projetos" class="button">Ver projetos</a>
+        </div>
+
+        <a href="#processo-criativo" class="hero-scroll" aria-label="Explorar o portefólio">
+            <span>Explorar</span>
+            <span aria-hidden="true">↓</span>
+        </a>
+    </section>
+
+    <!-- 02 — PROCESSO -->
+    <section id="processo-criativo">
+        <div class="section-number">02</div>
+
+        <div class="process-header">
+            <p class="eyebrow">PROCESSO</p>
+            <h2>Pensar antes<br><span>de criar.</span></h2>
+            <p class="section-intro">
+                Cada projeto começa com uma pergunta e desenvolve-se
+                através de investigação, experimentação e decisões
+                visuais fundamentadas.
+            </p>
+        </div>
+
+        <div class="process-grid">
+            <article class="process-item">
+                <span class="process-number">01</span>
+                <h3>Compreender</h3>
+                <p>Analiso o contexto, os objetivos, o público e as necessidades de cada projeto.</p>
+            </article>
+
+            <article class="process-item">
+                <span class="process-number">02</span>
+                <h3>Explorar</h3>
+                <p>Investigo referências, conceitos, tipografia, formas, cores e possibilidades visuais.</p>
+            </article>
+
+            <article class="process-item">
+                <span class="process-number">03</span>
+                <h3>Desenvolver</h3>
+                <p>Transformo as ideias selecionadas numa solução gráfica estruturada e coerente.</p>
+            </article>
+
+            <article class="process-item">
+                <span class="process-number">04</span>
+                <h3>Refinar</h3>
+                <p>Revejo a hierarquia, a composição, a legibilidade e a consistência das aplicações finais.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- 03 — SOBRE -->
+    <section id="sobre">
+        <div class="section-number">03</div>
+
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="foto-waldenia.jpg.JPG" alt="Retrato de Waldênia Silva" loading="lazy">
+            </div>
+
+            <div class="about-heading">
+                <p class="eyebrow">SOBRE MIM</p>
+                <h2>Design com<br><span>propósito.</span></h2>
+            </div>
+
+            <div class="about-text">
+                <p>
+                    Sou designer gráfica em formação, com interesse
+                    em identidade visual, design editorial, packaging
+                    e comunicação.
+                </p>
+                <p>
+                    Procuro transformar ideias em soluções visuais
+                    claras, coerentes e adequadas ao contexto de cada
+                    projeto, com atenção à tipografia, à composição
+                    e ao detalhe.
+                </p>
+                <a href="#contacto" class="text-link">
+                    Vamos conversar <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 — PROJETOS -->
+    <section id="projetos" class="portfolio-section">
+        <div class="section-number">04</div>
+
+        <div class="portfolio-header">
+            <p class="eyebrow">PORTEFÓLIO</p>
+            <h2>Projetos<br><span>selecionados.</span></h2>
+            <p class="section-intro">
+                Uma seleção de exercícios e projetos de design
+                desenvolvidos durante o meu percurso de aprendizagem.
+            </p>
+        </div>
+
+        <nav class="portfolio-filters" aria-label="Filtrar projetos por categoria">
+            <button type="button" class="filter-button active" data-filter="todos" aria-pressed="true">Todos</button>
+            <button type="button" class="filter-button" data-filter="identidade" aria-pressed="false">Identidade Visual</button>
+            <button type="button" class="filter-button" data-filter="packaging" aria-pressed="false">Packaging</button>
+            <button type="button" class="filter-button" data-filter="editorial" aria-pressed="false">Editorial</button>
+            <button type="button" class="filter-button" data-filter="publicidade" aria-pressed="false">Publicidade</button>
+        </nav>
+
+        <div class="portfolio-grid">
+            <article class="project-card" data-category="identidade">
+                <a href="#project-modal" class="project-link" data-project="veranum" aria-label="Ver detalhes do projeto Veranum">
+                    <div class="project-image">
+                        <div class="project-placeholder veranum"><span>VERANUM</span></div>
+                    </div>
+                    <div class="project-info">
+                        <p>Identidade Visual</p>
+                        <h3>Veranum</h3>
+                        <span>Identidade para gelados artesanais portugueses</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card" data-category="identidade">
+                <a href="#contacto" class="project-link">
+                    <div class="project-image">
+                        <div class="project-placeholder malta"><span>A MALTA</span></div>
+                    </div>
+                    <div class="project-info">
+                        <p>Identidade Visual</p>
+                        <h3>A Malta</h3>
+                        <span>Identidade e conceito visual para vinho</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card" data-category="packaging">
+                <a href="#contacto" class="project-link">
+                    <div class="project-image">
+                        <div class="project-placeholder malta-packaging"><span>A MALTA</span></div>
+                    </div>
+                    <div class="project-info">
+                        <p>Packaging</p>
+                        <h3>A Malta</h3>
+                        <span>Desenvolvimento de embalagem para vinho</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card" data-category="editorial">
+                <a href="#project-modal-origem" class="project-link" data-project="origem" aria-label="Ver detalhes do projeto editorial ORIGEM">
+                    <div class="project-image">
+                        <img src="Imagem/Origem/origem-01.png.png" alt="Projeto editorial ORIGEM" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <p>Editorial · 2026</p>
+                        <h3>ORIGEM</h3>
+                        <span>Revista sobre design, produção e impacto</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card" data-category="publicidade">
+                <a href="#contacto" class="project-link">
+                    <div class="project-image">
+                        <div class="project-placeholder doritos"><span>DORITOS WASABI</span></div>
+                    </div>
+                    <div class="project-info">
+                        <p>Publicidade · Campanha conceptual</p>
+                        <h3>Doritos Wasabi</h3>
+                        <span>Conceito de campanha publicitária</span>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- 05 — INSPIRAÇÕES -->
+    <section class="inspirations" id="inspiracoes">
+        <div class="section-number">05</div>
+
+        <div class="section-heading">
+            <p class="eyebrow">INSPIRAÇÕES</p>
+            <h2>Formas de<br>observar.</h2>
+            <p class="section-intro">
+                Exploro a perceção, o ritmo, a repetição, a linha
+                e a textura como formas de observar e compreender
+                a linguagem visual.
+            </p>
+        </div>
+
+        <div class="inspiration-list">
+            <article class="inspiration-item">
+                <h3>OP Art</h3>
+                <p>Perceção · Ritmo · Movimento</p>
+            </article>
+            <article class="inspiration-item">
+                <h3>Pattern</h3>
+                <p>Repetição · Sistema · Composição</p>
+            </article>
+            <article class="inspiration-item">
+                <h3>Contornos</h3>
+                <p>Linha · Forma · Síntese</p>
+            </article>
+            <article class="inspiration-item">
+                <h3>Zentangle</h3>
+                <p>Ritmo · Detalhe · Exploração</p>
+            </article>
+            <article class="inspiration-item">
+                <h3>Hachuras</h3>
+                <p>Textura · Contraste · Volume</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- 06 — CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="contacto-intro">
+            <p class="eyebrow">CONTACTO</p>
+            <h2>Vamos<br>conversar?</h2>
+            <p>
+                Tem um projeto, uma oportunidade de estágio
+                ou gostaria de saber mais sobre o meu trabalho?
+                Entre em contacto.
+            </p>
+            <button type="button" class="button" id="open-prebriefing">
+                Pedir um projeto <span aria-hidden="true">↗</span>
+            </button>
+        </div>
+
+        <div class="contacto-dados">
+            <div class="contacto-item">
+                <span>E-mail</span>
+                <a href="mailto:janine.consultor@outlook.pt">janine.consultor@outlook.pt</a>
+            </div>
+
+            <div class="contacto-item">
+                <span>WhatsApp</span>
+                <a href="https://wa.me/351925431560" target="_blank" rel="noopener noreferrer">+351 925 431 560</a>
+            </div>
+
+            <div class="contacto-item">
+                <span>LinkedIn</span>
+                <a href="https://www.linkedin.com/in/wald%C3%AAnia-janine-ferreira-silva-a0419a47/" target="_blank" rel="noopener noreferrer">Waldênia Janine Ferreira Silva</a>
+            </div>
+
+            <div class="contacto-item">
+                <span>Behance</span>
+                <a href="https://www.behance.net/janineferreira5" target="_blank" rel="noopener noreferrer">Ver portefólio no Behance ↗</a>
+            </div>
+
+            <div class="contacto-item">
+                <span>Localização</span>
+                <p>Lisboa, Portugal</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- MODAL DO PRÉ-BRIEFING -->
+<div class="prebriefing-modal" id="pre-briefing" aria-hidden="true">
+    <div class="prebriefing-modal-content" role="dialog" aria-modal="true" aria-labelledby="prebriefing-title" tabindex="-1">
+        <button type="button" class="prebriefing-close" aria-label="Fechar pré-briefing">×</button>
+
+        <div class="prebriefing" id="prebriefing-content">
+            <div class="prebriefing-header">
+                <p class="eyebrow">NOVO PROJETO</p>
+                <h3 id="prebriefing-title">Pré-briefing</h3>
+                <p>Partilhe comigo as informações essenciais para compreender o seu projeto.</p>
+                <p class="form-note">* Campos de preenchimento obrigatório.</p>
+            </div>
+
+            <form
+                id="prebriefing-form"
+                action="https://formsubmit.co/janine.consultor@outlook.pt"
+                method="POST"
+            >
+                <input type="hidden" name="_subject" value="Pré-briefing | Novo pedido de projeto">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="true">
+
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="nome">Nome *</label>
+                        <input type="text" id="nome" name="nome" autocomplete="name" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+
+                    <div class="form-field form-field-full">
+                        <label for="marca">Marca/empresa</label>
+                        <input type="text" id="marca" name="marca">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="servico">Serviço *</label>
+                        <select id="servico" name="servico" required>
+                            <option value="">Selecionar serviço</option>
+                            <option value="Identidade visual">Identidade visual</option>
+                            <option value="Design editorial">Design editorial</option>
+                            <option value="Packaging">Packaging</option>
+                            <option value="Publicidade e comunicação gráfica">Publicidade e comunicação gráfica</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="fase">Fase do projeto</label>
+                        <select id="fase" name="fase">
+                            <option value="A iniciar">A iniciar</option>
+                            <option value="Em desenvolvimento">Em desenvolvimento</option>
+                            <option value="Redesign de projeto existente">Redesign de projeto existente</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field form-field-full">
+                        <label for="objetivo">Objetivo do projeto *</label>
+                        <textarea id="objetivo" name="objetivo" rows="3" placeholder="O que pretende alcançar?" required></textarea>
+                    </div>
+
+                    <div class="form-field form-field-full">
+                        <label for="publico">Público-alvo</label>
+                        <textarea id="publico" name="publico" rows="2" placeholder="A quem se destina o projeto?"></textarea>
+                    </div>
+
+                    <div class="form-field form-field-full">
+                        <label for="estilo">Estilo visual e referências</label>
+                        <textarea id="estilo" name="estilo" rows="3" placeholder="Cores, referências, estilos ou ambientes visuais."></textarea>
+                    </div>
+
+                    <div class="form-field form-field-full">
+                        <label for="materiais">Materiais/aplicações</label>
+                        <textarea id="materiais" name="materiais" rows="2" placeholder="Ex.: logótipo, embalagem, cartaz, redes sociais."></textarea>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="prazo">Prazo pretendido</label>
+                        <input type="text" id="prazo" name="prazo" placeholder="Ex.: dezembro de 2026">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="orcamento">Orçamento previsto</label>
+                        <select id="orcamento" name="orcamento">
+                            <option value="">Selecionar orçamento</option>
+                            <option value="Até 150 €">Até 150 €</option>
+                            <option value="150 € a 300 €">150 € a 300 €</option>
+                            <option value="300 € a 600 €">300 € a 600 €</option>
+                            <option value="Mais de 600 €">Mais de 600 €</option>
+                            <option value="Ainda não definido">Ainda não definido</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field form-field-full">
+                        <label for="adicionais">Informações adicionais</label>
+                        <textarea id="adicionais" name="adicionais" rows="3" placeholder="Outros detalhes relevantes para o projeto."></textarea>
+                    </div>
+                </div>
+
+                <p class="form-privacy">
+                    As informações fornecidas serão utilizadas para analisar e responder ao pedido de projeto.
+                </p>
+
+                <button type="submit" class="button form-submit">
+                    Enviar pedido <span aria-hidden="true">↗</span>
+                </button>
+
+                <p id="form-feedback" class="form-feedback" role="status" aria-live="polite">
+                    Ao enviar o formulário, poderá ser necessário confirmar o endereço de e-mail na primeira utilização.
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL ORIGEM -->
+<div id="project-modal-origem" class="project-modal" aria-hidden="true">
+    <div class="project-modal-content" role="dialog" aria-modal="true" aria-labelledby="origem-modal-title" tabindex="-1">
+        <button type="button" class="project-modal-close" aria-label="Fechar projeto">×</button>
+
+        <p class="eyebrow">DESIGN EDITORIAL</p>
+        <h2 id="origem-modal-title">ORIGEM</h2>
+        <p class="project-modal-intro">
+            Revista editorial dedicada à investigação do impacto
+            da produção gráfica, explorando a relação entre design,
+            materiais, processos e sustentabilidade.
+        </p>
+
+        <div class="project-modal-gallery">
+            <img src="Imagem/Origem/origem-01.png.png" alt="ORIGEM — apresentação editorial" loading="lazy">
+            <img src="Imagem/Origem/origem-02.png.png" alt="ORIGEM — página do projeto editorial" loading="lazy">
+            <img src="Imagem/Origem/origem-03.png.png" alt="ORIGEM — desenvolvimento gráfico" loading="lazy">
+            <img src="Imagem/Origem/origem-04.png.png" alt="ORIGEM — composição editorial" loading="lazy">
+            <img src="Imagem/Origem/origem-05.png.png" alt="ORIGEM — exploração de materiais e tipografia" loading="lazy">
+            <img src="Imagem/Origem/origem-06.png.png" alt="ORIGEM — aplicação do sistema editorial" loading="lazy">
+        </div>
+
+        <div class="project-modal-details">
+            <div><strong>Projeto</strong><span>Design Editorial</span></div>
+            <div><strong>Conceito</strong><span>O impacto por trás da produção gráfica</span></div>
+            <div><strong>Direção visual</strong><span>Grelha · Tipografia · Materiais · Investigação</span></div>
+        </div>
+
+        <button type="button" class="project-modal-back">← Voltar aos projetos</button>
+    </div>
+</div>
+
+<!-- MODAL VERANUM -->
+<div id="project-modal" class="project-modal" aria-hidden="true">
+    <div class="project-modal-content" role="dialog" aria-modal="true" aria-labelledby="veranum-modal-title" tabindex="-1">
+        <button type="button" class="project-modal-close" aria-label="Fechar projeto">×</button>
+
+        <p class="eyebrow">IDENTIDADE VISUAL</p>
+        <h2 id="veranum-modal-title">Veranum</h2>
+        <p class="project-modal-intro">
+            Identidade visual para uma marca de gelados artesanais
+            portugueses, inspirada no território de Marvila e na
+            valorização de ingredientes locais e sazonais.
+        </p>
+
+        <div class="project-modal-placeholder">
+            <span>VERANUM</span>
+        </div>
+
+        <div class="project-modal-details">
+            <div><strong>Projeto</strong><span>Identidade Visual</span></div>
+            <div><strong>Conceito</strong><span>Gelados artesanais portugueses</span></div>
+            <div><strong>Direção visual</strong><span>Território · Ingredientes · Sistema gráfico</span></div>
+        </div>
+
+        <button type="button" class="project-modal-back">← Voltar aos projetos</button>
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="./script.js" defer></script>
+</body>
+</html>
