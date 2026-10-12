@@ -16,6 +16,7 @@ filterButtons.forEach(function (button) {
 
         filterButtons.forEach(function (item) {
             const active = item === button;
+
             item.classList.toggle("active", active);
             item.setAttribute("aria-pressed", String(active));
         });
@@ -50,7 +51,9 @@ function openProjectModal(modal, trigger) {
 
     const closeButton = modal.querySelector(".project-modal-close");
 
-    if (closeButton) closeButton.focus();
+    if (closeButton) {
+        closeButton.focus();
+    }
 }
 
 function closeProjectModal(modal) {
@@ -122,7 +125,9 @@ function showBriefing() {
 
     const dialog = briefingModal.querySelector(".prebriefing-modal-content");
 
-    if (dialog) dialog.focus();
+    if (dialog) {
+        dialog.focus();
+    }
 }
 
 function hideBriefing() {
@@ -132,7 +137,9 @@ function hideBriefing() {
     briefingModal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("prebriefing-open");
 
-    if (openBriefing) openBriefing.focus();
+    if (openBriefing) {
+        openBriefing.focus();
+    }
 }
 
 if (openBriefing && briefingModal && closeBriefingButton) {
@@ -166,7 +173,7 @@ document.addEventListener("keydown", function (event) {
 });
 
 
-/* 06 — FORMULÁRIO DE PRÉ-BRIEFING COM FORMSUBMIT */
+/* 06 — FORMULÁRIO DE PRÉ-BRIEFING */
 
 const prebriefingForm = document.querySelector("#prebriefing-form");
 const formFeedback = document.querySelector("#form-feedback");
@@ -174,9 +181,11 @@ const formFeedback = document.querySelector("#form-feedback");
 if (prebriefingForm) {
     prebriefingForm.addEventListener("submit", function (event) {
         /*
-         * Não usamos preventDefault() nem mailto.
-         * O navegador envia o formulário para o FormSubmit
-         * através do action e do method definidos no HTML.
+         * O formulário é enviado pelo FormSubmit,
+         * configurado no action do HTML.
+         *
+         * Não utilizar preventDefault() nem mailto,
+         * pois isso impediria o envio normal do formulário.
          */
 
         if (!prebriefingForm.reportValidity()) {
