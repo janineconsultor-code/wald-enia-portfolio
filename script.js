@@ -1,7 +1,8 @@
-
+```javascript
 /* ========================================
    WALDÊNIA SILVA — ESTÚDIO CRIATIVO
    JavaScript principal
+   Idioma: Português (Portugal)
 ======================================== */
 
 
@@ -183,11 +184,8 @@ if (prebriefingForm) {
         }
 
         if (formFeedback) {
-            const isEnglish = document.documentElement.lang === "en";
-
-            formFeedback.textContent = isEnglish
-                ? "Your form is being submitted. Please wait for confirmation before closing the page."
-                : "O formulário está a ser enviado. Aguarde a confirmação antes de fechar a página.";
+            formFeedback.textContent =
+                "O formulário está a ser enviado. Aguarde a confirmação antes de fechar a página.";
 
             formFeedback.setAttribute("role", "status");
             formFeedback.setAttribute("aria-live", "polite");
@@ -196,90 +194,7 @@ if (prebriefingForm) {
 }
 
 
-/* 07 — ALTERNÂNCIA DE IDIOMA PT / EN */
+/* 07 — IDIOMA DO SITE */
 
-const languageButtons = document.querySelectorAll(".language-button");
-
-function changeLanguage(language) {
-    const isEnglish = language === "en";
-
-    document.documentElement.lang = isEnglish ? "en" : "pt-PT";
-
-    // Atualizar o estado dos botões de idioma.
-    languageButtons.forEach(function (button) {
-        const buttonLanguage = button.textContent.trim().toLowerCase();
-        const isActive = buttonLanguage === language;
-
-        button.classList.toggle("active", isActive);
-        button.setAttribute("aria-pressed", String(isActive));
-    });
-
-    /*
-       Traduzir os elementos com data-pt e data-en.
-       Se um elemento tiver outros elementos dentro,
-       não substituir o seu conteúdo inteiro: isso poderia
-       apagar links ou outros elementos HTML.
-    */
-    document.querySelectorAll("[data-pt][data-en]").forEach(function (element) {
-        if (element.children.length > 0) {
-            return;
-        }
-
-        element.textContent = isEnglish
-            ? element.dataset.en
-            : element.dataset.pt;
-    });
-
-    // Traduzir os campos de formulário.
-    document.querySelectorAll(
-        "[data-placeholder-pt][data-placeholder-en]"
-    ).forEach(function (element) {
-        element.placeholder = isEnglish
-            ? element.dataset.placeholderEn
-            : element.dataset.placeholderPt;
-    });
-
-    // Traduzir os títulos auxiliares.
-    document.querySelectorAll("[data-title-pt][data-title-en]").forEach(
-        function (element) {
-            element.title = isEnglish
-                ? element.dataset.titleEn
-                : element.dataset.titlePt;
-        }
-    );
-
-    // Traduzir os nomes acessíveis.
-    document.querySelectorAll(
-        "[data-aria-label-pt][data-aria-label-en]"
-    ).forEach(function (element) {
-        element.setAttribute(
-            "aria-label",
-            isEnglish
-                ? element.dataset.ariaLabelEn
-                : element.dataset.ariaLabelPt
-        );
-    });
-
-    // Traduzir o texto alternativo das imagens.
-    document.querySelectorAll("[data-alt-pt][data-alt-en]").forEach(
-        function (element) {
-            element.alt = isEnglish
-                ? element.dataset.altEn
-                : element.dataset.altPt;
-        }
-    );
-}
-
-// Associar os botões à função de tradução.
-languageButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-        const language = button.textContent.trim().toLowerCase();
-
-        if (language === "pt" || language === "en") {
-            changeLanguage(language);
-        }
-    });
-});
-
-// Iniciar o site em português.
-changeLanguage("pt");
+document.documentElement.lang = "pt-PT";
+```
