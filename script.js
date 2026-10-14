@@ -16,14 +16,13 @@ filterButtons.forEach(function (button) {
 
         filterButtons.forEach(function (item) {
             const active = item === button;
-
             item.classList.toggle("active", active);
             item.setAttribute("aria-pressed", String(active));
         });
 
         projectCards.forEach(function (card) {
-            const category = card.dataset.category;
-            const visible = filter === "todos" || category === filter;
+            const visible =
+                filter === "todos" || card.dataset.category === filter;
 
             card.classList.toggle("is-hidden", !visible);
         });
@@ -44,7 +43,6 @@ function openProjectModal(modal, trigger) {
     if (!modal) return;
 
     lastProjectTrigger = trigger;
-
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("project-modal-open");
@@ -144,7 +142,6 @@ function hideBriefing() {
 
 if (openBriefing && briefingModal && closeBriefingButton) {
     openBriefing.addEventListener("click", showBriefing);
-
     closeBriefingButton.addEventListener("click", hideBriefing);
 
     briefingModal.addEventListener("click", function (event) {
@@ -186,9 +183,9 @@ if (prebriefingForm) {
         }
 
         if (formFeedback) {
-            const currentLanguage = document.documentElement.lang;
+            const isEnglish = document.documentElement.lang === "en";
 
-            formFeedback.textContent = currentLanguage === "en"
+            formFeedback.textContent = isEnglish
                 ? "Your form is being submitted. Please wait for confirmation before closing the page."
                 : "O formulário está a ser enviado. Aguarde a confirmação antes de fechar a página.";
 
@@ -206,10 +203,9 @@ const languageButtons = document.querySelectorAll(".language-button");
 function changeLanguage(language) {
     const isEnglish = language === "en";
 
-    // Atualiza o idioma do documento.
     document.documentElement.lang = isEnglish ? "en" : "pt-PT";
 
-    // Atualiza o estado visual e acessível dos botões.
+    // Atualizar o estado dos botões de idioma.
     languageButtons.forEach(function (button) {
         const buttonLanguage = button.textContent.trim().toLowerCase();
         const isActive = buttonLanguage === language;
@@ -218,14 +214,23 @@ function changeLanguage(language) {
         button.setAttribute("aria-pressed", String(isActive));
     });
 
-    // Troca os textos que tenham as duas versões no HTML.
+    /*
+       Traduzir os elementos com data-pt e data-en.
+       Se um elemento tiver outros elementos dentro,
+       não substituir o seu conteúdo inteiro: isso poderia
+       apagar links ou outros elementos HTML.
+    */
     document.querySelectorAll("[data-pt][data-en]").forEach(function (element) {
+        if (element.children.length > 0) {
+            return;
+        }
+
         element.textContent = isEnglish
             ? element.dataset.en
             : element.dataset.pt;
     });
 
-    // Traduz os placeholders dos campos, quando configurados.
+    // Traduzir os campos de formulário.
     document.querySelectorAll(
         "[data-placeholder-pt][data-placeholder-en]"
     ).forEach(function (element) {
@@ -234,7 +239,7 @@ function changeLanguage(language) {
             : element.dataset.placeholderPt;
     });
 
-    // Traduz os atributos title, quando configurados.
+    // Traduzir os títulos auxiliares.
     document.querySelectorAll("[data-title-pt][data-title-en]").forEach(
         function (element) {
             element.title = isEnglish
@@ -243,18 +248,29 @@ function changeLanguage(language) {
         }
     );
 
-    // Traduz os atributos aria-label, quando configurados.
-    document.querySelectorAll("[data-aria-label-pt][data-aria-label-en]")
-        .forEach(function (element) {
-            element.setAttribute(
-                "aria-label",
-                isEnglish
-                    ? element.dataset.ariaLabelEn
-                    : element.dataset.ariaLabelPt
-            );
-        });
+    // Traduzir os nomes acessíveis.
+    document.querySelectorAll(
+        "[data-aria-label-pt][data-aria-label-en]"
+    ).forEach(function (element) {
+        element.setAttribute(
+            "aria-label",
+            isEnglish
+                ? element.dataset.ariaLabelEn
+                : element.dataset.ariaLabelPt
+        );
+    });
+
+    // Traduzir o texto alternativo das imagens.
+    document.querySelectorAll("[data-alt-pt][data-alt-en]").forEach(
+        function (element) {
+            element.alt = isEnglish
+                ? element.dataset.altEn
+                : element.dataset.altPt;
+        }
+    );
 }
 
+// Associar os botões à função de tradução.
 languageButtons.forEach(function (button) {
     button.addEventListener("click", function () {
         const language = button.textContent.trim().toLowerCase();
@@ -265,5 +281,5 @@ languageButtons.forEach(function (button) {
     });
 });
 
-// Inicia o site em português.
+// Iniciar o site em português.
 changeLanguage("pt");
