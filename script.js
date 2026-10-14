@@ -180,25 +180,90 @@ const formFeedback = document.querySelector("#form-feedback");
 
 if (prebriefingForm) {
     prebriefingForm.addEventListener("submit", function (event) {
-        /*
-         * O formulário é enviado pelo FormSubmit,
-         * configurado no action do HTML.
-         *
-         * Não utilizar preventDefault() nem mailto,
-         * pois isso impediria o envio normal do formulário.
-         */
-
         if (!prebriefingForm.reportValidity()) {
             event.preventDefault();
             return;
         }
 
         if (formFeedback) {
-            formFeedback.textContent =
-                "O formulário está a ser enviado. Aguarde a confirmação antes de fechar a página.";
+            const currentLanguage = document.documentElement.lang;
+
+            formFeedback.textContent = currentLanguage === "en"
+                ? "Your form is being submitted. Please wait for confirmation before closing the page."
+                : "O formulário está a ser enviado. Aguarde a confirmação antes de fechar a página.";
 
             formFeedback.setAttribute("role", "status");
             formFeedback.setAttribute("aria-live", "polite");
         }
     });
 }
+
+
+/* 07 — ALTERNÂNCIA DE IDIOMA PT / EN */
+
+const languageButtons = document.querySelectorAll(".language-button");
+
+function changeLanguage(language) {
+    const isEnglish = language === "en";
+
+    // Atualiza o idioma do documento.
+    document.documentElement.lang = isEnglish ? "en" : "pt-PT";
+
+    // Atualiza o estado visual e acessível dos botões.
+    languageButtons.forEach(function (button) {
+        const buttonLanguage = button.textContent.trim().toLowerCase();
+        const isActive = buttonLanguage === language;
+
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    // Troca os textos que tenham as duas versões no HTML.
+    document.querySelectorAll("[data-pt][data-en]").forEach(function (element) {
+        element.textContent = isEnglish
+            ? element.dataset.en
+            : element.dataset.pt;
+    });
+
+    // Traduz os placeholders dos campos, quando configurados.
+    document.querySelectorAll(
+        "[data-placeholder-pt][data-placeholder-en]"
+    ).forEach(function (element) {
+        element.placeholder = isEnglish
+            ? element.dataset.placeholderEn
+            : element.dataset.placeholderPt;
+    });
+
+    // Traduz os atributos title, quando configurados.
+    document.querySelectorAll("[data-title-pt][data-title-en]").forEach(
+        function (element) {
+            element.title = isEnglish
+                ? element.dataset.titleEn
+                : element.dataset.titlePt;
+        }
+    );
+
+    // Traduz os atributos aria-label, quando configurados.
+    document.querySelectorAll("[data-aria-label-pt][data-aria-label-en]")
+        .forEach(function (element) {
+            element.setAttribute(
+                "aria-label",
+                isEnglish
+                    ? element.dataset.ariaLabelEn
+                    : element.dataset.ariaLabelPt
+            );
+        });
+}
+
+languageButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        const language = button.textContent.trim().toLowerCase();
+
+        if (language === "pt" || language === "en") {
+            changeLanguage(language);
+        }
+    });
+});
+
+// Inicia o site em português.
+changeLanguage("pt");
