@@ -1550,3 +1550,51 @@ body.project-modal-open {
         right: 8px;
     }
 }
+
+/* 24 — BOTÕES VOLTAR AO MENU */
+
+.section-return {
+    display: flex;
+    justify-content: flex-end;
+    max-width: var(--page-width);
+    margin: 45px auto 0;
+}
+
+.section-return .text-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 0;
+    padding: 12px 18px;
+
+    border: 1px solid var(--green-medium);
+    color: var(--green-dark);
+
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.section-return .text-link:hover {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+    color: var(--cream);
+}
+
+@media (max-width: 700px) {
+    .section-return {
+        justify-content: flex-start;
+        margin-top: 35px;
+    }
+
+    .section-return .text-link {
+        padding: 12px 15px;
+    }
+}
