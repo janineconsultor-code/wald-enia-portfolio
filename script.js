@@ -1,4 +1,3 @@
-```javascript
 /* ========================================
    WALDÊNIA SILVA — ESTÚDIO CRIATIVO
    JavaScript principal
@@ -196,5 +195,68 @@ if (prebriefingForm) {
 
 /* 07 — IDIOMA DO SITE */
 
-document.documentElement.lang = "pt-PT";
-```
+(function () {
+    const languageButtons = document.querySelectorAll(".language-button");
+    const translatableElements = document.querySelectorAll("[data-pt][data-en]");
+
+    function setLanguage(language) {
+        const isEnglish = language === "en";
+
+        document.documentElement.lang = isEnglish ? "en" : "pt-PT";
+
+        translatableElements.forEach(function (element) {
+            const translation = isEnglish ? element.dataset.en : element.dataset.pt;
+
+            if (translation === undefined) return;
+
+            // Traduz texto sem substituir elementos filhos, como links e ícones.
+            if (element.children.length === 0) {
+                element.textContent = translation;
+            }
+
+            const placeholder = isEnglish
+                ? element.dataset.placeholderEn
+                : element.dataset.placeholderPt;
+            const title = isEnglish ? element.dataset.titleEn : element.dataset.titlePt;
+            const ariaLabel = isEnglish
+                ? element.dataset.ariaLabelEn
+                : element.dataset.ariaLabelPt;
+            const alt = isEnglish ? element.dataset.altEn : element.dataset.altPt;
+
+            if (placeholder !== undefined) element.setAttribute("placeholder", placeholder);
+            if (title !== undefined) element.setAttribute("title", title);
+            if (ariaLabel !== undefined) element.setAttribute("aria-label", ariaLabel);
+            if (alt !== undefined) element.setAttribute("alt", alt);
+        });
+
+        languageButtons.forEach(function (button) {
+            const active = button.textContent.trim().toLowerCase() === language;
+            button.classList.toggle("active", active);
+            button.setAttribute("aria-pressed", String(active));
+        });
+
+        try {
+            localStorage.setItem("portfolio-language", language);
+        } catch (error) {
+            // O site continua a funcionar se o armazenamento local estiver bloqueado.
+        }
+    }
+
+    languageButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const language = button.textContent.trim().toLowerCase();
+            if (language === "pt" || language === "en") {
+                setLanguage(language);
+            }
+        });
+    });
+
+    let savedLanguage = "pt";
+    try {
+        savedLanguage = localStorage.getItem("portfolio-language") || "pt";
+    } catch (error) {
+        // Usa português como idioma inicial se o armazenamento não estiver disponível.
+    }
+
+    setLanguage(savedLanguage === "en" ? "en" : "pt");
+})();
