@@ -175,21 +175,42 @@ document.addEventListener("keydown", function (event) {
 const serviceSelect = document.querySelector("#servico");
 const conditionalGroups = document.querySelectorAll("[data-service-group]");
 
-function updateConditionalBriefingFields() {
-    if (!serviceSelect) return;
-
-    conditionalGroups.forEach(function (group) {
-        const active = group.dataset.serviceGroup === serviceSelect.value;
-        group.hidden = !active;
-
-        group.querySelectorAll("input, select, textarea").forEach(function (field) {
-            field.required = active && field.dataset.required === "true";
+function updateNestedConditionalFields() {
+    document.querySelectorAll("[data-show-when]").forEach(function (wrapper) {
+        const condition = wrapper.dataset.showWhen.split(":");
+        const source = document.getElementById(condition[0]);
+        const acceptedValues = condition[1].split("|");
+        const visible = source && acceptedValues.includes(source.value);
+        wrapper.hidden = !visible;
+        wrapper.querySelectorAll("input, select, textarea").forEach(function (field) {
+            field.required = Boolean(visible && field.dataset.required === "true");
         });
     });
 }
 
+function updateConditionalBriefingFields() {
+    if (!serviceSelect) return;
+    conditionalGroups.forEach(function (group) {
+        const active = group.dataset.serviceGroup === serviceSelect.value;
+        group.hidden = !active;
+        group.querySelectorAll("input, select, textarea").forEach(function (field) {
+            field.required = Boolean(active && field.dataset.required === "true");
+        });
+        group.querySelectorAll("[data-required-group]").forEach(function (fieldset) {
+            const first = fieldset.querySelector('input[type="checkbox"]');
+            if (first) first.required = active;
+        });
+    });
+    updateNestedConditionalFields();
+}
+
 if (serviceSelect) {
     serviceSelect.addEventListener("change", updateConditionalBriefingFields);
+    document.querySelectorAll("[data-show-when]").forEach(function (wrapper) {
+        const sourceId = wrapper.dataset.showWhen.split(":")[0];
+        const source = document.getElementById(sourceId);
+        if (source) source.addEventListener("change", updateNestedConditionalFields);
+    });
     updateConditionalBriefingFields();
 }
 
@@ -236,6 +257,13 @@ if (prebriefingForm) {
             // Traduz texto sem substituir elementos filhos, como links e ícones.
             if (element.children.length === 0) {
                 element.textContent = translation;
+            }
+
+            // Traduz também as opções de listas suspensas.
+            if (element.tagName === "SELECT") {
+                element.querySelectorAll("option[data-pt][data-en]").forEach(function (option) {
+                    option.textContent = language === "en" ? option.dataset.en : option.dataset.pt;
+                });
             }
 
             const placeholder = isEnglish
