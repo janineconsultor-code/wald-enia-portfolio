@@ -281,6 +281,11 @@ if (prebriefingForm) {
             if (alt !== undefined) element.setAttribute("alt", alt);
         });
 
+        // Traduz as opções dos campos select, que não fazem parte de translatableElements.
+        document.querySelectorAll("select option[data-pt][data-en]").forEach(function (option) {
+            option.textContent = isEnglish ? option.dataset.en : option.dataset.pt;
+        });
+
         languageButtons.forEach(function (button) {
             const active = button.textContent.trim().toLowerCase() === language;
             button.classList.toggle("active", active);
