@@ -175,12 +175,23 @@ document.addEventListener("keydown", function (event) {
 const serviceSelect = document.querySelector("#servico");
 const conditionalGroups = document.querySelectorAll("[data-service-group]");
 
+function isElementVisible(element) {
+    let current = element;
+    while (current && current !== document.body) {
+        if (current.hidden) return false;
+        current = current.parentElement;
+    }
+    return true;
+}
+
 function updateNestedConditionalFields() {
     document.querySelectorAll("[data-show-when]").forEach(function (wrapper) {
         const condition = wrapper.dataset.showWhen.split(":");
         const source = document.getElementById(condition[0]);
         const acceptedValues = condition[1].split("|");
-        const visible = source && acceptedValues.includes(source.value);
+        const parentVisible = isElementVisible(wrapper.parentElement);
+        const conditionMet = source && acceptedValues.includes(source.value);
+        const visible = Boolean(parentVisible && conditionMet);
         wrapper.hidden = !visible;
         wrapper.querySelectorAll("input, select, textarea").forEach(function (field) {
             field.required = Boolean(visible && field.dataset.required === "true");
@@ -195,10 +206,6 @@ function updateConditionalBriefingFields() {
         group.hidden = !active;
         group.querySelectorAll("input, select, textarea").forEach(function (field) {
             field.required = Boolean(active && field.dataset.required === "true");
-        });
-        group.querySelectorAll("[data-required-group]").forEach(function (fieldset) {
-            const first = fieldset.querySelector('input[type="checkbox"]');
-            if (first) first.required = active;
         });
     });
     updateNestedConditionalFields();
@@ -222,6 +229,30 @@ const formFeedback = document.querySelector("#form-feedback");
 
 if (prebriefingForm) {
     prebriefingForm.addEventListener("submit", function (event) {
+        // Cada grupo de caixas visível exige pelo menos uma escolha,
+        // sem obrigar o cliente a selecionar uma opção específica.
+        let invalidCheckboxGroup = null;
+        prebriefingForm.querySelectorAll("[data-required-group]").forEach(function (fieldset) {
+            const visible = isElementVisible(fieldset);
+            const checked = fieldset.querySelector('input[type="checkbox"]:checked');
+            if (visible && !checked && !invalidCheckboxGroup) invalidCheckboxGroup = fieldset;
+        });
+
+        if (invalidCheckboxGroup) {
+            event.preventDefault();
+            const firstCheckbox = invalidCheckboxGroup.querySelector('input[type="checkbox"]');
+            if (firstCheckbox) firstCheckbox.focus();
+            invalidCheckboxGroup.scrollIntoView({ behavior: "smooth", block: "center" });
+            if (formFeedback) {
+                formFeedback.textContent = document.documentElement.lang === "en"
+                    ? "Please select at least one option in each required group."
+                    : "Seleciona pelo menos uma opção em cada grupo obrigatório.";
+                formFeedback.setAttribute("role", "alert");
+                formFeedback.setAttribute("aria-live", "assertive");
+            }
+            return;
+        }
+
         if (!prebriefingForm.reportValidity()) {
             event.preventDefault();
             return;
