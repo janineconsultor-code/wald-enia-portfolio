@@ -170,7 +170,31 @@ document.addEventListener("keydown", function (event) {
 });
 
 
-/* 06 — FORMULÁRIO DE PRÉ-BRIEFING */
+/* 06 — CAMPOS CONDICIONAIS DO PRÉ-BRIEFING */
+
+const serviceSelect = document.querySelector("#servico");
+const conditionalGroups = document.querySelectorAll("[data-service-group]");
+
+function updateConditionalBriefingFields() {
+    if (!serviceSelect) return;
+
+    conditionalGroups.forEach(function (group) {
+        const active = group.dataset.serviceGroup === serviceSelect.value;
+        group.hidden = !active;
+
+        group.querySelectorAll("input, select, textarea").forEach(function (field) {
+            field.required = active && field.dataset.required === "true";
+        });
+    });
+}
+
+if (serviceSelect) {
+    serviceSelect.addEventListener("change", updateConditionalBriefingFields);
+    updateConditionalBriefingFields();
+}
+
+
+/* 07 — FORMULÁRIO DE PRÉ-BRIEFING */
 
 const prebriefingForm = document.querySelector("#prebriefing-form");
 const formFeedback = document.querySelector("#form-feedback");
@@ -193,7 +217,7 @@ if (prebriefingForm) {
 }
 
 
-/* 07 — IDIOMA DO SITE */
+/* 08 — IDIOMA DO SITE */
 
 (function () {
     const languageButtons = document.querySelectorAll(".language-button");
