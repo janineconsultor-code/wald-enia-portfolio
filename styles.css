@@ -1346,6 +1346,27 @@ footer p {
     gap: 1.5rem;
 }
 
+.prebriefing .form-conditional {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(24, 60, 53, 0.2);
+}
+
+.prebriefing .form-conditional[hidden] {
+    display: none !important;
+}
+
+.prebriefing .form-conditional h4 {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
 .prebriefing .form-field {
     display: flex;
     flex-direction: column;
@@ -1416,7 +1437,8 @@ footer p {
         padding-top: 2rem;
     }
 
-    .prebriefing .form-grid {
+    .prebriefing .form-grid,
+    .prebriefing .form-conditional {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
