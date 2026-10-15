@@ -566,6 +566,188 @@
                             data-placeholder-en="Any other details relevant to the project."
                             placeholder="Outros detalhes relevantes para o projeto."></textarea>
                     </div>
+<div class="form-field form-field-full">
+<label for="descricao-marca" data-pt="Fala-me um pouco sobre a tua marca, empresa ou projeto. *" data-en="Tell me a little about your brand, business or project. *">Fala-me um pouco sobre a tua marca, empresa ou projeto. *</label>
+<textarea id="descricao-marca" name="descricao-marca" rows="3" required></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="necessidade" data-pt="Que problema ou necessidade pretendes resolver? *" data-en="What problem or need do you want to address? *">Que problema ou necessidade pretendes resolver? *</label>
+<textarea id="necessidade" name="necessidade" rows="3" required></textarea>
+</div>
+<section class="form-conditional" data-service-group="Identidade visual" hidden aria-live="polite">
+<h4 data-pt="IDENTIDADE VISUAL — DETALHES DA MARCA" data-en="VISUAL IDENTITY — BRAND DETAILS">IDENTIDADE VISUAL — DETALHES DA MARCA</h4>
+<div class="form-field">
+<label for="iv_estado" data-pt="A marca já existe ou está a ser criada de raiz? *" data-en="Does the brand already exist or is it being created from scratch? *">A marca já existe ou está a ser criada de raiz? *</label>
+<select id="iv_estado" name="iv_estado" data-required="true">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Nova" data-pt="Marca nova" data-en="New brand">Marca nova</option>
+<option value="Existente" data-pt="Marca existente" data-en="Existing brand">Marca existente</option>
+<option value="Reformulação" data-pt="Reformulação da identidade" data-en="Brand identity redesign">Reformulação da identidade</option>
+</select>
+</div>
+<div class="form-field form-field-full">
+<label for="iv_produtos" data-pt="Que produtos ou serviços oferece a marca? *" data-en="What products or services does the brand offer? *">Que produtos ou serviços oferece a marca? *</label>
+<textarea id="iv_produtos" name="iv_produtos" rows="3" data-required="true"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="iv_personalidade" data-pt="Como gostarias que as pessoas percebessem a marca? *" data-en="How would you like people to perceive the brand? *">Como gostarias que as pessoas percebessem a marca? *</label>
+<textarea id="iv_personalidade" name="iv_personalidade" rows="3" data-required="true"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="iv_concorrentes" data-pt="Quem são os principais concorrentes?" data-en="Who are the main competitors?">Quem são os principais concorrentes?</label>
+<textarea id="iv_concorrentes" name="iv_concorrentes" rows="3" data-required="false"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="iv_cores" data-pt="Existem cores que gostarias de utilizar ou evitar? Porquê?" data-en="Are there colours you would like to use or avoid? Why?">Existem cores que gostarias de utilizar ou evitar? Porquê?</label>
+<textarea id="iv_cores" name="iv_cores" rows="3" data-required="false"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="iv_aplicacoes" data-pt="Onde será utilizada a identidade visual? *" data-en="Where will the visual identity be used? *">Onde será utilizada a identidade visual? *</label>
+<textarea id="iv_aplicacoes" name="iv_aplicacoes" rows="3" data-required="true"></textarea>
+</div>
+</section>
+<section class="form-conditional" data-service-group="Design editorial" hidden aria-live="polite">
+<h4 data-pt="DESIGN EDITORIAL — DETALHES DA PUBLICAÇÃO" data-en="EDITORIAL DESIGN — PUBLICATION DETAILS">DESIGN EDITORIAL — DETALHES DA PUBLICAÇÃO</h4>
+<div class="form-field">
+<label for="ed_tipo" data-pt="Que tipo de publicação pretendes desenvolver? *" data-en="What type of publication do you want to develop? *">Que tipo de publicação pretendes desenvolver? *</label>
+<select id="ed_tipo" name="ed_tipo" data-required="true">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Revista" data-pt="Revista" data-en="Magazine">Revista</option>
+<option value="Livro" data-pt="Livro" data-en="Book">Livro</option>
+<option value="Catálogo" data-pt="Catálogo" data-en="Catalogue">Catálogo</option>
+<option value="Brochura" data-pt="Brochura" data-en="Brochure">Brochura</option>
+<option value="Relatório" data-pt="Relatório" data-en="Report">Relatório</option>
+<option value="E-book" data-pt="E-book" data-en="E-book">E-book</option>
+<option value="Outra" data-pt="Outra" data-en="Other">Outra</option>
+</select>
+</div>
+<div class="form-field form-field-full">
+<label for="ed_tema" data-pt="Qual é o tema e o objetivo da publicação? *" data-en="What is the topic and purpose of the publication? *">Qual é o tema e o objetivo da publicação? *</label>
+<textarea id="ed_tema" name="ed_tema" rows="3" data-required="true"></textarea>
+</div>
+<div class="form-field">
+<label for="ed_conteudo" data-pt="Os textos e as imagens já estão preparados? *" data-en="Are the texts and images ready? *">Os textos e as imagens já estão preparados? *</label>
+<select id="ed_conteudo" name="ed_conteudo" data-required="true">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Totalmente" data-pt="Sim, totalmente" data-en="Yes, all ready">Sim, totalmente</option>
+<option value="Parcialmente" data-pt="Parcialmente" data-en="Partially">Parcialmente</option>
+<option value="Ainda não" data-pt="Ainda não" data-en="Not yet">Ainda não</option>
+</select>
+</div>
+<div class="form-field">
+<label for="ed_paginas" data-pt="Quantas páginas estimas que a publicação terá?" data-en="How many pages do you estimate the publication will have?">Quantas páginas estimas que a publicação terá?</label>
+<input type="text" id="ed_paginas" name="ed_paginas" data-required="false">
+</div>
+<div class="form-field">
+<label for="ed_formato" data-pt="Em que formato pretendes a publicação? *" data-en="What format do you want for the publication? *">Em que formato pretendes a publicação? *</label>
+<select id="ed_formato" name="ed_formato" data-required="true">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Impresso" data-pt="Impresso" data-en="Print">Impresso</option>
+<option value="Digital" data-pt="Digital" data-en="Digital">Digital</option>
+<option value="Ambos" data-pt="Ambos" data-en="Both">Ambos</option>
+<option value="Por definir" data-pt="Ainda por definir" data-en="Not yet decided">Ainda por definir</option>
+</select>
+</div>
+<div class="form-field form-field-full">
+<label for="ed_producao" data-pt="Existem requisitos de impressão ou acabamento definidos?" data-en="Are any printing or finishing requirements already defined?">Existem requisitos de impressão ou acabamento definidos?</label>
+<textarea id="ed_producao" name="ed_producao" rows="3" data-required="false"></textarea>
+</div>
+</section>
+<section class="form-conditional" data-service-group="Packaging" hidden aria-live="polite">
+<h4 data-pt="PACKAGING — DETALHES DO PRODUTO E DA EMBALAGEM" data-en="PACKAGING — PRODUCT AND PACKAGING DETAILS">PACKAGING — DETALHES DO PRODUTO E DA EMBALAGEM</h4>
+<div class="form-field">
+<label for="pack_produto" data-pt="Que produto será acondicionado na embalagem? *" data-en="What product will the packaging contain? *">Que produto será acondicionado na embalagem? *</label>
+<input type="text" id="pack_produto" name="pack_produto" data-required="true">
+</div>
+<div class="form-field">
+<label for="pack_objetivo" data-pt="Qual é o principal objetivo da embalagem? *" data-en="What is the main purpose of the packaging? *">Qual é o principal objetivo da embalagem? *</label>
+<select id="pack_objetivo" name="pack_objetivo" data-required="true">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Proteger" data-pt="Proteger o produto" data-en="Protect the product">Proteger o produto</option>
+<option value="Destaque" data-pt="Destacar o produto no ponto de venda" data-en="Stand out at point of sale">Destacar o produto no ponto de venda</option>
+<option value="Marca" data-pt="Reforçar a identidade da marca" data-en="Reinforce brand identity">Reforçar a identidade da marca</option>
+<option value="Informar" data-pt="Informar o consumidor" data-en="Inform the consumer">Informar o consumidor</option>
+<option value="Experiência" data-pt="Criar uma experiência diferenciadora" data-en="Create a distinctive experience">Criar uma experiência diferenciadora</option>
+<option value="Outro" data-pt="Outro" data-en="Other">Outro</option>
+</select>
+</div>
+<div class="form-field">
+<label for="pack_tipo" data-pt="Que tipo de embalagem pretendes desenvolver? *" data-en="What type of packaging do you want to develop? *">Que tipo de embalagem pretendes desenvolver? *</label>
+<input type="text" id="pack_tipo" name="pack_tipo" data-required="true">
+</div>
+<div class="form-field">
+<label for="pack_dimensoes" data-pt="Conheces as dimensões ou a capacidade da embalagem? *" data-en="Do you know the packaging dimensions or capacity? *">Conheces as dimensões ou a capacidade da embalagem? *</label>
+<select id="pack_dimensoes" name="pack_dimensoes" data-required="true">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Sim" data-pt="Sim" data-en="Yes">Sim</option>
+<option value="Não" data-pt="Não" data-en="No">Não</option>
+<option value="Por definir" data-pt="Ainda por definir" data-en="Not yet decided">Ainda por definir</option>
+</select>
+</div>
+<div class="form-field">
+<label for="pack_materiais" data-pt="Que materiais serão utilizados? *" data-en="Which materials will be used? *">Que materiais serão utilizados? *</label>
+<select id="pack_materiais" name="pack_materiais" data-required="true">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Papel/cartão" data-pt="Papel ou cartão" data-en="Paper or cardboard">Papel ou cartão</option>
+<option value="Plástico" data-pt="Plástico" data-en="Plastic">Plástico</option>
+<option value="Vidro" data-pt="Vidro" data-en="Glass">Vidro</option>
+<option value="Metal" data-pt="Metal" data-en="Metal">Metal</option>
+<option value="Outros" data-pt="Outros" data-en="Other">Outros</option>
+<option value="Por definir" data-pt="Ainda não definido" data-en="Not yet decided">Ainda não definido</option>
+</select>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_canais" data-pt="Onde será comercializado o produto? *" data-en="Where will the product be sold? *">Onde será comercializado o produto? *</label>
+<textarea id="pack_canais" name="pack_canais" rows="3" data-required="true"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_requisitos" data-pt="Existem requisitos legais ou especificações técnicas a respeitar?" data-en="Are there legal requirements or technical specifications to consider?">Existem requisitos legais ou especificações técnicas a respeitar?</label>
+<textarea id="pack_requisitos" name="pack_requisitos" rows="3" data-required="false"></textarea>
+</div>
+</section>
+<section class="form-conditional" data-service-group="Publicidade e comunicação gráfica" hidden aria-live="polite">
+<h4 data-pt="PUBLICIDADE E COMUNICAÇÃO GRÁFICA — DETALHES DA CAMPANHA" data-en="ADVERTISING AND GRAPHIC COMMUNICATION — CAMPAIGN DETAILS">PUBLICIDADE E COMUNICAÇÃO GRÁFICA — DETALHES DA CAMPANHA</h4>
+<div class="form-field form-field-full">
+<label for="pub_mensagem" data-pt="Qual é a mensagem principal que pretendes transmitir? *" data-en="What is the main message you want to communicate? *">Qual é a mensagem principal que pretendes transmitir? *</label>
+<textarea id="pub_mensagem" name="pub_mensagem" rows="3" data-required="true"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="pub_suportes" data-pt="Em que meios ou suportes será utilizada a comunicação? *" data-en="Which channels or formats will be used? *">Em que meios ou suportes será utilizada a comunicação? *</label>
+<textarea id="pub_suportes" name="pub_suportes" rows="3" data-required="true"></textarea>
+</div>
+<div class="form-field">
+<label for="pub_materiais" data-pt="Já tens textos, imagens, logótipo e outros materiais disponíveis? *" data-en="Do you already have texts, images, a logo and other materials? *">Já tens textos, imagens, logótipo e outros materiais disponíveis? *</label>
+<select id="pub_materiais" name="pub_materiais" data-required="true">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Todos" data-pt="Sim, todos" data-en="Yes, all">Sim, todos</option>
+<option value="Alguns" data-pt="Alguns" data-en="Some">Alguns</option>
+<option value="Ainda não" data-pt="Ainda não" data-en="Not yet">Ainda não</option>
+</select>
+</div>
+<div class="form-field">
+<label for="pub_data" data-pt="A comunicação está associada a uma data ou campanha com duração definida? *" data-en="Is the communication tied to a date or campaign with a set duration? *">A comunicação está associada a uma data ou campanha com duração definida? *</label>
+<select id="pub_data" name="pub_data" data-required="true">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Sim" data-pt="Sim" data-en="Yes">Sim</option>
+<option value="Não" data-pt="Não" data-en="No">Não</option>
+</select>
+</div>
+<div class="form-field">
+<label for="pub_periodo" data-pt="Se sim, indica a data ou o período da campanha." data-en="If yes, provide the campaign date or period.">Se sim, indica a data ou o período da campanha.</label>
+<input type="text" id="pub_periodo" name="pub_periodo" data-required="false">
+</div>
+<div class="form-field form-field-full">
+<label for="pub_obrigatorias" data-pt="Existem informações obrigatórias que devem aparecer na peça gráfica?" data-en="Is there any mandatory information that must appear in the design?">Existem informações obrigatórias que devem aparecer na peça gráfica?</label>
+<textarea id="pub_obrigatorias" name="pub_obrigatorias" rows="3" data-required="false"></textarea>
+</div>
+</section>
+<section class="form-conditional" data-service-group="Outro" hidden aria-live="polite">
+<h4 data-pt="OUTRO SERVIÇO — DETALHES DO PEDIDO" data-en="OTHER SERVICE — REQUEST DETAILS">OUTRO SERVIÇO — DETALHES DO PEDIDO</h4>
+<div class="form-field form-field-full">
+<label for="outro_servico" data-pt="Que serviço procuras? Descreve o que precisas. *" data-en="What service are you looking for? Describe what you need. *">Que serviço procuras? Descreve o que precisas. *</label>
+<textarea id="outro_servico" name="outro_servico" rows="3" data-required="true"></textarea>
+</div>
+</section>
                 </div>
 
                 <p class="form-privacy"
