@@ -452,7 +452,8 @@
 
             <form id="prebriefing-form"
                 action="https://formsubmit.co/janine.consultor@outlook.pt"
-                method="POST">
+                method="POST"
+                enctype="multipart/form-data">
 
                 <input type="hidden" name="_subject" value="Pré-briefing | Novo pedido de projeto">
                 <input type="hidden" name="_template" value="table">
@@ -532,6 +533,19 @@
 <option value="Ainda não definido" data-pt="Ainda não definido" data-en="Not yet decided">Ainda não definido</option>
 </select>
 </div>
+<div class="form-field form-field-full">
+<label for="anexo1" data-pt="Anexo 1 — Logótipo, referências ou documentos (opcional)" data-en="Attachment 1 — Logo, references or documents (optional)">Anexo 1 — Logótipo, referências ou documentos (opcional)</label>
+<input type="file" id="anexo1" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.zip,application/pdf,image/jpeg,image/png,application/zip">
+</div>
+<div class="form-field form-field-full">
+<label for="anexo2" data-pt="Anexo 2 — Ficheiro adicional (opcional)" data-en="Attachment 2 — Additional file (optional)">Anexo 2 — Ficheiro adicional (opcional)</label>
+<input type="file" id="anexo2" name="attachment2" accept=".pdf,.jpg,.jpeg,.png,.zip,application/pdf,image/jpeg,image/png,application/zip">
+</div>
+<div class="form-field form-field-full">
+<label for="anexo3" data-pt="Anexo 3 — Ficheiro adicional (opcional)" data-en="Attachment 3 — Additional file (optional)">Anexo 3 — Ficheiro adicional (opcional)</label>
+<input type="file" id="anexo3" name="attachment3" accept=".pdf,.jpg,.jpeg,.png,.zip,application/pdf,image/jpeg,image/png,application/zip">
+</div>
+<p class="form-field-full form-help" data-pt="Podes enviar até 3 ficheiros PDF, JPG, PNG ou ZIP. O tamanho total dos anexos não pode ultrapassar 10 MB. Não envies documentos pessoais desnecessários." data-en="You can upload up to 3 PDF, JPG, PNG or ZIP files. The combined attachment size must not exceed 10 MB. Do not send unnecessary personal documents.">Podes enviar até 3 ficheiros PDF, JPG, PNG ou ZIP. O tamanho total dos anexos não pode ultrapassar 10 MB. Não envies documentos pessoais desnecessários.</p>
 <div class="form-field form-field-full">
 <label for="adicionais" data-pt="Há alguma informação importante que ainda não tenhamos abordado?" data-en="Is there any important information we have not covered?">Há alguma informação importante que ainda não tenhamos abordado?</label>
 <textarea id="adicionais" name="adicionais" rows="3"></textarea>
