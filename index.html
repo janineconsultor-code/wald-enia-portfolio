@@ -1034,6 +1034,237 @@
 <label for="pack_variantes" data-pt="Quantas variantes do produto precisam de embalagem?" data-en="How many product variants need packaging?">Quantas variantes do produto precisam de embalagem?</label>
 <input type="text" id="pack_variantes" name="pack_variantes">
 </div>
+
+<h4 data-pt="CONTEXTO DO PRODUTO E VARIANTES" data-en="PRODUCT CONTEXT AND VARIANTS">CONTEXTO DO PRODUTO E VARIANTES</h4>
+<div class="form-field">
+<label for="pack_categoria" data-pt="Em que categoria se enquadra o produto?" data-en="Which category does the product belong to?">Em que categoria se enquadra o produto?</label>
+<select id="pack_categoria" name="pack_categoria">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Alimentação" data-pt="Alimentação" data-en="Food">Alimentação</option>
+<option value="Bebidas" data-pt="Bebidas" data-en="Beverages">Bebidas</option>
+<option value="Cosmética" data-pt="Cosmética e cuidados pessoais" data-en="Cosmetics and personal care">Cosmética e cuidados pessoais</option>
+<option value="Saúde" data-pt="Saúde e bem-estar" data-en="Health and wellness">Saúde e bem-estar</option>
+<option value="Limpeza" data-pt="Limpeza" data-en="Cleaning">Limpeza</option>
+<option value="Moda" data-pt="Moda e acessórios" data-en="Fashion and accessories">Moda e acessórios</option>
+<option value="Casa" data-pt="Casa e decoração" data-en="Home and decor">Casa e decoração</option>
+<option value="Tecnologia" data-pt="Eletrónica e tecnologia" data-en="Electronics and technology">Eletrónica e tecnologia</option>
+<option value="Papelaria" data-pt="Papelaria e artigos criativos" data-en="Stationery and creative goods">Papelaria e artigos criativos</option>
+<option value="Animais" data-pt="Produtos para animais" data-en="Pet products">Produtos para animais</option>
+<option value="Outro" data-pt="Outra categoria" data-en="Other category">Outra categoria</option>
+</select>
+</div>
+<div class="form-field">
+<label for="pack_estado_fisico" data-pt="Qual é o estado físico do produto?" data-en="What is the physical state of the product?">Qual é o estado físico do produto?</label>
+<select id="pack_estado_fisico" name="pack_estado_fisico">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Sólido" data-pt="Sólido" data-en="Solid">Sólido</option>
+<option value="Líquido" data-pt="Líquido" data-en="Liquid">Líquido</option>
+<option value="Gel/creme" data-pt="Gel ou creme" data-en="Gel or cream">Gel ou creme</option>
+<option value="Pó/grânulos" data-pt="Pó ou grânulos" data-en="Powder or granules">Pó ou grânulos</option>
+<option value="Múltiplos" data-pt="Mais do que um estado / conjunto" data-en="Multiple states / set">Mais do que um estado / conjunto</option>
+<option value="Outro" data-pt="Outro" data-en="Other">Outro</option>
+</select>
+</div>
+<div class="form-field">
+<label for="pack_peso_volume" data-pt="Qual é o peso, volume ou quantidade por unidade?" data-en="What is the weight, volume or quantity per unit?">Qual é o peso, volume ou quantidade por unidade?</label>
+<input id="pack_peso_volume" name="pack_peso_volume" type="text">
+</div>
+<div class="form-field form-field-full">
+<label for="pack_caracteristicas" data-pt="Há características especiais a considerar (fragilidade, validade, refrigeração, luz, humidade, derrames ou segurança)?" data-en="Are there special characteristics to consider (fragility, shelf life, refrigeration, light, moisture, spills or safety)?">Há características especiais a considerar (fragilidade, validade, refrigeração, luz, humidade, derrames ou segurança)?</label>
+<textarea id="pack_caracteristicas" name="pack_caracteristicas" rows="3"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_uso" data-pt="Como será utilizado ou consumido o produto? Existem instruções de utilização ou conservação?" data-en="How will the product be used or consumed? Are there usage or storage instructions?">Como será utilizado ou consumido o produto? Existem instruções de utilização ou conservação?</label>
+<textarea id="pack_uso" name="pack_uso" rows="3"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_variantes_estado" data-pt="Existem diferentes sabores, tamanhos, aromas, modelos ou variantes?" data-en="Are there different flavours, sizes, scents, models or variants?">Existem diferentes sabores, tamanhos, aromas, modelos ou variantes?</label>
+<select id="pack_variantes_estado" name="pack_variantes_estado">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Sim" data-pt="Sim" data-en="Yes">Sim</option>
+<option value="Não" data-pt="Não" data-en="No">Não</option>
+<option value="Futuras" data-pt="Previstas para o futuro" data-en="Planned for the future">Previstas para o futuro</option>
+</select>
+</div>
+<div class="form-field form-field-full conditional-detail" data-show-when="pack_variantes_estado:Sim|Futuras" hidden>
+<label for="pack_variantes_detalhes" data-pt="Descreve as variantes e as diferenças que precisam de ser identificadas visualmente." data-en="Describe the variants and the differences that need to be visually identified.">Descreve as variantes e as diferenças que precisam de ser identificadas visualmente.</label>
+<textarea id="pack_variantes_detalhes" name="pack_variantes_detalhes" rows="2"></textarea>
+</div>
+<h4 data-pt="ESTRUTURA, ABERTURA E PROTEÇÃO" data-en="STRUCTURE, OPENING AND PROTECTION">ESTRUTURA, ABERTURA E PROTEÇÃO</h4>
+<div class="form-field form-field-full">
+<label for="pack_estrutura_estado" data-pt="A estrutura física da embalagem já está definida?" data-en="Has the physical packaging structure already been defined?">A estrutura física da embalagem já está definida?</label>
+<select id="pack_estrutura_estado" name="pack_estrutura_estado">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Definida" data-pt="Sim, está definida e não deve ser alterada" data-en="Yes, it is defined and should not change">Sim, está definida e não deve ser alterada</option>
+<option value="Flexível" data-pt="Está definida, mas pode ser ajustada" data-en="Defined, but can be adjusted">Está definida, mas pode ser ajustada</option>
+<option value="Referência" data-pt="Tenho uma referência, mas não tenho desenho técnico" data-en="I have a reference but no technical drawing">Tenho uma referência, mas não tenho desenho técnico</option>
+<option value="Nova" data-pt="É necessário estudar uma nova estrutura" data-en="A new structure needs to be explored">É necessário estudar uma nova estrutura</option>
+<option value="Indefinida" data-pt="Ainda não sei" data-en="Not sure yet">Ainda não sei</option>
+</select>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_formato" data-pt="Qual é o formato de embalagem pretendido?" data-en="What packaging format do you need?">Qual é o formato de embalagem pretendido?</label>
+<select id="pack_formato" name="pack_formato">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Caixa" data-pt="Caixa de cartão ou cartão canelado" data-en="Cardboard or corrugated box">Caixa de cartão ou cartão canelado</option>
+<option value="Saco" data-pt="Saco" data-en="Bag">Saco</option>
+<option value="Embalagem flexível" data-pt="Embalagem flexível / bolsa" data-en="Flexible packaging / pouch">Embalagem flexível / bolsa</option>
+<option value="Frasco" data-pt="Frasco ou boião" data-en="Jar">Frasco ou boião</option>
+<option value="Garrafa" data-pt="Garrafa" data-en="Bottle">Garrafa</option>
+<option value="Lata" data-pt="Lata" data-en="Can">Lata</option>
+<option value="Bisnaga" data-pt="Bisnaga" data-en="Tube">Bisnaga</option>
+<option value="Rótulo" data-pt="Rótulo" data-en="Label">Rótulo</option>
+<option value="Sleeve" data-pt="Sleeve / cinta" data-en="Sleeve">Sleeve / cinta</option>
+<option value="Expedição" data-pt="Embalagem de expedição" data-en="Shipping packaging">Embalagem de expedição</option>
+<option value="Conjunto" data-pt="Embalagem para conjunto ou kit" data-en="Set or kit packaging">Embalagem para conjunto ou kit</option>
+<option value="Outro" data-pt="Outro" data-en="Other">Outro</option>
+</select>
+</div>
+<div class="form-field">
+<label for="pack_unidades" data-pt="Quantas unidades ou componentes vão dentro de cada embalagem?" data-en="How many units or components will each package contain?">Quantas unidades ou componentes vão dentro de cada embalagem?</label>
+<input id="pack_unidades" name="pack_unidades" type="text">
+</div>
+<div class="form-field">
+<label for="pack_abertura" data-pt="Existem requisitos para abertura, fecho, reutilização ou fecho novamente?" data-en="Are there requirements for opening, closing, reuse or resealing?">Existem requisitos para abertura, fecho, reutilização ou fecho novamente?</label>
+<input id="pack_abertura" name="pack_abertura" type="text">
+</div>
+<div class="form-field form-field-full">
+<label for="pack_protecao" data-pt="Que proteção é necessária durante o armazenamento, transporte e utilização?" data-en="What protection is needed during storage, transport and use?">Que proteção é necessária durante o armazenamento, transporte e utilização?</label>
+<textarea id="pack_protecao" name="pack_protecao" rows="2"></textarea>
+</div>
+<div class="form-field form-field-full conditional-detail" data-show-when="pack_dimensoes_estado:Sim" hidden>
+<label for="pack_desenho_tecnico" data-pt="Tens um desenho técnico, molde ou faca de corte (dieline) do fornecedor?" data-en="Do you have a technical drawing, template or supplier dieline?">Tens um desenho técnico, molde ou faca de corte (dieline) do fornecedor?</label>
+<textarea id="pack_desenho_tecnico" name="pack_desenho_tecnico" rows="2"></textarea>
+</div>
+<h4 data-pt="MATERIAIS, ACABAMENTOS E SUSTENTABILIDADE" data-en="MATERIALS, FINISHES AND SUSTAINABILITY">MATERIAIS, ACABAMENTOS E SUSTENTABILIDADE</h4>
+<div class="form-field form-field-full">
+<label for="pack_materiais_restricoes" data-pt="Há materiais que devem ser evitados ou que não podem ser utilizados?" data-en="Are there materials that should be avoided or cannot be used?">Há materiais que devem ser evitados ou que não podem ser utilizados?</label>
+<textarea id="pack_materiais_restricoes" name="pack_materiais_restricoes" rows="2"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_acabamentos" data-pt="Que acabamentos te interessam (mate, brilho, relevo, estampagem, textura, janela ou outros)?" data-en="Which finishes interest you (matte, gloss, embossing, foil, texture, window or others)?">Que acabamentos te interessam (mate, brilho, relevo, estampagem, textura, janela ou outros)?</label>
+<textarea id="pack_acabamentos" name="pack_acabamentos" rows="2"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_prioridades" data-pt="O que é mais importante para a embalagem (proteção, custo, leveza, resistência, facilidade de abertura, transporte, aparência ou reciclagem)?" data-en="What matters most for the packaging (protection, cost, weight, durability, ease of opening, transport, appearance or recycling)?">O que é mais importante para a embalagem (proteção, custo, leveza, resistência, facilidade de abertura, transporte, aparência ou reciclagem)?</label>
+<textarea id="pack_prioridades" name="pack_prioridades" rows="2"></textarea>
+</div>
+<div class="form-field">
+<label for="pack_sustentabilidade" data-pt="Qual é a importância da sustentabilidade neste projeto?" data-en="How important is sustainability in this project?">Qual é a importância da sustentabilidade neste projeto?</label>
+<select id="pack_sustentabilidade" name="pack_sustentabilidade">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Essencial" data-pt="Essencial" data-en="Essential">Essencial</option>
+<option value="Importante" data-pt="Importante" data-en="Important">Importante</option>
+<option value="Desejável" data-pt="Desejável" data-en="Desirable">Desejável</option>
+<option value="Baixa prioridade" data-pt="Baixa prioridade" data-en="Low priority">Baixa prioridade</option>
+<option value="Indefinida" data-pt="Ainda por definir" data-en="To be defined">Ainda por definir</option>
+</select>
+</div>
+<div class="form-field form-field-full conditional-detail" data-show-when="pack_sustentabilidade:Essencial|Importante|Desejável" hidden>
+<label for="pack_sustentabilidade_obj" data-pt="Que objetivos ambientais devem ser considerados (reciclabilidade, reutilização, menos material, materiais reciclados/renováveis, separação fácil ou menor volume de transporte)?" data-en="Which environmental goals should be considered (recyclability, reuse, less material, recycled/renewable materials, easy separation or lower transport volume)?">Que objetivos ambientais devem ser considerados (reciclabilidade, reutilização, menos material, materiais reciclados/renováveis, separação fácil ou menor volume de transporte)?</label>
+<textarea id="pack_sustentabilidade_obj" name="pack_sustentabilidade_obj" rows="3"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_alegacoes" data-pt="Existem certificações, normas ou alegações ambientais que a marca pretende comunicar? Devem ser comprovadas antes de serem incluídas." data-en="Are there certifications, standards or environmental claims the brand wants to communicate? These must be substantiated before inclusion.">Existem certificações, normas ou alegações ambientais que a marca pretende comunicar? Devem ser comprovadas antes de serem incluídas.</label>
+<textarea id="pack_alegacoes" name="pack_alegacoes" rows="2"></textarea>
+</div>
+<h4 data-pt="TEXTO, INFORMAÇÃO OBRIGATÓRIA E IDENTIFICAÇÃO" data-en="COPY, REQUIRED INFORMATION AND IDENTIFICATION">TEXTO, INFORMAÇÃO OBRIGATÓRIA E IDENTIFICAÇÃO</h4>
+<div class="form-field form-field-full">
+<label for="pack_informacao" data-pt="Que informações devem constar na embalagem (nome, descrição, ingredientes, peso/volume, modo de utilização, conservação, validade, lote, fabricante, contactos, código de barras, QR, reciclagem ou outras)?" data-en="What information must appear on the packaging (name, description, ingredients, weight/volume, use, storage, expiry, batch, manufacturer, contacts, barcode, QR, recycling or other)?">Que informações devem constar na embalagem (nome, descrição, ingredientes, peso/volume, modo de utilização, conservação, validade, lote, fabricante, contactos, código de barras, QR, reciclagem ou outras)?</label>
+<textarea id="pack_informacao" name="pack_informacao" rows="3"></textarea>
+</div>
+<div class="form-field">
+<label for="pack_textos_estado" data-pt="Qual é o estado dos textos e informações técnicas?" data-en="What is the status of the copy and technical information?">Qual é o estado dos textos e informações técnicas?</label>
+<select id="pack_textos_estado" name="pack_textos_estado">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Final" data-pt="Finalizados e validados" data-en="Finalised and approved">Finalizados e validados</option>
+<option value="Rever" data-pt="Precisam de revisão" data-en="Need review">Precisam de revisão</option>
+<option value="Parcial" data-pt="Só uma parte está pronta" data-en="Only some content is ready">Só uma parte está pronta</option>
+<option value="Tecnico" data-pt="Dependem de informação técnica de terceiros" data-en="Depend on technical information from a third party">Dependem de informação técnica de terceiros</option>
+<option value="Indefinido" data-pt="Ainda por definir" data-en="To be defined">Ainda por definir</option>
+</select>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_responsavel_legal" data-pt="Quem fornece e valida os textos legais, técnicos e regulamentares da embalagem?" data-en="Who provides and validates the legal, technical and regulatory packaging copy?">Quem fornece e valida os textos legais, técnicos e regulamentares da embalagem?</label>
+<input id="pack_responsavel_legal" name="pack_responsavel_legal" type="text">
+</div>
+<div class="form-field form-field-full">
+<label for="pack_codigos" data-pt="São necessários código de barras, QR, identificação de lote, rastreabilidade ou outros códigos?" data-en="Are a barcode, QR code, batch identification, traceability or other codes required?">São necessários código de barras, QR, identificação de lote, rastreabilidade ou outros códigos?</label>
+<textarea id="pack_codigos" name="pack_codigos" rows="2"></textarea>
+</div>
+<div class="form-field">
+<label for="pack_idiomas" data-pt="Em que idiomas deve estar a informação da embalagem?" data-en="Which languages should appear on the packaging?">Em que idiomas deve estar a informação da embalagem?</label>
+<input id="pack_idiomas" name="pack_idiomas" type="text" placeholder="Ex.: português, inglês" data-placeholder-pt="Ex.: português, inglês" data-placeholder-en="E.g. Portuguese, English">
+</div>
+<div class="form-field form-field-full">
+<label for="pack_regulamentacao" data-pt="Já foram identificadas as exigências legais e regulamentares aplicáveis ao produto?" data-en="Have the legal and regulatory requirements for the product been identified?">Já foram identificadas as exigências legais e regulamentares aplicáveis ao produto?</label>
+<select id="pack_regulamentacao" name="pack_regulamentacao">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Sim" data-pt="Sim, foram identificadas e serão fornecidas" data-en="Yes, identified and will be supplied">Sim, foram identificadas e serão fornecidas</option>
+<option value="Parcial" data-pt="Parcialmente" data-en="Partially">Parcialmente</option>
+<option value="Não" data-pt="Ainda não" data-en="Not yet">Ainda não</option>
+<option value="Não sei" data-pt="Preciso de orientação do fornecedor/especialista" data-en="Need guidance from supplier/specialist">Preciso de orientação do fornecedor/especialista</option>
+</select>
+</div>
+<h4 data-pt="PRODUÇÃO E FORNECEDOR" data-en="PRODUCTION AND SUPPLIER">PRODUÇÃO E FORNECEDOR</h4>
+<div class="form-field">
+<label for="pack_producao" data-pt="A produção física da embalagem já está planeada?" data-en="Is physical packaging production already planned?">A produção física da embalagem já está planeada?</label>
+<select id="pack_producao" name="pack_producao">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="Sim" data-pt="Sim" data-en="Yes">Sim</option>
+<option value="Não" data-pt="Não" data-en="No">Não</option>
+<option value="A avaliar" data-pt="Ainda estou a avaliar opções" data-en="Still considering options">Ainda estou a avaliar opções</option>
+</select>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_fornecedor" data-pt="Qual é o fornecedor ou fabricante? Já disponibilizou especificações técnicas?" data-en="Who is the supplier or manufacturer? Have they provided technical specifications?">Qual é o fornecedor ou fabricante? Já disponibilizou especificações técnicas?</label>
+<textarea id="pack_fornecedor" name="pack_fornecedor" rows="2"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_processo" data-pt="Conheces o processo de impressão ou produção (digital, offset, flexografia, serigrafia, impressão direta ou outro)?" data-en="Do you know the printing or production process (digital, offset, flexography, screen printing, direct printing or other)?">Conheces o processo de impressão ou produção (digital, offset, flexografia, serigrafia, impressão direta ou outro)?</label>
+<textarea id="pack_processo" name="pack_processo" rows="2"></textarea>
+</div>
+<div class="form-field">
+<label for="pack_quantidade" data-pt="Qual é a quantidade estimada de embalagens?" data-en="What is the estimated quantity of packages?">Qual é a quantidade estimada de embalagens?</label>
+<input id="pack_quantidade" name="pack_quantidade" type="text">
+</div>
+<div class="form-field">
+<label for="pack_orcamento_producao" data-pt="Existe um orçamento separado para a produção das embalagens?" data-en="Is there a separate budget for packaging production?">Existe um orçamento separado para a produção das embalagens?</label>
+<input id="pack_orcamento_producao" name="pack_orcamento_producao" type="text">
+</div>
+<h4 data-pt="PRAZOS, ORÇAMENTO E APROVAÇÃO" data-en="TIMELINE, BUDGET AND APPROVAL">PRAZOS, ORÇAMENTO E APROVAÇÃO</h4>
+<div class="form-field">
+<label for="pack_prazo" data-pt="Qual é a data-limite pretendida?" data-en="What is your target deadline?">Qual é a data-limite pretendida?</label>
+<input id="pack_prazo" name="pack_prazo" type="date">
+</div>
+<div class="form-field">
+<label for="pack_lancamento" data-pt="Existe uma data de lançamento ou campanha associada?" data-en="Is there an associated launch or campaign date?">Existe uma data de lançamento ou campanha associada?</label>
+<input id="pack_lancamento" name="pack_lancamento" type="date">
+</div>
+<div class="form-field">
+<label for="pack_orcamento" data-pt="Qual é o orçamento previsto para o design da embalagem?" data-en="What is the planned budget for packaging design?">Qual é o orçamento previsto para o design da embalagem?</label>
+<select id="pack_orcamento" name="pack_orcamento">
+<option value="" data-pt="Selecionar opção" data-en="Select an option">Selecionar opção</option>
+<option value="<150" data-pt="Menos de 150 €" data-en="Under €150">Menos de 150 €</option>
+<option value="150-300" data-pt="150–300 €" data-en="€150–300">150–300 €</option>
+<option value="301-600" data-pt="301–600 €" data-en="€301–600">301–600 €</option>
+<option value="601-1000" data-pt="601–1.000 €" data-en="€601–1,000">601–1.000 €</option>
+<option value=">1000" data-pt="Mais de 1.000 €" data-en="Over €1,000">Mais de 1.000 €</option>
+<option value="Definir" data-pt="Preciso de orientação / pedir orçamento" data-en="I need guidance / a quote">Preciso de orientação / pedir orçamento</option>
+</select>
+</div>
+<div class="form-field">
+<label for="pack_aprovadores" data-pt="Quem aprova o projeto e quantas pessoas participam na decisão?" data-en="Who approves the project and how many people are involved in the decision?">Quem aprova o projeto e quantas pessoas participam na decisão?</label>
+<input id="pack_aprovadores" name="pack_aprovadores" type="text">
+</div>
+<div class="form-field form-field-full">
+<label for="pack_condicionantes" data-pt="Há limitações, preocupações ou expectativas adicionais?" data-en="Are there any additional constraints, concerns or expectations?">Há limitações, preocupações ou expectativas adicionais?</label>
+<textarea id="pack_condicionantes" name="pack_condicionantes" rows="3"></textarea>
+</div>
+<div class="form-field form-field-full">
+<label for="pack_confirmacao" data-pt="Confirmo que as informações fornecidas são corretas e que os direitos dos materiais fornecidos foram verificados." data-en="I confirm that the information provided is accurate and that usage rights for supplied materials have been checked.">Confirmo que as informações fornecidas são corretas e que os direitos dos materiais fornecidos foram verificados.</label>
+<label class="checkbox-option"><input type="checkbox" id="pack_confirmacao" name="pack_confirmacao" value="Confirmado"><span data-pt="Confirmo as informações e que os direitos dos materiais fornecidos foram verificados." data-en="I confirm the information and that usage rights for supplied materials have been checked.">Confirmo as informações e que os direitos dos materiais fornecidos foram verificados.</span></label>
+</div>
 </section>
 <section class="form-conditional" data-service-group="Publicidade e comunicação gráfica" hidden aria-live="polite">
 <h4 data-pt="PUBLICIDADE E COMUNICAÇÃO GRÁFICA — DETALHES DA CAMPANHA" data-en="ADVERTISING AND GRAPHIC COMMUNICATION — CAMPAIGN DETAILS">PUBLICIDADE E COMUNICAÇÃO GRÁFICA — DETALHES DA CAMPANHA</h4>
