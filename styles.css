@@ -1416,10 +1416,14 @@ footer p {
 }
 
 .prebriefing .checkbox-option input {
-    width: auto;
-    min-height: 0;
-    margin-top: 0.2rem;
-    flex: 0 0 auto;
+    width: 0.95rem;
+    height: 0.95rem;
+    min-width: 0.95rem;
+    min-height: 0.95rem;
+    padding: 0;
+    margin: 0.18rem 0 0;
+    flex: 0 0 0.95rem;
+    accent-color: var(--color-primary, #244b3c);
 }
 
 .prebriefing .form-field {
