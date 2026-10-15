@@ -229,6 +229,45 @@ const formFeedback = document.querySelector("#form-feedback");
 
 if (prebriefingForm) {
     prebriefingForm.addEventListener("submit", function (event) {
+        // Validar anexos antes do envio: até 3 ficheiros, 10 MB no total,
+        // apenas PDF, JPG, PNG ou ZIP. A validação do navegador é auxiliar.
+        const fileInputs = Array.from(prebriefingForm.querySelectorAll('input[type="file"]'));
+        const selectedFiles = fileInputs.flatMap(function (input) {
+            return Array.from(input.files || []);
+        });
+        const maxTotalBytes = 10 * 1024 * 1024;
+        const allowedExtensions = /\.(pdf|jpe?g|png|zip)$/i;
+        const totalBytes = selectedFiles.reduce(function (sum, file) {
+            return sum + file.size;
+        }, 0);
+        const invalidFile = selectedFiles.find(function (file) {
+            return !allowedExtensions.test(file.name);
+        });
+
+        if (selectedFiles.length > 3 || totalBytes > maxTotalBytes || invalidFile) {
+            event.preventDefault();
+            let message;
+            if (document.documentElement.lang === "en") {
+                message = invalidFile
+                    ? "Please upload only PDF, JPG, PNG or ZIP files."
+                    : "Please upload no more than 3 files, with a combined size of 10 MB maximum.";
+            } else {
+                message = invalidFile
+                    ? "Envia apenas ficheiros PDF, JPG, PNG ou ZIP."
+                    : "Envia no máximo 3 ficheiros, com um tamanho total até 10 MB.";
+            }
+            if (formFeedback) {
+                formFeedback.textContent = message;
+                formFeedback.setAttribute("role", "alert");
+                formFeedback.setAttribute("aria-live", "assertive");
+            }
+            const firstFileInput = fileInputs.find(function (input) {
+                return input.files && input.files.length;
+            });
+            if (firstFileInput) firstFileInput.focus();
+            return;
+        }
+
         // Cada grupo de caixas visível exige pelo menos uma escolha,
         // sem obrigar o cliente a selecionar uma opção específica.
         let invalidCheckboxGroup = null;
