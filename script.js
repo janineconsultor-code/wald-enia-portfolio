@@ -298,8 +298,9 @@ if (prebriefingForm) {
         }
 
         if (formFeedback) {
-            formFeedback.textContent =
-                "O formulário está a ser enviado. Aguarde a confirmação antes de fechar a página.";
+            formFeedback.textContent = document.documentElement.lang === "en"
+                ? "Your form is being submitted. Please wait for confirmation before closing this page."
+                : "O formulário está a ser enviado. Aguarde a confirmação antes de fechar a página.";
 
             formFeedback.setAttribute("role", "status");
             formFeedback.setAttribute("aria-live", "polite");
