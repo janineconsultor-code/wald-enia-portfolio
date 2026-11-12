@@ -33,6 +33,7 @@ filterButtons.forEach(function (button) {
 /* 02 — MODAIS DOS PROJETOS */
 
 const projectModals = {
+    malta: document.querySelector("#project-modal-malta"),
     veranum: document.querySelector("#project-modal"),
     origem: document.querySelector("#project-modal-origem")
 };
