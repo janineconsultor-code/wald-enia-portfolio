@@ -1680,3 +1680,27 @@ body.project-modal-open {
         padding: 12px 15px;
     }
 }
+
+
+/* A MALTA — CAPA DO PROJETO */
+.malta-card-image {
+    background: #4A101D;
+}
+
+.malta-card-image img {
+    object-position: center 12%;
+}
+
+.malta-gallery {
+    margin-top: 35px;
+}
+
+.malta-gallery img {
+    background: #4A101D;
+}
+
+@media (max-width: 700px) {
+    .malta-card-image img {
+        object-position: center 10%;
+    }
+}
