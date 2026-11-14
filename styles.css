@@ -1769,7 +1769,7 @@ body.project-modal-open {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
+    gap: 0;
     width: 100%;
     margin-top: 22px;
 }
@@ -1791,6 +1791,6 @@ body.project-modal-open {
     }
 
     #project-modal-pedacos .project-modal-gallery {
-        gap: 6px;
+        gap: 0;
     }
 }
