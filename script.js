@@ -516,7 +516,7 @@ if (prebriefingForm) {
         saveButton: "#malta-style-save",
         cancelButton: "#malta-style-cancel",
         status: "#malta-style-status",
-        storageKey: "waldenia-malta-presentation",
-        defaultSpacing: -3
+        storageKey: "waldenia-malta-presentation-v2",
+        defaultSpacing: -4
     });
 })();
