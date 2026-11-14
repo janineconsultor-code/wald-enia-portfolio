@@ -643,6 +643,11 @@ a:focus-visible {
     transform: scale(1.025);
 }
 
+/* ORIGEM — enquadramento da prancheta central da capa */
+.project-card:has(.project-link[data-project="origem"]) .project-image img {
+    object-position: 50% 50%;
+}
+
 
 /* 12 — CORES DOS PROJETOS */
 
