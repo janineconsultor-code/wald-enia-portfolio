@@ -392,104 +392,131 @@ if (prebriefingForm) {
 })();
 
 
-/* 09 — ESTILOS PRIVADOS DA APRESENTAÇÃO PEDAÇOS DE CACAU */
+/* 09 — ESTILOS PRIVADOS DAS APRESENTAÇÕES DOS PROJECTOS */
 
 (function () {
-    const gallery = document.querySelector("#project-modal-pedacos .project-modal-gallery");
-    const colorPicker = document.querySelector("#pedacos-bg-color");
-    const hexInput = document.querySelector("#pedacos-bg-hex");
-    const spacingInput = document.querySelector("#pedacos-spacing");
-    const saveButton = document.querySelector("#pedacos-style-save");
-    const cancelButton = document.querySelector("#pedacos-style-cancel");
-    const status = document.querySelector("#pedacos-style-status");
+    function setupProjectStyleEditor(config) {
+        const gallery = document.querySelector(config.gallery);
+        const colorPicker = document.querySelector(config.colorPicker);
+        const hexInput = document.querySelector(config.hexInput);
+        const spacingInput = document.querySelector(config.spacingInput);
+        const saveButton = document.querySelector(config.saveButton);
+        const cancelButton = document.querySelector(config.cancelButton);
+        const status = document.querySelector(config.status);
 
-    if (!gallery || !colorPicker || !hexInput || !spacingInput || !saveButton || !cancelButton) return;
+        if (!gallery || !colorPicker || !hexInput || !spacingInput || !saveButton || !cancelButton) return;
 
-    const storageKey = "waldenia-pedacos-presentation";
-    const defaults = { background: "#E8E4D8", spacing: 12 };
-    let savedSettings = { ...defaults };
+        const defaults = { background: "#E8E4D8", spacing: config.defaultSpacing };
+        let savedSettings = { ...defaults };
 
-    function normaliseSettings(settings) {
-        const colour = /^#[0-9A-F]{6}$/i.test(settings.background || "")
-            ? settings.background.toUpperCase()
-            : defaults.background;
-        const spacing = Number.isFinite(Number(settings.spacing))
-            ? Math.min(80, Math.max(0, Number(settings.spacing)))
-            : defaults.spacing;
-        return { background: colour, spacing: spacing };
-    }
-
-    function applySettings(settings) {
-        const valid = normaliseSettings(settings);
-        gallery.style.setProperty("--project-gallery-background", valid.background);
-        gallery.style.setProperty("--project-gallery-gap", valid.spacing + "px");
-        colorPicker.value = valid.background;
-        hexInput.value = valid.background;
-        spacingInput.value = String(valid.spacing);
-    }
-
-    try {
-        const stored = localStorage.getItem(storageKey);
-        if (stored) savedSettings = normaliseSettings(JSON.parse(stored));
-    } catch (error) {
-        // Mantém os valores predefinidos se o armazenamento estiver indisponível.
-    }
-
-    applySettings(savedSettings);
-
-    colorPicker.addEventListener("input", function () {
-        const colour = colorPicker.value.toUpperCase();
-        hexInput.value = colour;
-        applySettings({ background: colour, spacing: spacingInput.value });
-        if (status) status.textContent = "";
-    });
-
-    hexInput.addEventListener("input", function () {
-        const colour = hexInput.value.trim();
-        if (!/^#[0-9A-F]{6}$/i.test(colour)) return;
-        applySettings({ background: colour, spacing: spacingInput.value });
-        if (status) status.textContent = "";
-    });
-
-    spacingInput.addEventListener("input", function () {
-        const spacing = Number(spacingInput.value);
-        if (spacingInput.value === "" || !Number.isFinite(spacing)) return;
-        applySettings({ background: hexInput.value, spacing: spacing });
-        if (status) status.textContent = "";
-    });
-
-    saveButton.addEventListener("click", function () {
-        const colour = hexInput.value.trim();
-        if (!/^#[0-9A-F]{6}$/i.test(colour)) {
-            if (status) status.textContent = document.documentElement.lang === "en"
-                ? "Enter a valid hexadecimal colour, e.g. #E8E4D8."
-                : "Introduz uma cor hexadecimal válida, por exemplo #E8E4D8.";
-            hexInput.focus();
-            return;
+        function normaliseSettings(settings) {
+            const colour = /^#[0-9A-F]{6}$/i.test(settings.background || "")
+                ? settings.background.toUpperCase()
+                : defaults.background;
+            const spacingValue = Number(settings.spacing);
+            const spacing = Number.isFinite(spacingValue)
+                ? Math.min(40, Math.max(-30, spacingValue))
+                : defaults.spacing;
+            return { background: colour, spacing: spacing };
         }
 
-        savedSettings = normaliseSettings({
-            background: colour,
-            spacing: spacingInput.value
-        });
-        applySettings(savedSettings);
+        function applySettings(settings) {
+            const valid = normaliseSettings(settings);
+            gallery.style.setProperty("--project-gallery-background", valid.background);
+            gallery.style.setProperty("--project-gallery-overlap", valid.spacing + "px");
+            colorPicker.value = valid.background;
+            hexInput.value = valid.background;
+            spacingInput.value = String(valid.spacing);
+        }
 
         try {
-            localStorage.setItem(storageKey, JSON.stringify(savedSettings));
-            if (status) status.textContent = document.documentElement.lang === "en"
-                ? "Settings saved in this browser."
-                : "Preferências guardadas neste navegador.";
+            const stored = localStorage.getItem(config.storageKey);
+            if (stored) savedSettings = normaliseSettings(JSON.parse(stored));
         } catch (error) {
-            if (status) status.textContent = document.documentElement.lang === "en"
-                ? "Browser storage is unavailable. Changes are temporary."
-                : "Não foi possível guardar neste navegador. As alterações são temporárias.";
+            // Mantém os valores predefinidos se o armazenamento estiver indisponível.
         }
+
+        applySettings(savedSettings);
+
+        colorPicker.addEventListener("input", function () {
+            const colour = colorPicker.value.toUpperCase();
+            hexInput.value = colour;
+            applySettings({ background: colour, spacing: spacingInput.value });
+            if (status) status.textContent = "";
+        });
+
+        hexInput.addEventListener("input", function () {
+            const colour = hexInput.value.trim();
+            if (!/^#[0-9A-F]{6}$/i.test(colour)) return;
+            applySettings({ background: colour, spacing: spacingInput.value });
+            if (status) status.textContent = "";
+        });
+
+        spacingInput.addEventListener("input", function () {
+            if (spacingInput.value === "") return;
+            const spacing = Number(spacingInput.value);
+            if (!Number.isFinite(spacing)) return;
+            applySettings({ background: hexInput.value, spacing: spacing });
+            if (status) status.textContent = "";
+        });
+
+        saveButton.addEventListener("click", function () {
+            const colour = hexInput.value.trim();
+            if (!/^#[0-9A-F]{6}$/i.test(colour)) {
+                if (status) status.textContent = document.documentElement.lang === "en"
+                    ? "Enter a valid hexadecimal colour, e.g. #E8E4D8."
+                    : "Introduz uma cor hexadecimal válida, por exemplo #E8E4D8.";
+                hexInput.focus();
+                return;
+            }
+
+            savedSettings = normaliseSettings({
+                background: colour,
+                spacing: spacingInput.value
+            });
+            applySettings(savedSettings);
+
+            try {
+                localStorage.setItem(config.storageKey, JSON.stringify(savedSettings));
+                if (status) status.textContent = document.documentElement.lang === "en"
+                    ? "Settings saved in this browser."
+                    : "Preferências guardadas neste navegador.";
+            } catch (error) {
+                if (status) status.textContent = document.documentElement.lang === "en"
+                    ? "Browser storage is unavailable. Changes are temporary."
+                    : "Não foi possível guardar neste navegador. As alterações são temporárias.";
+            }
+        });
+
+        cancelButton.addEventListener("click", function () {
+            applySettings(savedSettings);
+            if (status) status.textContent = document.documentElement.lang === "en"
+                ? "Unsaved changes were cancelled."
+                : "As alterações não guardadas foram canceladas.";
+        });
+    }
+
+    setupProjectStyleEditor({
+        gallery: "#project-modal-pedacos .project-modal-gallery",
+        colorPicker: "#pedacos-bg-color",
+        hexInput: "#pedacos-bg-hex",
+        spacingInput: "#pedacos-spacing",
+        saveButton: "#pedacos-style-save",
+        cancelButton: "#pedacos-style-cancel",
+        status: "#pedacos-style-status",
+        storageKey: "waldenia-pedacos-presentation-v2",
+        defaultSpacing: -8
     });
 
-    cancelButton.addEventListener("click", function () {
-        applySettings(savedSettings);
-        if (status) status.textContent = document.documentElement.lang === "en"
-            ? "Unsaved changes were cancelled."
-            : "As alterações não guardadas foram canceladas.";
+    setupProjectStyleEditor({
+        gallery: "#project-modal-malta .project-modal-gallery",
+        colorPicker: "#malta-bg-color",
+        hexInput: "#malta-bg-hex",
+        spacingInput: "#malta-spacing",
+        saveButton: "#malta-style-save",
+        cancelButton: "#malta-style-cancel",
+        status: "#malta-style-status",
+        storageKey: "waldenia-malta-presentation",
+        defaultSpacing: -3
     });
 })();
