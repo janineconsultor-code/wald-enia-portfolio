@@ -35,7 +35,8 @@ filterButtons.forEach(function (button) {
 const projectModals = {
     malta: document.querySelector("#project-modal-malta"),
     veranum: document.querySelector("#project-modal"),
-    origem: document.querySelector("#project-modal-origem")
+    origem: document.querySelector("#project-modal-origem"),
+    pedacos: document.querySelector("#project-modal-pedacos")
 };
 
 let lastProjectTrigger = null;
