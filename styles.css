@@ -1935,3 +1935,77 @@ body.project-modal-open {
         padding: 8px;
     }
 }
+
+
+/* AJUSTE DE SOBREPOSIÇÃO E ACESSO AOS ESTILOS DOS PROJECTOS */
+
+#project-modal-pedacos .project-style-editor,
+#project-modal-malta .project-style-editor {
+    display: block;
+    margin: 24px 0 30px;
+    border: 1px solid var(--border);
+    padding: 0 16px;
+}
+
+#project-modal-pedacos .project-style-editor summary,
+#project-modal-malta .project-style-editor summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0;
+    cursor: pointer;
+    list-style: none;
+}
+
+#project-modal-pedacos .project-style-editor summary::-webkit-details-marker,
+#project-modal-malta .project-style-editor summary::-webkit-details-marker {
+    display: none;
+}
+
+#project-modal-pedacos .project-style-editor summary::after,
+#project-modal-malta .project-style-editor summary::after {
+    content: "+";
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#project-modal-pedacos .project-style-editor[open] summary::after,
+#project-modal-malta .project-style-editor[open] summary::after {
+    content: "−";
+}
+
+#project-modal-pedacos .project-style-controls,
+#project-modal-malta .project-style-controls {
+    padding-bottom: 18px;
+}
+
+#project-modal-pedacos .project-modal-gallery,
+#project-modal-malta .project-modal-gallery {
+    box-sizing: border-box;
+    padding: 16px;
+    background: var(--project-gallery-background, #E8E4D8);
+    gap: 0;
+}
+
+#project-modal-pedacos .project-modal-gallery img,
+#project-modal-malta .project-modal-gallery img {
+    margin: 0 0 var(--project-gallery-overlap, -8px);
+}
+
+#project-modal-pedacos .project-modal-gallery img:last-child,
+#project-modal-malta .project-modal-gallery img:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+    #project-modal-pedacos .project-modal-gallery,
+    #project-modal-malta .project-modal-gallery {
+        padding: 8px;
+    }
+
+    #project-modal-pedacos .project-style-editor,
+    #project-modal-malta .project-style-editor {
+        padding: 0 12px;
+    }
+}
