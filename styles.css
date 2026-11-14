@@ -1720,3 +1720,77 @@ body.project-modal-open {
         object-position: center 10%;
     }
 }
+
+
+/* AJUSTES DE ESCALA PARA ECRÃS GRANDES */
+@media (min-width: 1440px) {
+    :root {
+        --page-width: 1240px;
+        --page-gutter: 7vw;
+    }
+
+    .logo-name { font-size: 16px; }
+    .logo-description { font-size: 11px; }
+    .main-nav a { font-size: 12px; }
+    .language-switch { font-size: 13px; }
+
+    .eyebrow,
+    .section-number { font-size: 12px; }
+
+    .section-intro,
+    .hero-description,
+    .about-text p,
+    .project-modal-intro {
+        font-size: clamp(17px, 1.1vw, 20px);
+    }
+
+    .process-item h3 { font-size: 23px; }
+    .process-item p { font-size: 16px; }
+    .filter-button,
+    .project-info p,
+    .contacto-item > span { font-size: 12px; }
+    .project-info h3 { font-size: 29px; }
+    .project-info > span,
+    .contacto-item a,
+    .contacto-item p { font-size: 16px; }
+    .inspiration-item h3 { font-size: 26px; }
+    .inspiration-item p { font-size: 12px; }
+    .project-modal-details strong { font-size: 12px; }
+    .project-modal-details span { font-size: 15px; }
+}
+
+/* APRESENTAÇÃO PEDAÇOS DE CACAU — IMAGENS COMPLETAS E PRÓXIMAS */
+#project-modal-pedacos .project-modal-content {
+    width: min(1200px, 100%);
+    padding: 58px clamp(18px, 4vw, 56px) 42px;
+}
+
+#project-modal-pedacos .project-modal-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    width: 100%;
+    margin-top: 22px;
+}
+
+#project-modal-pedacos .project-modal-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    #project-modal-pedacos .project-modal-content {
+        padding: 58px 16px 30px;
+    }
+
+    #project-modal-pedacos .project-modal-gallery {
+        gap: 6px;
+    }
+}
