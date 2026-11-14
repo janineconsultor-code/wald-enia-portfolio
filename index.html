@@ -1509,6 +1509,40 @@
         <p class="eyebrow" data-pt="DIRECÇÃO DE ARTE · PACKAGING" data-en="ART DIRECTION · PACKAGING">DIRECÇÃO DE ARTE · PACKAGING</p>
         <h2 id="pedacos-modal-title">Pedaços de Cacau</h2>
 
+        <details class="project-style-editor" id="pedacos-style-editor">
+            <summary data-pt="Estilos de projecto" data-en="Project styles">Estilos de projecto</summary>
+            <div class="project-style-controls">
+                <p class="project-style-note"
+                    data-pt="Ajustes privados, guardados apenas neste navegador."
+                    data-en="Private settings, saved only in this browser.">
+                    Ajustes privados, guardados apenas neste navegador.
+                </p>
+
+                <div class="project-style-fields">
+                    <div class="project-style-field">
+                        <label for="pedacos-bg-color" data-pt="Cor do fundo" data-en="Background colour">Cor do fundo</label>
+                        <div class="project-style-color">
+                            <input type="color" id="pedacos-bg-color" value="#E8E4D8" aria-label="Escolher cor de fundo">
+                            <input type="text" id="pedacos-bg-hex" value="#E8E4D8" maxlength="7" spellcheck="false" inputmode="text" aria-label="Código hexadecimal da cor">
+                        </div>
+                    </div>
+
+                    <div class="project-style-field">
+                        <label for="pedacos-spacing" data-pt="Espaçamento entre pranchetas (px)" data-en="Spacing between artboards (px)">Espaçamento entre pranchetas (px)</label>
+                        <input type="number" id="pedacos-spacing" min="0" max="80" step="2" value="12">
+                    </div>
+                </div>
+
+                <div class="project-style-actions">
+                    <button type="button" class="project-style-save" id="pedacos-style-save"
+                        data-pt="Guardar" data-en="Save">Guardar</button>
+                    <button type="button" class="project-style-cancel" id="pedacos-style-cancel"
+                        data-pt="Cancelar" data-en="Cancel">Cancelar</button>
+                    <span class="project-style-status" id="pedacos-style-status" role="status" aria-live="polite"></span>
+                </div>
+            </div>
+        </details>
+
         <h3 data-pt="O Projecto" data-en="The Project">O Projecto</h3>
         <p class="project-modal-intro"
             data-pt="O projecto Pedaços de Cacau consistiu no desenvolvimento de uma proposta de direcção de arte para uma colecção especial de três embalagens de chocolate artesanal. O desafio passou por construir uma linguagem visual coerente para a colecção, articulando os elementos da identidade da marca com a ilustração, a tipografia e a composição gráfica das embalagens. A proposta procurou valorizar a apresentação do produto, assegurando simultaneamente a diferenciação entre os sabores e a consistência visual das três embalagens."
