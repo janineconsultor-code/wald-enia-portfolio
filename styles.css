@@ -1782,7 +1782,7 @@ body.project-modal-open {
     max-height: none;
     object-fit: contain;
     object-position: center;
-    margin: 0 0 -4px;
+    margin: 0 0 -8px;
 }
 
 #project-modal-pedacos .project-modal-gallery img:last-child {
