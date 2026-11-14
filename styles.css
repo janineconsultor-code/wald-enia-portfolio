@@ -1798,3 +1798,140 @@ body.project-modal-open {
         gap: 0;
     }
 }
+
+
+/* EDITOR PRIVADO — ESTILOS DA APRESENTAÇÃO PEDAÇOS DE CACAU */
+
+#project-modal-pedacos .project-style-editor {
+    margin: 28px 0 34px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    color: var(--green-dark);
+}
+
+#project-modal-pedacos .project-style-editor summary {
+    padding: 16px 0;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+#project-modal-pedacos .project-style-controls {
+    padding: 0 0 20px;
+}
+
+#project-modal-pedacos .project-style-note {
+    margin: 0 0 18px;
+    color: var(--green-medium);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+#project-modal-pedacos .project-style-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+#project-modal-pedacos .project-style-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+#project-modal-pedacos .project-style-field label {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#project-modal-pedacos .project-style-color {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#project-modal-pedacos .project-style-color input[type="color"] {
+    width: 46px;
+    height: 42px;
+    padding: 3px;
+    border: 1px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+}
+
+#project-modal-pedacos .project-style-field input[type="text"],
+#project-modal-pedacos .project-style-field input[type="number"] {
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    padding: 9px 11px;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    color: var(--green-dark);
+    font: inherit;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+#project-modal-pedacos .project-style-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#project-modal-pedacos .project-style-actions button {
+    min-height: 38px;
+    padding: 9px 16px;
+    border: 1px solid var(--green-dark);
+    font: inherit;
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#project-modal-pedacos .project-style-save {
+    background: var(--green-dark);
+    color: var(--cream);
+}
+
+#project-modal-pedacos .project-style-cancel {
+    background: transparent;
+    color: var(--green-dark);
+}
+
+#project-modal-pedacos .project-style-status {
+    flex-basis: 100%;
+    min-height: 1em;
+    color: var(--green-medium);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+#project-modal-pedacos .project-modal-gallery {
+    box-sizing: border-box;
+    padding: 16px;
+    background: var(--project-gallery-background, #E8E4D8);
+    gap: var(--project-gallery-gap, 12px);
+}
+
+#project-modal-pedacos .project-modal-gallery img {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    #project-modal-pedacos .project-style-fields {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    #project-modal-pedacos .project-modal-gallery {
+        padding: 8px;
+    }
+}
