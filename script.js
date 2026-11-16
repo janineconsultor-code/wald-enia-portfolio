@@ -5,6 +5,55 @@
 ======================================== */
 
 
+/* 00 — MENU SANDUÍCHE */
+
+(function () {
+    const menuButton = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector("#main-navigation");
+
+    if (!menuButton || !mainNav) return;
+
+    function closeMenu(returnFocus) {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label",
+            document.documentElement.lang === "en" ? "Open menu" : "Abrir menu");
+        menuButton.classList.remove("is-open");
+        mainNav.classList.remove("is-open");
+        if (returnFocus) menuButton.focus();
+    }
+
+    menuButton.addEventListener("click", function () {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        const nextState = !isOpen;
+        menuButton.setAttribute("aria-expanded", String(nextState));
+        menuButton.setAttribute("aria-label", nextState
+            ? (document.documentElement.lang === "en" ? "Close menu" : "Fechar menu")
+            : (document.documentElement.lang === "en" ? "Open menu" : "Abrir menu"));
+        menuButton.classList.toggle("is-open", nextState);
+        mainNav.classList.toggle("is-open", nextState);
+    });
+
+    mainNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            closeMenu(false);
+        });
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+            closeMenu(true);
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        if (menuButton.getAttribute("aria-expanded") === "true" &&
+            !mainNav.contains(event.target) && !menuButton.contains(event.target)) {
+            closeMenu(false);
+        }
+    });
+})();
+
+
 /* 01 — FILTROS DO PORTFÓLIO */
 
 const filterButtons = document.querySelectorAll(".filter-button");
