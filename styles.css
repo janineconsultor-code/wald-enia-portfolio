@@ -2167,7 +2167,7 @@ body.project-modal-open {
 }
 
 .contacto-dados-only .contacto-dados {
-    max-width: 55%;
+    max-width: 100%;
 }
 
 /* Em ecrãs intermédios, reduzir a escala para proteger o conteúdo. */
