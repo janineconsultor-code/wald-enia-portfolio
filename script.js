@@ -196,6 +196,7 @@ function updateNestedConditionalFields() {
         const visible = Boolean(parentVisible && conditionMet);
         wrapper.hidden = !visible;
         wrapper.querySelectorAll("input, select, textarea").forEach(function (field) {
+            field.disabled = !visible;
             field.required = Boolean(visible && field.dataset.required === "true");
         });
     });
@@ -207,6 +208,7 @@ function updateConditionalBriefingFields() {
         const active = group.dataset.serviceGroup === serviceSelect.value;
         group.hidden = !active;
         group.querySelectorAll("input, select, textarea").forEach(function (field) {
+            field.disabled = !active;
             field.required = Boolean(active && field.dataset.required === "true");
         });
     });
