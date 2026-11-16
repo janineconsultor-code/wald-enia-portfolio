@@ -2081,3 +2081,149 @@ body.project-modal-open {
         padding: 0 12px;
     }
 }
+
+
+/* 25 — PADRÃO GEOMÉTRICO DA IDENTIDADE VISUAL
+   Elementos originais em semicírculos e círculos recortados. */
+
+.identity-pattern {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    line-height: 0;
+    color: var(--green-medium);
+    opacity: 0.96;
+}
+
+.identity-pattern svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    fill: currentColor;
+}
+
+/* Capa: composição principal, em contraste com o fundo verde. */
+#hero {
+    overflow: hidden;
+}
+
+.identity-pattern--hero {
+    width: clamp(320px, 43vw, 610px);
+    aspect-ratio: 1;
+    top: 15%;
+    right: max(4vw, calc((100vw - var(--page-width)) / 2));
+    color: var(--cream);
+    opacity: 0.88;
+}
+
+/* O conteúdo mantém-se acima do padrão. */
+#hero .hero-content,
+#hero .hero-scroll {
+    z-index: 1;
+}
+
+/* Pedido de projeto: fragmento geométrico junto à margem esquerda. */
+.contacto-pedido {
+    overflow: hidden;
+}
+
+.identity-pattern--request {
+    width: clamp(150px, 18vw, 245px);
+    height: clamp(210px, 26vw, 350px);
+    left: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--green-dark);
+    opacity: 0.95;
+}
+
+.contacto-pedido .contacto-intro {
+    position: relative;
+    z-index: 1;
+    grid-column: 1 / -1;
+    max-width: 680px;
+    margin-left: clamp(120px, 18vw, 245px);
+}
+
+/* Contactos: composição horizontal mais discreta, à direita. */
+.contacto-dados-only {
+    overflow: hidden;
+}
+
+.identity-pattern--contact {
+    width: clamp(230px, 31vw, 420px);
+    height: clamp(165px, 22vw, 300px);
+    right: max(4vw, calc((100vw - var(--page-width)) / 2));
+    bottom: 0;
+    color: var(--green-medium);
+    opacity: 0.9;
+}
+
+.contacto-dados-only .contacto-heading,
+.contacto-dados-only .contacto-dados {
+    position: relative;
+    z-index: 1;
+}
+
+.contacto-dados-only .contacto-dados {
+    max-width: 55%;
+}
+
+/* Em ecrãs intermédios, reduzir a escala para proteger o conteúdo. */
+@media (max-width: 900px) {
+    .identity-pattern--hero {
+        width: 38vw;
+        right: 3vw;
+        top: 20%;
+    }
+
+    .contacto-pedido .contacto-intro {
+        margin-left: 14vw;
+    }
+
+    .identity-pattern--request {
+        width: 150px;
+    }
+
+    .identity-pattern--contact {
+        width: 28vw;
+    }
+}
+
+/* Em telemóvel, os padrões passam a apontamentos de fundo. */
+@media (max-width: 700px) {
+    .identity-pattern--hero {
+        width: 58vw;
+        max-width: 280px;
+        top: 13%;
+        right: -8vw;
+        opacity: 0.22;
+    }
+
+    .contacto-pedido .contacto-intro {
+        margin-left: 0;
+    }
+
+    .identity-pattern--request {
+        width: 105px;
+        height: 145px;
+        left: auto;
+        right: -22px;
+        top: 24px;
+        transform: none;
+        opacity: 0.16;
+    }
+
+    .identity-pattern--contact {
+        width: 175px;
+        height: 125px;
+        right: -30px;
+        bottom: 0;
+        opacity: 0.18;
+    }
+
+    .contacto-dados-only .contacto-dados {
+        max-width: 100%;
+    }
+}
