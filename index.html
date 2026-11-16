@@ -364,24 +364,66 @@
 
     <!-- 05 — INSPIRAÇÕES -->
     <section id="pedido-projeto" class="contacto contacto-pedido">
-        <div class="contacto-intro">
-            <p class="eyebrow" data-pt="PEDIDO DE PROJETO" data-en="PROJECT INQUIRY">PEDIDO DE PROJETO</p>
-
-            <h2><span data-pt="Vamos" data-en="Let's">Vamos</span><br>
-                <span data-pt="conversar?" data-en="talk?">conversar?</span></h2>
-
-            <p data-pt="Para iniciar um projeto, partilhe comigo as informações essenciais através do questionário."
-                data-en="To start a project, share the essential information with me through the questionnaire.">
-                Para iniciar um projeto, partilhe comigo as informações essenciais
-                através do questionário.
-            </p>
-
-            <button type="button" class="button" id="open-prebriefing">
-                <span data-pt="Pedir um projeto" data-en="Request a project">Pedir um projeto</span>
-                <span aria-hidden="true">↗</span>
-            </button>
+        <div class="identity-pattern identity-pattern--request" aria-hidden="true">
+            <svg viewBox="0 0 320 420" focusable="false">
+                <circle cx="0" cy="0" r="160"/>
+                <circle cx="0" cy="320" r="160"/>
+                <path d="M0 160H160A160 160 0 0 1 0 320Z"/>
+                <circle cx="0" cy="320" r="92" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
         </div>
 
+        <div class="contacto-intro">
+            <p class="eyebrow" data-pt="PEDIDOS DE PROJETOS" data-en="PROJECT INQUIRIES">PEDIDOS DE PROJETOS</p>
+            <h2>
+                <span data-pt="Vamos criar" data-en="Let's create">Vamos criar</span><br>
+                <span data-pt="algo incrível juntos?" data-en="something great together?">algo incrível juntos?</span>
+            </h2>
+            <p data-pt="Tens uma ideia ou um projeto em mente? Conta-me um pouco sobre o que procuras. Podemos começar por uma conversa."
+                data-en="Do you have an idea or project in mind? Tell me a little about what you need. We can start with a conversation.">
+                Tens uma ideia ou um projeto em mente? Conta-me um pouco sobre o que procuras. Podemos começar por uma conversa.
+            </p>
+            <a class="button request-scroll-button" href="#pedido-nome">
+                <span data-pt="Enviar pedido" data-en="Start a request">Enviar pedido</span>
+                <span aria-hidden="true">↗</span>
+            </a>
+        </div>
+
+        <form class="project-contact-form" id="project-contact-form"
+            action="https://formsubmit.co/janine.consultor@outlook.pt" method="POST">
+            <input type="hidden" name="_subject" value="Novo pedido de projeto | Portefólio Waldênia Silva">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+
+            <div class="project-contact-field">
+                <label for="pedido-nome" data-pt="Nome" data-en="Name">Nome</label>
+                <input id="pedido-nome" name="nome" type="text" autocomplete="name" required
+                    placeholder="O teu nome" data-placeholder-pt="O teu nome" data-placeholder-en="Your name">
+            </div>
+            <div class="project-contact-field">
+                <label for="pedido-email" data-pt="E-mail" data-en="Email">E-mail</label>
+                <input id="pedido-email" name="email" type="email" autocomplete="email" required
+                    placeholder="O teu endereço de e-mail" data-placeholder-pt="O teu endereço de e-mail" data-placeholder-en="Your email address">
+            </div>
+            <div class="project-contact-field">
+                <label for="pedido-assunto" data-pt="Assunto" data-en="Subject">Assunto</label>
+                <input id="pedido-assunto" name="assunto" type="text" required
+                    placeholder="Em que posso ajudar?" data-placeholder-pt="Em que posso ajudar?" data-placeholder-en="How can I help?">
+            </div>
+            <div class="project-contact-field">
+                <label for="pedido-mensagem" data-pt="Mensagem" data-en="Message">Mensagem</label>
+                <textarea id="pedido-mensagem" name="mensagem" rows="4" required
+                    placeholder="Partilha algumas informações sobre o projeto..." data-placeholder-pt="Partilha algumas informações sobre o projeto..." data-placeholder-en="Tell me a little about your project..."></textarea>
+            </div>
+            <button class="button project-contact-submit" type="submit">
+                <span data-pt="Enviar mensagem" data-en="Send message">Enviar mensagem</span>
+                <span aria-hidden="true">↗</span>
+            </button>
+            <p class="project-contact-note" data-pt="Os dados enviados serão utilizados apenas para responder ao teu pedido."
+                data-en="The information submitted will be used only to respond to your inquiry.">
+                Os dados enviados serão utilizados apenas para responder ao teu pedido.
+            </p>
+        </form>
     </section>
 
     <section id="contacto" class="contacto contacto-dados-only">
