@@ -2081,3 +2081,16 @@ body.project-modal-open {
         padding: 0 12px;
     }
 }
+
+/* ESPAÇAMENTO DAS PRANCHETAS — ORIGEM */
+#project-modal-origem .project-modal-gallery {
+    gap: 0;
+}
+
+#project-modal-origem .project-modal-gallery img {
+    margin-bottom: -8px;
+}
+
+#project-modal-origem .project-modal-gallery img:last-child {
+    margin-bottom: 0;
+}
