@@ -1,0 +1,37 @@
+/* 25 — AJUSTE DE CONTRASTE DOS BOTÕES | PALETA NOVEMBRO 2026 */
+
+/* Em superfícies escuras (azul-marinho ou bordô), o botão passa a cinza-pedra. */
+#hero .button,
+#sobre .button,
+#inspiracoes .button,
+.button {
+    border-color: var(--color-stone);
+    background: var(--color-stone);
+    color: var(--color-navy);
+}
+
+#hero .button:hover,
+#sobre .button:hover,
+#inspiracoes .button:hover,
+.button:hover {
+    border-color: var(--color-stone);
+    background: transparent;
+    color: var(--color-stone);
+}
+
+/* Em superfícies claras, o bordô é usado como acento com texto cinza-pedra. */
+.contacto .button,
+.prebriefing-modal .button,
+.prebriefing .form-submit {
+    border-color: var(--color-burgundy);
+    background: var(--color-burgundy);
+    color: var(--color-stone);
+}
+
+.contacto .button:hover,
+.prebriefing-modal .button:hover,
+.prebriefing .form-submit:hover {
+    border-color: var(--color-navy);
+    background: var(--color-navy);
+    color: var(--color-stone);
+}
