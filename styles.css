@@ -307,7 +307,7 @@ a:focus-visible {
         linear-gradient(
             125deg,
             var(--green-dark) 0%,
-            var(--green-deep) 55%,
+            var(--green-deep) 82%,
             var(--green-medium) 100%
         );
 }
@@ -456,8 +456,8 @@ a:focus-visible {
     background:
         linear-gradient(
             135deg,
-            var(--green-dark),
-            var(--green-deep)
+            var(--green-dark) 0%,
+            var(--green-deep) 88%
         );
 
     color: var(--cream);
@@ -755,8 +755,9 @@ a:focus-visible {
     background:
         linear-gradient(
             135deg,
-            var(--green-deep),
-            var(--green-medium)
+            var(--green-deep) 0%,
+            var(--green-deep) 78%,
+            var(--green-medium) 100%
         );
 
     color: var(--cream);
