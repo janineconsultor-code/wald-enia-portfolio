@@ -8,25 +8,31 @@
 /* 01 — PALETA E VARIÁVEIS */
 
 :root {
-    --green-dark: #12372F;
-    --green-deep: #1B493B;
-    --green-medium: #356B50;
-    --green-soft: #77977A;
-    --green-pale: #E3E9DF;
+    /* Nova paleta institucional — Novembro de 2026 */
+    --color-stone: #E7E3DC;
+    --color-navy: #14213D;
+    --color-burgundy: #7A1F2B;
 
-    --cream: #F7F3E9;
-    --gold: #D4AF37;
+    /* Aliases legados mantidos para preservar os componentes existentes */
+    --green-dark: var(--color-navy);
+    --green-deep: var(--color-navy);
+    --green-medium: var(--color-burgundy);
+    --green-soft: var(--color-burgundy);
+    --green-pale: var(--color-stone);
 
-    --text: #12372F;
-    --muted: #356B50;
-    --border: rgba(18, 55, 47, 0.20);
+    --cream: var(--color-stone);
+    --gold: var(--color-burgundy);
 
-    --navy-black: #12372F;
-    --navy-dark: #1B493B;
-    --blue-muted: #356B50;
-    --dark: #12372F;
-    --light: #F7F3E9;
-    --white: #F7F3E9;
+    --text: var(--color-navy);
+    --muted: var(--color-burgundy);
+    --border: rgba(20, 33, 61, 0.20);
+
+    --navy-black: var(--color-navy);
+    --navy-dark: var(--color-navy);
+    --blue-muted: var(--color-burgundy);
+    --dark: var(--color-navy);
+    --light: var(--color-stone);
+    --white: var(--color-stone);
 
     --page-width: 1100px;
     --page-gutter: 8vw;
@@ -152,7 +158,7 @@ a:focus-visible {
     padding: 0;
     border: 0;
     background: transparent;
-    color: rgba(247, 243, 233, 0.65);
+    color: rgba(231, 227, 220, 0.65);
     cursor: pointer;
 }
 
@@ -173,7 +179,7 @@ a:focus-visible {
     width: 42px;
     height: 42px;
     padding: 9px;
-    border: 1px solid rgba(247, 243, 233, 0.45);
+    border: 1px solid rgba(231, 227, 220, 0.45);
     background: transparent;
     color: var(--cream);
     cursor: pointer;
@@ -414,7 +420,7 @@ a:focus-visible {
 .process-item {
     min-width: 0;
     padding-top: 20px;
-    border-top: 1px solid rgba(18, 55, 47, 0.35);
+    border-top: 1px solid rgba(20, 33, 61, 0.35);
 }
 
 .process-number {
@@ -485,7 +491,7 @@ a:focus-visible {
     width: 100%;
     padding: 10px;
 
-    border: 1px solid rgba(247, 243, 233, 0.22);
+    border: 1px solid rgba(231, 227, 220, 0.22);
     border-radius: 12px;
 
     overflow: hidden;
@@ -797,7 +803,7 @@ a:focus-visible {
 
     padding: 25px 0;
 
-    border-bottom: 1px solid rgba(247, 243, 233, 0.28);
+    border-bottom: 1px solid rgba(231, 227, 220, 0.28);
 }
 
 .inspiration-item h3 {
@@ -940,7 +946,7 @@ footer p {
 
     padding: 35px 5vw;
 
-    background: rgba(9, 28, 23, 0.92);
+    background: rgba(20, 33, 61, 0.92);
 }
 
 .project-modal.is-open {
@@ -1146,7 +1152,7 @@ footer p {
         gap: 0;
         padding: 12px 22px;
         background: var(--green-deep);
-        border: 1px solid rgba(247, 243, 233, 0.16);
+        border: 1px solid rgba(231, 227, 220, 0.16);
         box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
     }
 
@@ -1157,7 +1163,7 @@ footer p {
     .main-nav a {
         display: block;
         padding: 14px 0;
-        border-bottom: 1px solid rgba(247, 243, 233, 0.12);
+        border-bottom: 1px solid rgba(231, 227, 220, 0.12);
         font-size: 11px;
     }
 
@@ -1396,8 +1402,8 @@ footer p {
 .prebriefing {
     margin-top: 5rem;
     padding-top: 3rem;
-    border-top: 1px solid rgba(24, 60, 53, 0.2);
-    color: #183C35;
+    border-top: 1px solid rgba(20, 33, 61, 0.2);
+    color: #14213D;
 }
 
 .prebriefing-header {
@@ -1440,7 +1446,7 @@ footer p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(24, 60, 53, 0.2);
+    border-top: 1px solid rgba(20, 33, 61, 0.2);
 }
 
 .prebriefing .form-conditional[hidden] {
@@ -1461,7 +1467,7 @@ footer p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(24, 60, 53, 0.2);
+    border-top: 1px solid rgba(20, 33, 61, 0.2);
 }
 
 .prebriefing .form-conditional[hidden],
@@ -1511,7 +1517,7 @@ footer p {
     padding: 0;
     margin: 0.18rem 0 0;
     flex: 0 0 0.95rem;
-    accent-color: var(--color-primary, #244b3c);
+    accent-color: var(--color-primary, #14213D);
 }
 
 .prebriefing .form-field {
@@ -1536,10 +1542,10 @@ footer p {
     width: 100%;
     min-height: 48px;
     padding: 0.85rem 1rem;
-    border: 1px solid rgba(24, 60, 53, 0.3);
+    border: 1px solid rgba(20, 33, 61, 0.3);
     border-radius: 0;
     background: transparent;
-    color: #183C35;
+    color: #14213D;
     font: inherit;
     box-sizing: border-box;
 }
@@ -1552,7 +1558,7 @@ footer p {
 .prebriefing .form-field input:focus-visible,
 .prebriefing .form-field select:focus-visible,
 .prebriefing .form-field textarea:focus-visible {
-    outline: 2px solid #183C35;
+    outline: 2px solid #14213D;
     outline-offset: 3px;
 }
 
@@ -1616,7 +1622,7 @@ footer p {
     padding: 24px;
     overflow-y: auto;
 
-    background: rgba(9, 28, 23, 0.88);
+    background: rgba(20, 33, 61, 0.88);
 }
 
 .prebriefing-modal.is-open {
