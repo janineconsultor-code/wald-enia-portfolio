@@ -3,8 +3,7 @@
 /* Em superfícies escuras (azul-marinho ou bordô), o botão passa a cinza-pedra. */
 #hero .button,
 #sobre .button,
-#inspiracoes .button,
-.button {
+#inspiracoes .button {
     border-color: var(--color-stone);
     background: var(--color-stone);
     color: var(--color-navy);
@@ -12,8 +11,7 @@
 
 #hero .button:hover,
 #sobre .button:hover,
-#inspiracoes .button:hover,
-.button:hover {
+#inspiracoes .button:hover {
     border-color: var(--color-stone);
     background: transparent;
     color: var(--color-stone);
