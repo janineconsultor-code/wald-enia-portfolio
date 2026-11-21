@@ -200,3 +200,38 @@
         bottom: 35px;
     }
 }
+
+
+/* TESTE CROMÁTICO — SECÇÃO SOBRE MIM (isolado do restante site) */
+#sobre {
+    background: var(--color-burgundy);
+    color: var(--color-stone);
+}
+
+#sobre .section-number,
+#sobre .eyebrow,
+#sobre h2,
+#sobre h2 span,
+#sobre .about-text p,
+#sobre .about-text .text-link,
+#sobre .section-return .text-link {
+    color: var(--color-stone);
+}
+
+#sobre .about-text > .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 20px;
+    border: 1px solid var(--color-stone);
+    border-radius: 2px;
+    background: var(--color-stone);
+    color: var(--color-navy);
+    text-decoration: none;
+}
+
+#sobre .about-text > .text-link:hover {
+    border-color: var(--color-navy);
+    background: var(--color-navy);
+    color: var(--color-stone);
+}
