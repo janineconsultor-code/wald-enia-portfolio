@@ -205,3 +205,42 @@
     background: var(--color-navy);
     color: var(--color-stone);
 }
+
+/* TESTE CROMÁTICO — PAINEL PROCESSO */
+#processo-criativo {
+    background: var(--color-navy);
+    color: var(--color-stone);
+}
+
+#processo-criativo .section-number,
+#processo-criativo .eyebrow,
+#processo-criativo .process-header h2,
+#processo-criativo .process-header h2 span,
+#processo-criativo .process-header .section-intro,
+#processo-criativo .process-number,
+#processo-criativo .process-item h3,
+#processo-criativo .process-item p {
+    color: var(--color-stone);
+}
+
+#processo-criativo .process-item {
+    border-top-color: rgba(231, 227, 220, 0.4);
+}
+
+#processo-criativo .section-return .text-link {
+    border: 1px solid var(--color-burgundy);
+    background: var(--color-burgundy);
+    color: var(--color-stone);
+}
+
+#processo-criativo .section-return .text-link:hover {
+    border-color: var(--color-burgundy);
+    background: var(--color-burgundy);
+    color: var(--color-stone);
+}
+
+#processo-criativo .section-return .text-link:focus-visible {
+    outline: 2px solid var(--color-stone);
+    outline-offset: 4px;
+}
+
