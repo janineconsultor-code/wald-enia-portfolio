@@ -287,7 +287,145 @@
 /* TESTE TIPOGRÁFICO — SERIFADA APENAS NO NOME DO HERO */
 #hero .hero-content h1,
 #hero .hero-content h1 span {
-    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-family: "Bodoni Moda", Georgia, serif !important;
     font-weight: 500;
     letter-spacing: -0.035em;
+}
+
+
+/* LINGUAGEM GRÁFICA — ELEMENTOS DE APOIO NAS TRÊS SECÇÕES */
+#hero,
+#processo-criativo,
+#inspiracoes {
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* HERO — círculo aberto e eixo fino como contraponto ao nome. */
+#hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 17%;
+    right: 13%;
+    width: clamp(150px, 23vw, 330px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(122, 31, 43, 0.42);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 13%;
+    right: calc(13% + clamp(75px, 11.5vw, 165px));
+    width: 1px;
+    height: clamp(210px, 30vw, 390px);
+    background: rgba(20, 33, 61, 0.22);
+    transform: rotate(38deg);
+    transform-origin: top;
+    pointer-events: none;
+}
+
+/* PROCESSO — grelha de linhas e pequenos pontos, evocando construção. */
+#processo-criativo::before {
+    content: "";
+    position: absolute;
+    top: 12%;
+    right: 9%;
+    width: clamp(105px, 15vw, 190px);
+    height: clamp(105px, 15vw, 190px);
+    border: 1px solid rgba(231, 227, 220, 0.28);
+    background:
+        linear-gradient(rgba(231, 227, 220, 0.2), rgba(231, 227, 220, 0.2)) 50% 0 / 1px 100% no-repeat,
+        linear-gradient(90deg, rgba(231, 227, 220, 0.2), rgba(231, 227, 220, 0.2)) 0 50% / 100% 1px no-repeat;
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+#processo-criativo::after {
+    content: "";
+    position: absolute;
+    top: calc(12% + clamp(52px, 7.5vw, 95px));
+    right: calc(9% + clamp(52px, 7.5vw, 95px));
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-burgundy);
+    pointer-events: none;
+}
+
+/* FORMAS DE OBSERVAR — círculos concêntricos e linha de referência. */
+#inspiracoes::before {
+    content: "";
+    position: absolute;
+    top: 13%;
+    right: 10%;
+    width: clamp(125px, 18vw, 235px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(231, 227, 220, 0.32);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 16px transparent,
+        0 0 0 17px rgba(231, 227, 220, 0.2),
+        0 0 0 34px transparent,
+        0 0 0 35px rgba(231, 227, 220, 0.12);
+    pointer-events: none;
+}
+
+#inspiracoes::after {
+    content: "";
+    position: absolute;
+    top: 13%;
+    right: calc(10% + clamp(62px, 9vw, 117px));
+    width: 1px;
+    height: clamp(180px, 23vw, 290px);
+    background: rgba(231, 227, 220, 0.24);
+    pointer-events: none;
+}
+
+/* Os elementos mantêm-se discretos e não competem com o conteúdo em ecrãs pequenos. */
+@media (max-width: 700px) {
+    #hero::before {
+        top: 17%;
+        right: -35px;
+        width: 145px;
+        opacity: 0.7;
+    }
+
+    #hero::after {
+        top: 14%;
+        right: 38px;
+        height: 180px;
+        opacity: 0.7;
+    }
+
+    #processo-criativo::before {
+        top: 7%;
+        right: 7%;
+        width: 82px;
+        height: 82px;
+        opacity: 0.65;
+    }
+
+    #processo-criativo::after {
+        top: calc(7% + 41px);
+        right: calc(7% + 41px);
+    }
+
+    #inspiracoes::before {
+        top: 7%;
+        right: -22px;
+        width: 115px;
+        opacity: 0.65;
+    }
+
+    #inspiracoes::after {
+        top: 7%;
+        right: 35px;
+        height: 145px;
+        opacity: 0.65;
+    }
 }
