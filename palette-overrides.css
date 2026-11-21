@@ -767,3 +767,66 @@
         width: 280px;
     }
 }
+
+
+/* REFINAMENTO FINAL — GRAFISMOS DA DIRECÇÃO APROVADA
+   Aplicação restrita ao Hero, Formas de observar, Pedido de projecto e Contactos. */
+
+/* Hero: manter a diagonal azul-marinho e o círculo bordô;
+   o contorno parcial funciona como arco, não como segundo círculo fechado. */
+#hero::after {
+    border: 1px solid transparent;
+    border-top-color: rgba(122, 31, 43, 0.72);
+    border-right-color: rgba(122, 31, 43, 0.72);
+    box-shadow: none;
+}
+
+/* Formas de observar: metade fotográfica e metade bordô,
+   recortadas pela mesma circunferência. */
+#inspiracoes::before {
+    background-image:
+        linear-gradient(var(--color-burgundy), var(--color-burgundy)),
+        url("./foto-waldenia.jpg.JPG");
+    background-size: 50% 100%, 50% 100%;
+    background-position: right center, left center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* A linha horizontal atravessa o círculo sem alterar a hierarquia do texto. */
+#inspiracoes::after {
+    z-index: 0;
+}
+
+/* Garantir que os elementos gráficos ficam atrás do conteúdo. */
+#hero .hero-content,
+#hero .hero-scroll,
+#inspiracoes .section-heading,
+#inspiracoes .inspiration-list,
+#inspiracoes .section-number,
+#inspiracoes .section-return,
+#pedido-projeto > *,
+#contacto > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Os grafismos não devem aparecer nas secções não seleccionadas. */
+#sobre::before,
+#sobre::after,
+#processo-criativo::before,
+#processo-criativo::after,
+#projetos::before,
+#projetos::after {
+    content: none !important;
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+    #inspiracoes::before {
+        right: -32px;
+        bottom: 8%;
+        width: 175px;
+        background-size: 50% 100%, 50% 100%;
+    }
+}
