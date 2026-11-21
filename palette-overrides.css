@@ -244,3 +244,35 @@
     outline-offset: 4px;
 }
 
+/* TESTE CROMÁTICO — PAINEL FORMAS DE OBSERVAR */
+#inspiracoes {
+    background: var(--color-navy);
+    color: var(--color-stone);
+}
+
+#inspiracoes .section-number,
+#inspiracoes .eyebrow,
+#inspiracoes .section-heading h2,
+#inspiracoes .section-heading h2 span,
+#inspiracoes .section-heading .section-intro,
+#inspiracoes .inspiration-item h3,
+#inspiracoes .inspiration-item p {
+    color: var(--color-stone);
+}
+
+#inspiracoes .section-return .text-link {
+    border: 1px solid var(--color-stone);
+    background: var(--color-stone);
+    color: var(--color-burgundy);
+}
+
+#inspiracoes .section-return .text-link:hover {
+    border-color: var(--color-stone);
+    background: var(--color-stone);
+    color: var(--color-burgundy);
+}
+
+#inspiracoes .section-return .text-link:focus-visible {
+    outline: 2px solid var(--color-stone);
+    outline-offset: 4px;
+}
