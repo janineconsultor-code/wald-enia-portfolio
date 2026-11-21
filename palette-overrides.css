@@ -565,3 +565,204 @@
         opacity: 0.55;
     }
 }
+
+
+/* DIRECÇÃO GRÁFICA VALIDADA — GRAFISMOS EM QUATRO SECÇÕES
+   Hero, Formas de observar, Pedido de projecto e Contactos.
+   Sobre mim, Processo e Projectos ficam sem grafismos decorativos. */
+
+/* Limpeza dos grafismos anteriores */
+#hero,
+#inspiracoes,
+#pedido-projeto,
+#contacto {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+#processo-criativo::before,
+#processo-criativo::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* HERO — diagonal azul-marinho, círculo bordô e arco de contorno */
+#hero::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        transparent 0 63%,
+        var(--color-navy) 63% 72%,
+        transparent 72% 100%
+    );
+    pointer-events: none;
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 18%;
+    right: 12%;
+    width: clamp(170px, 25vw, 340px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-burgundy);
+    box-shadow: 0 0 0 1px var(--color-burgundy);
+    pointer-events: none;
+}
+
+#hero .hero-content,
+#hero .hero-scroll {
+    z-index: 2;
+}
+
+/* FORMAS DE OBSERVAR — círculo dividido e linha horizontal */
+#inspiracoes::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    right: clamp(9%, 17vw, 230px);
+    width: clamp(190px, 27vw, 350px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: linear-gradient(
+        90deg,
+        var(--color-stone) 0 50%,
+        var(--color-burgundy) 50% 100%
+    );
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 1px rgba(231, 227, 220, 0.7);
+    pointer-events: none;
+}
+
+#inspiracoes::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    right: 0;
+    width: 46%;
+    height: 1px;
+    background: var(--color-stone);
+    pointer-events: none;
+}
+
+#inspiracoes .section-heading,
+#inspiracoes .inspiration-list,
+#inspiracoes .section-number,
+#inspiracoes .section-return {
+    position: relative;
+    z-index: 1;
+}
+
+/* PEDIDO DE PROJECTO — semicírculo azul-marinho e arco fino */
+#pedido-projeto::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    right: -4%;
+    bottom: -58%;
+    width: clamp(300px, 48vw, 650px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-navy);
+    pointer-events: none;
+}
+
+#pedido-projeto::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    right: 2%;
+    bottom: -66%;
+    width: clamp(340px, 56vw, 740px);
+    aspect-ratio: 1;
+    border: 1px solid var(--color-burgundy);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+#pedido-projeto > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* CONTACTOS — grande segmento circular bordô no canto inferior */
+#contacto::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    right: -12%;
+    bottom: -145%;
+    width: clamp(300px, 48vw, 650px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-burgundy);
+    pointer-events: none;
+}
+
+#contacto::after {
+    content: none !important;
+    display: none !important;
+}
+
+#contacto > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajustes de escala e posicionamento em ecrãs estreitos */
+@media (max-width: 700px) {
+    #hero::before {
+        background: linear-gradient(
+            135deg,
+            transparent 0 70%,
+            var(--color-navy) 70% 79%,
+            transparent 79% 100%
+        );
+    }
+
+    #hero::after {
+        top: 15%;
+        right: -42px;
+        width: 155px;
+    }
+
+    #inspiracoes::before {
+        top: auto;
+        right: -32px;
+        bottom: 8%;
+        width: 175px;
+        transform: none;
+    }
+
+    #inspiracoes::after {
+        top: auto;
+        bottom: calc(8% + 87px);
+        width: 38%;
+    }
+
+    #pedido-projeto::before {
+        right: -30%;
+        bottom: -28%;
+        width: 260px;
+    }
+
+    #pedido-projeto::after {
+        right: -24%;
+        bottom: -35%;
+        width: 300px;
+    }
+
+    #contacto::before {
+        right: -32%;
+        bottom: -95%;
+        width: 280px;
+    }
+}
