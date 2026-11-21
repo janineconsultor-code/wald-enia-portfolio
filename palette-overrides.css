@@ -429,3 +429,139 @@
         opacity: 0.65;
     }
 }
+
+
+/* SISTEMA GRÁFICO — ELEMENTOS APENAS NOS BLOCOS DE PROCESSO,
+   OBSERVAÇÃO, PEDIDO DE PROJECTO E CONTACTO.
+   O desenho funciona como uma extensão do pensamento visual:
+   observar, estruturar, relacionar e comunicar. */
+
+/* O hero, o sobre mim e os projectos permanecem sem grafismos decorativos. */
+#hero::before,
+#hero::after,
+#sobre::before,
+#sobre::after,
+#projetos::before,
+#projetos::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* PEDIDO DE PROJECTO — percurso de pontos ligados:
+   representa a passagem da ideia à definição do briefing. */
+#pedido-projeto {
+    isolation: isolate;
+    overflow: hidden;
+}
+
+#pedido-projeto::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 10%;
+    right: 8%;
+    width: clamp(145px, 18vw, 230px);
+    height: clamp(90px, 11vw, 140px);
+    background:
+        linear-gradient(var(--color-burgundy), var(--color-burgundy))
+            12% 50% / 76% 1px no-repeat,
+        linear-gradient(135deg, transparent 48.8%, rgba(20, 33, 61, 0.34) 49.5%, rgba(20, 33, 61, 0.34) 50.5%, transparent 51.2%)
+            50% 50% / 38% 72% no-repeat;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#pedido-projeto::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: calc(10% + clamp(39px, 5.5vw, 70px));
+    right: calc(8% + clamp(62px, 8vw, 103px));
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--color-burgundy);
+    border-radius: 50%;
+    background: var(--color-stone);
+    box-shadow:
+        calc(clamp(145px, 18vw, 230px) * -0.36) 0 0 -1px var(--color-stone),
+        calc(clamp(145px, 18vw, 230px) * -0.36) 0 0 0 var(--color-burgundy),
+        calc(clamp(145px, 18vw, 230px) * 0.36) 0 0 -1px var(--color-stone),
+        calc(clamp(145px, 18vw, 230px) * 0.36) 0 0 0 var(--color-burgundy);
+    pointer-events: none;
+}
+
+/* CONTACTO — dois arcos incompletos e um eixo:
+   sugerem ligação e continuidade, sem se tornarem um ícone literal. */
+#contacto {
+    isolation: isolate;
+    overflow: hidden;
+}
+
+#contacto::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 12%;
+    right: 9%;
+    width: clamp(105px, 14vw, 175px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(122, 31, 43, 0.42);
+    border-right-color: transparent;
+    border-bottom-color: rgba(20, 33, 61, 0.28);
+    border-radius: 50%;
+    transform: rotate(-28deg);
+    pointer-events: none;
+}
+
+#contacto::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 12%;
+    right: calc(9% + clamp(52px, 7vw, 87px));
+    width: 1px;
+    height: clamp(135px, 17vw, 210px);
+    background: rgba(20, 33, 61, 0.25);
+    transform: rotate(38deg);
+    transform-origin: top;
+    pointer-events: none;
+}
+
+/* Mantém o conteúdo acima dos elementos de apoio. */
+#pedido-projeto > *,
+#contacto > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Em ecrãs pequenos, os grafismos recuam para a margem e perdem escala. */
+@media (max-width: 700px) {
+    #pedido-projeto::before {
+        top: 5%;
+        right: 5%;
+        width: 112px;
+        height: 72px;
+        opacity: 0.35;
+    }
+
+    #pedido-projeto::after {
+        top: calc(5% + 32px);
+        right: calc(5% + 50px);
+        width: 6px;
+        height: 6px;
+    }
+
+    #contacto::before {
+        top: 5%;
+        right: -24px;
+        width: 105px;
+        opacity: 0.55;
+    }
+
+    #contacto::after {
+        top: 5%;
+        right: 28px;
+        height: 125px;
+        opacity: 0.55;
+    }
+}
