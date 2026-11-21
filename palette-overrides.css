@@ -3,13 +3,7 @@
 /* Abertura: superfície clara, com azul-marinho e bordô como contraste. */
 #hero {
     color: var(--color-navy);
-    background:
-        linear-gradient(
-            105deg,
-            var(--color-stone) 0%,
-            var(--color-stone) 72%,
-            rgba(122, 31, 43, 0.10) 100%
-        );
+    background: var(--color-stone);
 }
 
 .site-header {
@@ -92,4 +86,14 @@
     border-color: var(--color-navy);
     background: var(--color-navy);
     color: var(--color-stone);
+}
+
+
+/* Ajustes de legibilidade — cabeçalho */
+.logo-description {
+    font-size: 10px;
+}
+
+.main-nav a {
+    font-size: 11px;
 }
