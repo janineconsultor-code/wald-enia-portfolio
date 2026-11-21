@@ -286,7 +286,7 @@
 
 /* TESTE TIPOGRÁFICO — SERIFADA APENAS NO NOME DO HERO */
 #hero h1 {
-    font-family: "Lora", Georgia, serif;
+    font-family: "Cormorant Garamond", Georgia, serif;
     font-weight: 500;
     letter-spacing: -0.035em;
 }
