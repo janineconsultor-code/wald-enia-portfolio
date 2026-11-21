@@ -260,16 +260,22 @@
     color: var(--color-stone);
 }
 
-#inspiracoes .section-return .text-link {
-    border: 1px solid var(--color-stone);
-    background: var(--color-stone);
-    color: var(--color-burgundy);
+#inspiracoes .section-return a.text-link,
+#inspiracoes .section-return a.text-link:link,
+#inspiracoes .section-return a.text-link:visited {
+    border: 1px solid var(--color-stone) !important;
+    background-color: var(--color-stone) !important;
+    background-image: none !important;
+    color: var(--color-burgundy) !important;
 }
 
-#inspiracoes .section-return .text-link:hover {
-    border-color: var(--color-stone);
-    background: var(--color-stone);
-    color: var(--color-burgundy);
+#inspiracoes .section-return a.text-link:hover,
+#inspiracoes .section-return a.text-link:focus-visible,
+#inspiracoes .section-return a.text-link:active {
+    border-color: var(--color-stone) !important;
+    background-color: var(--color-stone) !important;
+    background-image: none !important;
+    color: var(--color-burgundy) !important;
 }
 
 #inspiracoes .section-return .text-link:focus-visible {
