@@ -437,8 +437,6 @@
    observar, estruturar, relacionar e comunicar. */
 
 /* O hero, o sobre mim e os projectos permanecem sem grafismos decorativos. */
-#hero::before,
-#hero::after,
 #sobre::before,
 #sobre::after,
 #projetos::before,
