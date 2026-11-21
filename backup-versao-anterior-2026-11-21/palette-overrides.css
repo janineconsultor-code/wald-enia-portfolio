@@ -1,0 +1,99 @@
+/* 25 — PALETA EXPERIMENTAL | CINZA-PEDRA COMO BASE */
+
+/* Abertura: superfície clara, com azul-marinho e bordô como contraste. */
+#hero {
+    color: var(--color-navy);
+    background: var(--color-stone);
+}
+
+.site-header {
+    color: var(--color-navy);
+}
+
+.logo-description {
+    color: var(--color-burgundy);
+}
+
+.main-nav a:hover,
+.language-button.active {
+    color: var(--color-burgundy);
+}
+
+.language-button {
+    color: rgba(20, 33, 61, 0.58);
+}
+
+.menu-toggle {
+    border-color: rgba(20, 33, 61, 0.45);
+    color: var(--color-navy);
+}
+
+.menu-toggle span {
+    background: currentColor;
+}
+
+#hero .eyebrow {
+    color: var(--color-burgundy);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+}
+
+#hero h1 {
+    color: var(--color-navy);
+}
+
+#hero h1 span {
+    color: var(--color-burgundy);
+}
+
+.hero-description,
+.hero-scroll {
+    color: var(--color-navy);
+}
+
+.hero-scroll span:last-child {
+    color: var(--color-burgundy);
+}
+
+/* Botões: bordô sobre cinza-pedra, com texto claro. */
+.button,
+#hero .button,
+.contacto .button,
+.prebriefing-modal .button,
+.prebriefing .form-submit {
+    border-color: var(--color-burgundy);
+    background: var(--color-burgundy);
+    color: var(--color-stone);
+}
+
+.button:hover,
+#hero .button:hover,
+.contacto .button:hover,
+.prebriefing-modal .button:hover,
+.prebriefing .form-submit:hover {
+    border-color: var(--color-navy);
+    background: var(--color-navy);
+    color: var(--color-stone);
+}
+
+/* Detalhes de navegação e links mantêm o azul-marinho e o bordô. */
+.section-return .text-link {
+    border-color: var(--color-burgundy);
+    color: var(--color-navy);
+}
+
+.section-return .text-link:hover {
+    border-color: var(--color-navy);
+    background: var(--color-navy);
+    color: var(--color-stone);
+}
+
+
+/* Ajustes de legibilidade — cabeçalho */
+.logo-description {
+    font-size: 10px;
+}
+
+.main-nav a {
+    font-size: 11px;
+}
