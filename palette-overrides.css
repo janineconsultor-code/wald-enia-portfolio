@@ -832,84 +832,96 @@
 }
 
 
-/* GRAFISMOS VECTORIAIS ORIGINAIS — substituem as aproximações CSS anteriores.
-   Cada SVG é aplicado como asset independente, preservando o desenho original. */
+
+/* ATIVO 3 — grafismo único da identidade visual
+   Aplicação: Hero, Processo, Inspirações e Contactos.
+   O PNG é usado como máscara para preservar a forma e permitir a aplicação cromática. */
+
+#hero,
+#processo-criativo,
+#inspiracoes,
+#contacto {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
 #hero::before,
+#processo-criativo::before,
 #inspiracoes::before,
-#pedido-projeto::before,
 #contacto::before {
-    content: "";
+    content: "" !important;
+    display: block !important;
     position: absolute;
     z-index: 0;
-    display: block;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    background-color: transparent;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, var(--color-navy) 8%, var(--color-burgundy) 92%);
     background-repeat: no-repeat;
-    background-size: contain;
     pointer-events: none;
+    opacity: 0.28;
+    -webkit-mask-image: url("./Ativo%203.png");
+    mask-image: url("./Ativo%203.png");
+    -webkit-mask-mode: alpha;
+    mask-mode: alpha;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+/* Desactiva os grafismos anteriores e mantém apenas o Ativo 3. */
+#hero::after,
+#processo-criativo::after,
+#inspiracoes::after,
+#contacto::after,
+#pedido-projeto::before,
+#pedido-projeto::after,
+#sobre::before,
+#sobre::after,
+#projetos::before,
+#projetos::after {
+    content: none !important;
+    display: none !important;
 }
 
 #hero::before {
-    inset: 8% 4% 8% auto;
-    width: min(39%, 540px);
-    height: 84%;
-    background-image: url("./Ativo%201.svg");
-    background-position: center right;
+    width: clamp(270px, 39vw, 520px);
+    top: 7%;
+    right: 2%;
+    opacity: 0.22;
 }
 
-#hero::after {
-    content: none !important;
-    display: none !important;
+#processo-criativo::before {
+    width: clamp(180px, 25vw, 330px);
+    top: 12%;
+    right: 5%;
+    background: var(--color-stone);
+    opacity: 0.16;
 }
 
 #inspiracoes::before {
-    inset: 10% 5% 10% auto;
-    width: min(34%, 470px);
-    height: 80%;
-    background-image: url("./Ativo%202.svg");
-    background-position: center right;
-}
-
-#inspiracoes::after {
-    content: none !important;
-    display: none !important;
-}
-
-#pedido-projeto::before {
-    inset: auto 4% 0 auto;
-    width: min(42%, 560px);
-    height: 88%;
-    background-image: url("./Ativo%203.svg");
-    background-position: bottom right;
-}
-
-#pedido-projeto::after {
-    content: none !important;
-    display: none !important;
+    width: clamp(220px, 32vw, 420px);
+    top: 13%;
+    right: 4%;
+    background: linear-gradient(135deg, var(--color-stone) 15%, var(--color-burgundy) 90%);
+    opacity: 0.24;
 }
 
 #contacto::before {
-    inset: auto 3% 0 auto;
-    width: min(37%, 490px);
-    height: 90%;
-    background-image: url("./Ativo%204.svg");
-    background-position: bottom right;
+    width: clamp(160px, 23vw, 300px);
+    right: 4%;
+    bottom: 2%;
+    background: var(--color-stone);
+    opacity: 0.18;
 }
 
-#contacto::after {
-    content: none !important;
-    display: none !important;
-}
-
+/* Conteúdo sempre acima do grafismo. */
 #hero .hero-content,
 #hero .hero-scroll,
-#inspiracoes .section-heading,
-#inspiracoes .inspiration-list,
-#inspiracoes .section-number,
-#inspiracoes .section-return,
-#pedido-projeto > *,
+#processo-criativo > *,
+#inspiracoes > *,
 #contacto > * {
     position: relative;
     z-index: 1;
@@ -917,34 +929,32 @@
 
 @media (max-width: 700px) {
     #hero::before {
-        inset: auto -4% 5% auto;
-        width: 47%;
-        height: 43%;
-        background-position: bottom right;
-        opacity: 0.92;
+        width: 230px;
+        top: auto;
+        right: -55px;
+        bottom: 4%;
+        opacity: 0.14;
+    }
+
+    #processo-criativo::before {
+        width: 150px;
+        top: 5%;
+        right: -35px;
+        opacity: 0.12;
     }
 
     #inspiracoes::before {
-        inset: auto -4% 3% auto;
-        width: 42%;
-        height: 42%;
-        background-position: bottom right;
-        opacity: 0.92;
-    }
-
-    #pedido-projeto::before {
-        inset: auto -8% -2% auto;
-        width: 54%;
-        height: 48%;
-        background-position: bottom right;
-        opacity: 0.92;
+        width: 190px;
+        top: auto;
+        right: -45px;
+        bottom: 5%;
+        opacity: 0.16;
     }
 
     #contacto::before {
-        inset: auto -7% -2% auto;
-        width: 48%;
-        height: 52%;
-        background-position: bottom right;
-        opacity: 0.92;
+        width: 145px;
+        right: -30px;
+        bottom: 3%;
+        opacity: 0.14;
     }
 }
