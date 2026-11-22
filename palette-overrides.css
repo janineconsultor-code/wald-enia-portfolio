@@ -859,16 +859,20 @@
     background-repeat: no-repeat;
     pointer-events: none;
     opacity: 0.28;
-    -webkit-mask-image: url("./Ativo%203.png");
-    mask-image: url("./Ativo%203.png");
-    -webkit-mask-mode: alpha;
-    mask-mode: alpha;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
+    /* O PNG tem fundo branco opaco e desenho preto. A composição XOR
+       inverte a máscara luminosa para revelar apenas o desenho preto. */
+    -webkit-mask-image: linear-gradient(#fff 0 0), url("./Ativo%203.png");
+    mask-image: linear-gradient(#fff 0 0), url("./Ativo%203.png");
+    -webkit-mask-mode: alpha, luminance;
+    mask-mode: alpha, luminance;
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-position: center, center;
+    mask-position: center, center;
+    -webkit-mask-size: 100% 100%, contain;
+    mask-size: 100% 100%, contain;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
 /* Desactiva os grafismos anteriores e mantém apenas o Ativo 3. */
