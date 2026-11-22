@@ -1029,8 +1029,9 @@
 #inspiracoes::before,
 #pedido-projeto::before,
 #contacto::before {
-    content: "";
-    display: block;
+    /* Override explícito da regra antiga que removia os pseudo-elementos. */
+    content: "" !important;
+    display: block !important;
     position: absolute;
     z-index: 0;
     pointer-events: none;
