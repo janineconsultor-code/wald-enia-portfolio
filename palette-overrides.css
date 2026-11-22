@@ -987,3 +987,21 @@
         opacity: 0.14;
     }
 }
+
+
+/* REMOÇÃO DO ATIVO 3 — secções limpas, sem grafismo de fundo. */
+#hero::before,
+#hero::after,
+#processo-criativo::before,
+#processo-criativo::after,
+#inspiracoes::before,
+#inspiracoes::after,
+#contacto::before,
+#contacto::after {
+    content: none !important;
+    display: none !important;
+}
+
+#hero .hero-content {
+    max-width: 900px;
+}
