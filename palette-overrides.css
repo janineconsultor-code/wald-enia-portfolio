@@ -830,3 +830,121 @@
         background-size: 50% 100%, 50% 100%;
     }
 }
+
+
+/* GRAFISMOS VECTORIAIS ORIGINAIS — substituem as aproximações CSS anteriores.
+   Cada SVG é aplicado como asset independente, preservando o desenho original. */
+#hero::before,
+#inspiracoes::before,
+#pedido-projeto::before,
+#contacto::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    display: block;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+}
+
+#hero::before {
+    inset: 8% 4% 8% auto;
+    width: min(39%, 540px);
+    height: 84%;
+    background-image: url("./Ativo%201.svg");
+    background-position: center right;
+}
+
+#hero::after {
+    content: none !important;
+    display: none !important;
+}
+
+#inspiracoes::before {
+    inset: 10% 5% 10% auto;
+    width: min(34%, 470px);
+    height: 80%;
+    background-image: url("./Ativo%202.svg");
+    background-position: center right;
+}
+
+#inspiracoes::after {
+    content: none !important;
+    display: none !important;
+}
+
+#pedido-projeto::before {
+    inset: auto 4% 0 auto;
+    width: min(42%, 560px);
+    height: 88%;
+    background-image: url("./Ativo%203.svg");
+    background-position: bottom right;
+}
+
+#pedido-projeto::after {
+    content: none !important;
+    display: none !important;
+}
+
+#contacto::before {
+    inset: auto 3% 0 auto;
+    width: min(37%, 490px);
+    height: 90%;
+    background-image: url("./Ativo%204.svg");
+    background-position: bottom right;
+}
+
+#contacto::after {
+    content: none !important;
+    display: none !important;
+}
+
+#hero .hero-content,
+#hero .hero-scroll,
+#inspiracoes .section-heading,
+#inspiracoes .inspiration-list,
+#inspiracoes .section-number,
+#inspiracoes .section-return,
+#pedido-projeto > *,
+#contacto > * {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 700px) {
+    #hero::before {
+        inset: auto -4% 5% auto;
+        width: 47%;
+        height: 43%;
+        background-position: bottom right;
+        opacity: 0.92;
+    }
+
+    #inspiracoes::before {
+        inset: auto -4% 3% auto;
+        width: 42%;
+        height: 42%;
+        background-position: bottom right;
+        opacity: 0.92;
+    }
+
+    #pedido-projeto::before {
+        inset: auto -8% -2% auto;
+        width: 54%;
+        height: 48%;
+        background-position: bottom right;
+        opacity: 0.92;
+    }
+
+    #contacto::before {
+        inset: auto -7% -2% auto;
+        width: 48%;
+        height: 52%;
+        background-position: bottom right;
+        opacity: 0.92;
+    }
+}
