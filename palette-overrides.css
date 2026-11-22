@@ -1158,3 +1158,112 @@
         opacity: .42;
     }
 }
+
+
+/* GRAFISMO BAUHAUS — CAMADAS HTML EXPLÍCITAS
+   Estas camadas substituem os pseudo-elementos antigos, que estavam
+   a ser ocultados por regras anteriores da folha de estilos. */
+.bauhaus-graphic {
+    position: absolute !important;
+    z-index: 0 !important;
+    display: block !important;
+    pointer-events: none;
+    width: clamp(220px, 34vw, 460px);
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    opacity: .82;
+}
+#hero, #processo-criativo, #inspiracoes, #pedido-projeto, #contacto {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+#hero > .bauhaus-graphic,
+#processo-criativo > .bauhaus-graphic,
+#inspiracoes > .bauhaus-graphic,
+#pedido-projeto > .bauhaus-graphic,
+#contacto > .bauhaus-graphic {
+    position: absolute !important;
+    z-index: 0 !important;
+}
+#hero > *:not(.bauhaus-graphic),
+#processo-criativo > *:not(.bauhaus-graphic),
+#inspiracoes > *:not(.bauhaus-graphic),
+#pedido-projeto > *:not(.bauhaus-graphic),
+#contacto > *:not(.bauhaus-graphic) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero: módulo circular à direita, afastado do nome. */
+.bauhaus-graphic--hero {
+    top: 10%;
+    right: 3%;
+    background-image:
+        radial-gradient(circle at 70% 28%, var(--color-burgundy) 0 9%, transparent 9.5%),
+        conic-gradient(from 180deg at 100% 100%, var(--color-navy) 0 90deg, transparent 90deg 360deg),
+        repeating-radial-gradient(circle at 100% 100%, transparent 0 17px, rgba(20,33,61,.52) 18px 19px, transparent 20px 29px),
+        radial-gradient(circle, var(--color-burgundy) 1.3px, transparent 1.8px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 13px 13px;
+}
+
+/* Processo: rectas paralelas a encontrar arcos concêntricos. */
+.bauhaus-graphic--processo {
+    right: 3%;
+    bottom: 2%;
+    background-image:
+        radial-gradient(circle at 100% 0%, var(--color-burgundy) 0 10%, transparent 10.5%),
+        repeating-radial-gradient(circle at 100% 0%, transparent 0 16px, rgba(231,227,220,.72) 17px 18px, transparent 19px 28px),
+        repeating-linear-gradient(0deg, transparent 0 12px, rgba(231,227,220,.62) 12.5px 13.5px, transparent 14px 26px),
+        conic-gradient(from 90deg at 100% 0%, transparent 0 270deg, var(--color-burgundy) 270deg 360deg);
+    background-size: 100% 100%, 100% 100%, 48% 100%, 100% 100%;
+}
+
+/* Inspirações: composição modular mais densa, com grelha de pontos. */
+.bauhaus-graphic--inspiracoes {
+    top: 8%;
+    right: 3%;
+    width: clamp(250px, 37vw, 490px);
+    background-image:
+        radial-gradient(circle at 52% 48%, var(--color-burgundy) 0 12%, transparent 12.5%),
+        conic-gradient(from 270deg at 0% 100%, var(--color-stone) 0 90deg, transparent 90deg 360deg),
+        repeating-radial-gradient(circle at 0% 100%, transparent 0 15px, rgba(231,227,220,.72) 16px 17px, transparent 18px 27px),
+        radial-gradient(circle, var(--color-stone) 1.25px, transparent 1.7px);
+    background-size: 100% 100%, 50% 50%, 100% 100%, 13px 13px;
+    background-position: center, left bottom, center, right top;
+}
+
+/* Pedido de projecto: quarto de círculo e módulo circular. */
+.bauhaus-graphic--pedido {
+    right: 2%;
+    bottom: -12%;
+    width: clamp(260px, 38vw, 510px);
+    background-image:
+        radial-gradient(circle at 100% 0%, var(--color-burgundy) 0 15%, transparent 15.5%),
+        conic-gradient(from 180deg at 100% 0%, var(--color-navy) 0 90deg, transparent 90deg 360deg),
+        repeating-radial-gradient(circle at 100% 0%, transparent 0 19px, rgba(20,33,61,.5) 20px 21px, transparent 22px 32px),
+        radial-gradient(circle, var(--color-burgundy) 1.3px, transparent 1.8px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 14px 14px;
+}
+
+/* Contactos: arco no canto inferior e grelha linear. */
+.bauhaus-graphic--contacto {
+    right: 2%;
+    bottom: -8%;
+    width: clamp(220px, 31vw, 420px);
+    background-image:
+        radial-gradient(circle at 100% 100%, var(--color-burgundy) 0 11%, transparent 11.5%),
+        repeating-radial-gradient(circle at 100% 100%, transparent 0 16px, rgba(231,227,220,.72) 17px 18px, transparent 19px 28px),
+        repeating-linear-gradient(90deg, transparent 0 14px, rgba(231,227,220,.62) 14.5px 15.5px, transparent 16px 29px),
+        conic-gradient(from 270deg at 100% 100%, var(--color-burgundy) 0 90deg, transparent 90deg 360deg);
+    background-size: 100% 100%, 100% 100%, 45% 100%, 100% 100%;
+}
+
+@media (max-width: 700px) {
+    .bauhaus-graphic { opacity: .4; }
+    .bauhaus-graphic--hero { width: 175px; top: auto; right: -38px; bottom: 2%; }
+    .bauhaus-graphic--processo { width: 165px; right: -35px; bottom: 2%; }
+    .bauhaus-graphic--inspiracoes { width: 185px; top: auto; right: -42px; bottom: 4%; }
+    .bauhaus-graphic--pedido { width: 180px; right: -42px; bottom: -5%; }
+    .bauhaus-graphic--contacto { width: 165px; right: -38px; bottom: -3%; }
+}
