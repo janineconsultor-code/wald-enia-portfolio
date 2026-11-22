@@ -890,19 +890,38 @@
     display: none !important;
 }
 
+/* HERO — manter o grafismo no lado direito, sem invadir a área do nome. */
 #hero::before {
-    width: clamp(270px, 39vw, 520px);
-    top: 7%;
-    right: 2%;
-    opacity: 0.22;
+    width: clamp(230px, 27vw, 360px);
+    top: 50%;
+    right: 2.5%;
+    left: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+    opacity: 0.16;
 }
 
+#hero .hero-content {
+    max-width: min(780px, 62%);
+    position: relative;
+    z-index: 2;
+}
+
+#hero .hero-content h1 {
+    position: relative;
+    z-index: 2;
+}
+
+/* PROCESSO — aproximação mais contida da solução aprovada em Inspirações. */
 #processo-criativo::before {
-    width: clamp(180px, 25vw, 330px);
-    top: 12%;
-    right: 5%;
-    background: var(--color-stone);
-    opacity: 0.16;
+    width: clamp(190px, 23vw, 285px);
+    top: auto;
+    right: 4%;
+    bottom: 8%;
+    left: auto;
+    transform: none;
+    background: linear-gradient(135deg, var(--color-stone) 15%, var(--color-burgundy) 90%);
+    opacity: 0.15;
 }
 
 #inspiracoes::before {
@@ -933,18 +952,24 @@
 
 @media (max-width: 700px) {
     #hero::before {
-        width: 230px;
+        width: 165px;
         top: auto;
-        right: -55px;
-        bottom: 4%;
-        opacity: 0.14;
+        right: -38px;
+        bottom: 2%;
+        transform: none;
+        opacity: 0.10;
+    }
+
+    #hero .hero-content {
+        max-width: 100%;
     }
 
     #processo-criativo::before {
-        width: 150px;
-        top: 5%;
+        width: 165px;
+        top: auto;
         right: -35px;
-        opacity: 0.12;
+        bottom: 3%;
+        opacity: 0.10;
     }
 
     #inspiracoes::before {
