@@ -1005,3 +1005,155 @@
 #hero .hero-content {
     max-width: 900px;
 }
+
+
+/* =========================================================
+   SISTEMA MODULAR BAUHAUS — APLICAÇÃO NOS CINCO BLOCOS
+   Paleta institucional: pedra, azul-noite e bordô.
+   Construção em CSS vectorial, sem imagens rasterizadas.
+========================================================= */
+
+#hero,
+#processo-criativo,
+#inspiracoes,
+#pedido-projeto,
+#contacto {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* O grafismo fica na camada de fundo; o conteúdo mantém prioridade. */
+#hero::before,
+#processo-criativo::before,
+#inspiracoes::before,
+#pedido-projeto::before,
+#contacto::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    width: clamp(230px, 34vw, 470px);
+    aspect-ratio: 1;
+    opacity: 0.76;
+    background-repeat: no-repeat;
+}
+
+/* HERO — módulo de quarto de círculo, arco e pontos. */
+#hero::before {
+    top: 8%;
+    right: 2%;
+    background-image:
+        radial-gradient(circle, var(--color-burgundy) 0 13%, transparent 13.5%),
+        conic-gradient(from 180deg at 100% 100%, var(--color-navy) 0deg 90deg, transparent 90deg 360deg),
+        repeating-radial-gradient(circle at 100% 100%, transparent 0 18px, rgba(20,33,61,.48) 19px 20px, transparent 21px 31px),
+        radial-gradient(circle, var(--color-burgundy) 1.35px, transparent 1.8px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 14px 14px;
+    background-position: center, center, center, 0 0;
+}
+
+/* PROCESSO — linhas paralelas que se abrem em arcos concêntricos. */
+#processo-criativo::before {
+    right: 3%;
+    bottom: 3%;
+    background-image:
+        radial-gradient(circle at 100% 0%, var(--color-burgundy) 0 9%, transparent 9.5%),
+        repeating-radial-gradient(circle at 100% 0%, transparent 0 17px, rgba(231,227,220,.72) 18px 19px, transparent 20px 29px),
+        repeating-linear-gradient(0deg, transparent 0 13px, rgba(231,227,220,.62) 13.5px 14.5px, transparent 15px 27px),
+        conic-gradient(from 90deg at 100% 0%, transparent 0deg 270deg, var(--color-burgundy) 270deg 360deg);
+    background-size: 100% 100%, 100% 100%, 48% 100%, 100% 100%;
+    background-position: center, center, left center, center;
+}
+
+/* INSPIRAÇÕES — composição mais densa, com círculos e grelha modular. */
+#inspiracoes::before {
+    top: 10%;
+    right: 2%;
+    width: clamp(250px, 36vw, 500px);
+    background-image:
+        radial-gradient(circle at 50% 50%, var(--color-burgundy) 0 12%, transparent 12.5%),
+        conic-gradient(from 270deg at 0% 100%, var(--color-stone) 0deg 90deg, transparent 90deg 360deg),
+        repeating-radial-gradient(circle at 0% 100%, transparent 0 15px, rgba(231,227,220,.7) 16px 17px, transparent 18px 27px),
+        radial-gradient(circle, var(--color-stone) 1.25px, transparent 1.7px);
+    background-size: 100% 100%, 50% 50%, 100% 100%, 13px 13px;
+    background-position: center, left bottom, center, right top;
+}
+
+/* PEDIDO DE PROJECTO — sequência de módulos e grelha de pontos. */
+#pedido-projeto::before {
+    right: 2%;
+    bottom: -12%;
+    width: clamp(260px, 38vw, 520px);
+    background-image:
+        radial-gradient(circle at 100% 0%, var(--color-burgundy) 0 15%, transparent 15.5%),
+        conic-gradient(from 180deg at 100% 0%, var(--color-navy) 0deg 90deg, transparent 90deg 360deg),
+        repeating-radial-gradient(circle at 100% 0%, transparent 0 19px, rgba(20,33,61,.48) 20px 21px, transparent 22px 32px),
+        radial-gradient(circle, var(--color-burgundy) 1.3px, transparent 1.8px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 14px 14px;
+    background-position: center, center, center, left bottom;
+}
+
+/* CONTACTOS — arco modular e transição entre rectas e curvas. */
+#contacto::before {
+    right: 2%;
+    bottom: -8%;
+    width: clamp(220px, 31vw, 420px);
+    background-image:
+        radial-gradient(circle at 100% 100%, var(--color-burgundy) 0 11%, transparent 11.5%),
+        repeating-radial-gradient(circle at 100% 100%, transparent 0 16px, rgba(231,227,220,.7) 17px 18px, transparent 19px 28px),
+        repeating-linear-gradient(90deg, transparent 0 14px, rgba(231,227,220,.62) 14.5px 15.5px, transparent 16px 29px),
+        conic-gradient(from 270deg at 100% 100%, var(--color-burgundy) 0deg 90deg, transparent 90deg 360deg);
+    background-size: 100% 100%, 100% 100%, 45% 100%, 100% 100%;
+    background-position: center, center, left center, center;
+}
+
+/* Conteúdo sempre acima da composição geométrica. */
+#hero > *,
+#processo-criativo > *,
+#inspiracoes > *,
+#pedido-projeto > *,
+#contacto > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Em ecrãs pequenos, os módulos recuam para a margem e reduzem a escala. */
+@media (max-width: 700px) {
+    #hero::before {
+        width: 190px;
+        top: auto;
+        right: -42px;
+        bottom: 2%;
+        opacity: .48;
+    }
+
+    #processo-criativo::before {
+        width: 175px;
+        right: -38px;
+        bottom: 2%;
+        opacity: .38;
+    }
+
+    #inspiracoes::before {
+        width: 195px;
+        top: auto;
+        right: -48px;
+        bottom: 4%;
+        opacity: .48;
+    }
+
+    #pedido-projeto::before {
+        width: 190px;
+        right: -45px;
+        bottom: -5%;
+        opacity: .42;
+    }
+
+    #contacto::before {
+        width: 175px;
+        right: -40px;
+        bottom: -3%;
+        opacity: .42;
+    }
+}
