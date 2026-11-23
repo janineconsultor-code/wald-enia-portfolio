@@ -1267,3 +1267,23 @@
     .bauhaus-graphic--pedido { width: 180px; right: -42px; bottom: -5%; }
     .bauhaus-graphic--contacto { width: 165px; right: -38px; bottom: -3%; }
 }
+
+
+/* CORRECÇÃO HERO — Explorar permanece independente do botão principal. */
+#hero > .hero-scroll {
+    position: absolute !important;
+    z-index: 2 !important;
+    right: 5vw;
+    bottom: 45px;
+    left: auto;
+    top: auto;
+    display: flex;
+    width: max-content;
+    margin: 0;
+}
+@media (max-width: 700px) {
+    #hero > .hero-scroll {
+        right: var(--page-gutter);
+        bottom: 24px;
+    }
+}
