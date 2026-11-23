@@ -2083,3 +2083,18 @@ main section [class*="block-number"] {
         margin-top: 44px;
     }
 }
+
+/* PEDIDO DE PROJETO — apresentação apenas tipográfica, sem grafismo. */
+#pedido-projeto.ws-project-request {
+    display: block;
+    grid-template-columns: none;
+    grid-template-areas: none;
+}
+#pedido-projeto.ws-project-request .ws-project-request__content {
+    width: 100%;
+    max-width: 650px;
+}
+#pedido-projeto.ws-project-request .ws-project-request__visual,
+#pedido-projeto.ws-project-request .ws-project-request__svg {
+    display: none !important;
+}
