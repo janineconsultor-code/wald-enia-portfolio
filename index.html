@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css?v=20261121-1">
-    <link rel="stylesheet" href="./palette-overrides.css?v=20261123-09">
+    <link rel="stylesheet" href="./palette-overrides.css?v=20261123-10">
 </head>
 
 <body>
@@ -49,13 +49,23 @@
 </header>
 
 <main>
-<section id="hero">
-        <div class="hero-content">
-            <p class="eyebrow">DESIGN GRÁFICO</p>
+<section id="hero" class="ws-hero">
+        <div class="ws-hero__visual" aria-hidden="true">
+            <svg class="ws-hero__svg" viewBox="0 0 500 500" role="presentation" focusable="false">
+                <path class="ws-hero__shape-burgundy"
+                    d="M 500 0 H 0 A 500 500 0 0 1 500 500 Z" />
+                <path class="ws-hero__shape-cream"
+                    d="M 0 500 H 500 A 500 500 0 0 0 0 0 Z" />
+                <circle class="ws-hero__shape-charcoal" cx="250" cy="250" r="90" />
+            </svg>
+        </div>
+
+        <div class="hero-content ws-hero__content">
+            <p class="eyebrow ws-hero__eyebrow">DESIGN GRÁFICO</p>
 
             <h1>Waldênia<br><span>Silva</span></h1>
 
-            <p class="hero-description"
+            <p class="hero-description ws-hero__description"
                 data-pt="Sou designer gráfica em formação e exploro formas de transformar ideias em soluções visuais claras, coerentes e intencionais."
                 data-en="I am a graphic design student exploring ways to turn ideas into clear, coherent and purposeful visual solutions.">
                 Sou designer gráfica em formação e exploro formas
@@ -63,18 +73,8 @@
                 coerentes e intencionais.
             </p>
 
-            <a href="#projetos" class="button"
+            <a href="#projetos" class="button ws-hero__button"
                 data-pt="Ver projetos" data-en="View projects">Ver projetos</a>
-        </div>
-
-        <div class="hero-composition" aria-hidden="true">
-            <svg class="hero-composition-svg" viewBox="0 0 500 500" role="presentation" focusable="false">
-                <path class="hero-shape-burgundy"
-                    d="M 500 0 L 0 0 A 500 500 0 0 1 500 500 Z" />
-                <path class="hero-shape-cream"
-                    d="M 0 500 L 500 500 A 500 500 0 0 0 0 0 Z" />
-                <circle class="hero-shape-charcoal" cx="250" cy="250" r="90" />
-            </svg>
         </div>
 
         <a href="#processo-criativo" class="hero-scroll"
