@@ -1930,3 +1930,156 @@ main section [class*="block-number"] {
         width: min(100%, 280px);
     }
 }
+
+/* PROCESSO + INSPIRAÇÕES — grelha tipográfica comum baseada na referência.
+   Regras limitadas às duas secções; conteúdo HTML preservado. */
+#processo-criativo,
+#inspiracoes.ws-inspirations {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #14213D !important;
+    background-image: none !important;
+    color: #E7E3DC;
+}
+
+#processo-criativo::before,
+#processo-criativo::after,
+#inspiracoes.ws-inspirations::before,
+#inspiracoes.ws-inspirations::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+#processo-criativo > .bauhaus-graphic,
+#inspiracoes.ws-inspirations > .bauhaus-graphic {
+    display: none !important;
+}
+
+#processo-criativo .process-header,
+#inspiracoes.ws-inspirations .ws-inspirations__heading {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+#processo-criativo .eyebrow,
+#processo-criativo .process-header h2,
+#processo-criativo .process-header h2 span,
+#processo-criativo .process-header .section-intro,
+#inspiracoes.ws-inspirations .ws-inspirations__index,
+#inspiracoes.ws-inspirations .eyebrow,
+#inspiracoes.ws-inspirations .ws-inspirations__heading h2,
+#inspiracoes.ws-inspirations .ws-inspirations__heading h2 span,
+#inspiracoes.ws-inspirations .ws-inspirations__heading .section-intro {
+    color: #E7E3DC !important;
+}
+
+#processo-criativo .process-header .section-intro,
+#inspiracoes.ws-inspirations .ws-inspirations__heading .section-intro {
+    max-width: 680px;
+    margin-top: 24px;
+    line-height: 1.7;
+}
+
+#processo-criativo .process-grid,
+#inspiracoes.ws-inspirations .ws-inspirations__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 42px 32px;
+    width: 100%;
+    max-width: var(--page-width);
+    margin: clamp(42px, 5vw, 64px) auto 0;
+}
+
+#processo-criativo .process-item,
+#inspiracoes.ws-inspirations .ws-inspiration-card {
+    display: block;
+    min-width: 0;
+    margin: 0;
+    padding: 20px 0 0;
+    border: 0;
+    border-top: 1px solid rgba(231, 227, 220, 0.42);
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+#processo-criativo .process-item h3,
+#inspiracoes.ws-inspirations .ws-inspiration-card__copy h3 {
+    margin: 0 0 10px;
+    color: #E7E3DC !important;
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+#processo-criativo .process-item p,
+#inspiracoes.ws-inspirations .ws-inspiration-card__copy p {
+    max-width: 440px;
+    margin: 0;
+    color: #E7E3DC !important;
+    font-size: 13px;
+    line-height: 1.65;
+    letter-spacing: .015em;
+    text-transform: none;
+}
+
+#processo-criativo .section-return,
+#inspiracoes.ws-inspirations .section-return {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 64px auto 0;
+}
+
+#processo-criativo .section-return .text-link,
+#inspiracoes.ws-inspirations .section-return .text-link {
+    color: #E7E3DC !important;
+}
+
+@media (max-width: 900px) {
+    #processo-criativo,
+    #inspiracoes.ws-inspirations {
+        padding: 112px var(--page-gutter);
+    }
+    #processo-criativo .process-grid,
+    #inspiracoes.ws-inspirations .ws-inspirations__grid {
+        gap: 36px 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    #processo-criativo,
+    #inspiracoes.ws-inspirations {
+        padding: 88px var(--page-gutter);
+    }
+    #processo-criativo .process-header .section-intro,
+    #inspiracoes.ws-inspirations .ws-inspirations__heading .section-intro {
+        margin-top: 20px;
+    }
+    #processo-criativo .process-grid,
+    #inspiracoes.ws-inspirations .ws-inspirations__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        margin-top: 34px;
+    }
+    #processo-criativo .process-item h3,
+    #inspiracoes.ws-inspirations .ws-inspiration-card__copy h3 {
+        font-size: 22px;
+    }
+    #processo-criativo .process-item p,
+    #inspiracoes.ws-inspirations .ws-inspiration-card__copy p {
+        font-size: 13px;
+    }
+    #processo-criativo .section-return,
+    #inspiracoes.ws-inspirations .section-return {
+        justify-content: flex-start;
+        margin-top: 44px;
+    }
+}
