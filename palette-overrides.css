@@ -1312,3 +1312,11 @@
         color: var(--color-navy);
     }
 }
+
+
+/* GARANTIA: ocultar qualquer numeração residual junto aos títulos das secções. */
+.section-number,
+.process-number {
+    display: none !important;
+    visibility: hidden !important;
+}
