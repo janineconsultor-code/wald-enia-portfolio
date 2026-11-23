@@ -1848,3 +1848,41 @@ main section [class*="block-number"] {
         font-size: 12px;
     }
 }
+
+
+/* INSPIRAÇÕES — refinamento isolado dos cinco módulos SVG. */
+#inspiracoes.ws-inspirations .ws-inspirations__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+}
+#inspiracoes.ws-inspirations .ws-inspiration-card__visual {
+    display: block;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #E7E3DC;
+}
+#inspiracoes.ws-inspirations .ws-inspiration-card__visual svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#inspiracoes.ws-inspirations .ws-inspiration-card__visual path,
+#inspiracoes.ws-inspirations .ws-inspiration-card__visual circle {
+    stroke: none;
+}
+@media (max-width: 900px) {
+    #inspiracoes.ws-inspirations .ws-inspirations__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    #inspiracoes.ws-inspirations .ws-inspirations__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 34px;
+    }
+    #inspiracoes.ws-inspirations .ws-inspiration-card {
+        width: min(100%, 430px);
+    }
+}
