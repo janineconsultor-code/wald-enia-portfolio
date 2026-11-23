@@ -2015,3 +2015,107 @@ main section [class*="block-number"] {
         width: min(100%, 280px);
     }
 }
+
+
+/* PROCESSO — configuração tipográfica alinhada com Inspirações; estilos exclusivos da secção. */
+#processo-criativo {
+    position: relative;
+    isolation: isolate;
+    padding: 140px var(--page-gutter);
+    background: #14213D;
+    color: #E7E3DC;
+}
+#processo-criativo::before,
+#processo-criativo::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+#processo-criativo .process-header {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+#processo-criativo .process-header .eyebrow,
+#processo-criativo .process-header h2,
+#processo-criativo .process-header .section-intro {
+    color: #E7E3DC;
+}
+#processo-criativo .process-header .section-intro {
+    max-width: 680px;
+    margin-top: 24px;
+    line-height: 1.7;
+}
+#processo-criativo .process-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 42px 32px;
+    width: 100%;
+    max-width: var(--page-width);
+    margin: clamp(42px, 5vw, 64px) auto 0;
+}
+#processo-criativo .process-item {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#processo-criativo .process-item h3 {
+    margin: 0 0 10px;
+    color: #E7E3DC;
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 500;
+    line-height: 1.15;
+}
+#processo-criativo .process-item p {
+    max-width: 440px;
+    margin: 0;
+    color: #E7E3DC;
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: .025em;
+}
+#processo-criativo .section-return {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 64px auto 0;
+}
+#processo-criativo .section-return .text-link {
+    color: #E7E3DC;
+}
+@media (max-width: 900px) {
+    #processo-criativo {
+        padding: 112px var(--page-gutter);
+    }
+    #processo-criativo .process-grid {
+        gap: 36px 24px;
+    }
+}
+@media (max-width: 600px) {
+    #processo-criativo {
+        padding: 88px var(--page-gutter);
+    }
+    #processo-criativo .process-header .section-intro {
+        margin-top: 20px;
+    }
+    #processo-criativo .process-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        margin-top: 34px;
+    }
+    #processo-criativo .process-item h3 {
+        font-size: 22px;
+    }
+    #processo-criativo .process-item p {
+        font-size: 12px;
+    }
+    #processo-criativo .section-return {
+        justify-content: flex-start;
+        margin-top: 42px;
+    }
+}
