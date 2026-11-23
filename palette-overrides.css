@@ -1517,3 +1517,49 @@ main section [class*="block-number"] {
         width: min(82vw, 300px);
     }
 }
+
+
+/* HERO MOBILE — grafismo compacto antes do conteúdo, nunca depois do CTA. */
+@media (max-width: 700px) {
+    #hero {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        row-gap: 18px;
+        align-content: center;
+        padding-top: 125px;
+        padding-bottom: 105px;
+    }
+
+    #hero .hero-composition {
+        grid-column: 1;
+        grid-row: 1;
+        width: clamp(138px, 40vw, 210px);
+        max-width: 48%;
+        justify-self: end;
+        align-self: start;
+        margin: 0 0 0 auto;
+    }
+
+    #hero .hero-content {
+        grid-column: 1;
+        grid-row: 2;
+        max-width: 100%;
+    }
+
+    #hero .hero-scroll {
+        right: 7vw;
+        bottom: 28px;
+    }
+}
+
+@media (max-width: 380px) {
+    #hero {
+        row-gap: 14px;
+        padding-top: 112px;
+    }
+
+    #hero .hero-composition {
+        width: clamp(126px, 38vw, 155px);
+        max-width: 44%;
+    }
+}
