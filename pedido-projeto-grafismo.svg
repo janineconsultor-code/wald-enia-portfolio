@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <defs>
+    <clipPath id="burgundy-mass">
+      <path d="M78 35 448 82 472 354 292 470 48 382 20 166Z"/>
+    </clipPath>
+    <pattern id="diagonal-grid" width="34" height="34" patternUnits="userSpaceOnUse" patternTransform="rotate(42)">
+      <path d="M0 0H5V34H0Z M0 0V5H34V0Z" fill="#E7E3DC" opacity=".82"/>
+    </pattern>
+  </defs>
+  <path d="M78 35 448 82 472 354 292 470 48 382 20 166Z" fill="#7B1F2C"/>
+  <g clip-path="url(#burgundy-mass)">
+    <rect x="-50" y="-50" width="600" height="600" fill="url(#diagonal-grid)"/>
+  </g>
+  <circle cx="420" cy="48" r="9" fill="#434345"/>
+  <circle cx="35" cy="430" r="6" fill="#434345"/>
+  <circle cx="390" cy="420" r="13" fill="#E7E3DC"/>
+  <rect x="58" y="76" width="13" height="13" transform="rotate(18 64.5 82.5)" fill="#E7E3DC"/>
+  <rect x="440" y="240" width="10" height="10" transform="rotate(45 445 245)" fill="#434345"/>
+  <circle cx="116" cy="450" r="4" fill="#7B1F2C"/>
+</svg>
