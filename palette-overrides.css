@@ -2131,3 +2131,48 @@ main > section#pedido-projeto::after {
     display: none !important;
     visibility: hidden !important;
 }
+
+/* FIX DEFINITIVO — PEDIDO DE PROJETO sem painel ou bloco vermelho decorativo. */
+#pedido-projeto.ws-project-request {
+    background: var(--color-stone, #E7E3DC) !important;
+    background-image: none !important;
+}
+
+#pedido-projeto.ws-project-request::before,
+#pedido-projeto.ws-project-request::after,
+#pedido-projeto.ws-project-request *::before,
+#pedido-projeto.ws-project-request *::after {
+    content: none !important;
+    display: none !important;
+    visibility: hidden !important;
+    background: none !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-mask: none !important;
+    mask: none !important;
+}
+
+#pedido-projeto.ws-project-request > .bauhaus-graphic,
+#pedido-projeto.ws-project-request .bauhaus-graphic,
+#pedido-projeto.ws-project-request .bauhaus-graphic--pedido,
+#pedido-projeto.ws-project-request .ws-project-request__visual,
+#pedido-projeto.ws-project-request .ws-project-request__svg {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+#pedido-projeto.ws-project-request > :not(.ws-project-request__content),
+#pedido-projeto.ws-project-request .ws-project-request__content,
+#pedido-projeto.ws-project-request .ws-project-request__description {
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+#pedido-projeto.ws-project-request .ws-project-request__button,
+#pedido-projeto.ws-project-request .ws-project-request__button * {
+    background-color: var(--color-burgundy, #7A1F2B) !important;
+    color: var(--color-stone, #E7E3DC) !important;
+}
