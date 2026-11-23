@@ -1607,3 +1607,134 @@ main section [class*="block-number"] {
         max-width: 43% !important;
     }
 }
+
+
+/* TESTE VISUAL — HERO APENAS | Waldênia Silva */
+#hero.ws-hero {
+    --ws-stone: #E7E3DC;
+    --ws-burgundy: #7B1F2C;
+    --ws-charcoal: #434345;
+    --ws-visual-size: clamp(300px, 38vw, 510px);
+
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    grid-template-areas: "content visual";
+    align-items: center;
+    gap: clamp(32px, 6vw, 100px);
+    min-height: 100svh;
+    padding: clamp(110px, 13vh, 150px) clamp(24px, 7vw, 110px);
+    overflow: hidden;
+    background: var(--ws-stone);
+    color: #14213D;
+}
+
+#hero.ws-hero .ws-hero__content {
+    grid-area: content;
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+}
+
+#hero.ws-hero .ws-hero__visual {
+    grid-area: visual;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: var(--ws-visual-size);
+    aspect-ratio: 1 / 1;
+    justify-self: end;
+}
+
+#hero.ws-hero .ws-hero__svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#hero.ws-hero .ws-hero__shape-burgundy { fill: var(--ws-burgundy); }
+#hero.ws-hero .ws-hero__shape-cream { fill: var(--ws-stone); }
+#hero.ws-hero .ws-hero__shape-charcoal { fill: var(--ws-charcoal); }
+
+#hero.ws-hero .ws-hero__eyebrow {
+    color: var(--ws-burgundy);
+}
+
+#hero.ws-hero .ws-hero__description {
+    max-width: 480px;
+}
+
+#hero.ws-hero .ws-hero__button {
+    display: inline-flex;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    #hero.ws-hero {
+        grid-template-columns: minmax(0, 1fr) minmax(230px, 0.8fr);
+        gap: 28px;
+        padding-inline: 5vw;
+    }
+
+    #hero.ws-hero h1 {
+        font-size: clamp(54px, 8vw, 78px);
+    }
+}
+
+@media (max-width: 700px) {
+    #hero.ws-hero {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "visual"
+            "content";
+        align-content: center;
+        align-items: start;
+        gap: 20px;
+        min-height: 100svh;
+        padding: 105px 7vw 90px;
+    }
+
+    #hero.ws-hero .ws-hero__visual {
+        grid-area: visual;
+        width: clamp(145px, 43vw, 220px);
+        max-width: 48%;
+        justify-self: end;
+        margin: 0 0 0 auto;
+    }
+
+    #hero.ws-hero .ws-hero__content {
+        grid-area: content;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #hero.ws-hero h1 {
+        font-size: clamp(52px, 12vw, 76px);
+        line-height: 0.98;
+    }
+
+    #hero.ws-hero .ws-hero__description {
+        margin-top: 22px;
+    }
+}
+
+@media (max-width: 380px) {
+    #hero.ws-hero {
+        gap: 14px;
+        padding-inline: 6vw;
+    }
+
+    #hero.ws-hero .ws-hero__visual {
+        width: clamp(125px, 39vw, 150px);
+        max-width: 45%;
+    }
+
+    #hero.ws-hero h1 {
+        font-size: clamp(46px, 12vw, 58px);
+    }
+}
