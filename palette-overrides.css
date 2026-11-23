@@ -1563,3 +1563,47 @@ main section [class*="block-number"] {
         max-width: 44%;
     }
 }
+
+
+/* HERO MOBILE — ordem explícita e independente da cache anterior. */
+@media screen and (max-width: 700px) {
+    main > section#hero {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-areas:
+            "visual"
+            "texto" !important;
+        align-items: start;
+    }
+
+    main > section#hero > .hero-composition {
+        grid-area: visual !important;
+        position: relative;
+        width: clamp(132px, 38vw, 190px) !important;
+        max-width: 46% !important;
+        justify-self: end !important;
+        align-self: start !important;
+        margin: 0 0 0 auto !important;
+        z-index: 1;
+    }
+
+    main > section#hero > .hero-content {
+        grid-area: texto !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: 100%;
+        max-width: none;
+        z-index: 2;
+    }
+
+    main > section#hero > .hero-scroll {
+        z-index: 3;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    main > section#hero > .hero-composition {
+        width: clamp(120px, 36vw, 145px) !important;
+        max-width: 43% !important;
+    }
+}
