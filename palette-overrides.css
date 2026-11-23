@@ -2176,3 +2176,16 @@ main > section#pedido-projeto::after {
     background-color: var(--color-burgundy, #7A1F2B) !important;
     color: var(--color-stone, #E7E3DC) !important;
 }
+
+/* OVERRIDE FINAL — remove apenas os módulos geométricos do Pedido de Projeto. */
+#pedido-projeto.ws-project-request::before,
+#pedido-projeto.ws-project-request::after {
+    content: none !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    background: none !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
