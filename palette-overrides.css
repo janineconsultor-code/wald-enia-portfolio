@@ -1384,3 +1384,34 @@ main > section#contacto::after {
     background-image: none !important;
     box-shadow: none !important;
 }
+
+
+/* RESET DEFINITIVO DOS GRAFISMOS DECORATIVOS — todas as secções e ecrãs. */
+main section::before,
+main section::after,
+main section *::before,
+main section *::after {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+}
+
+main section,
+main section * {
+    background-image: none !important;
+}
+
+main section .bauhaus-graphic,
+main section [class*="graphic"],
+main section [class*="grafismo"],
+main section [class*="ornament"],
+main section [class*="decoration"],
+main section [class*="section-number"],
+main section [class*="process-number"],
+main section [class*="block-number"] {
+    display: none !important;
+    visibility: hidden !important;
+}
