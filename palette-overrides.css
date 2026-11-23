@@ -2189,3 +2189,156 @@ main > section#pedido-projeto::after {
     border: 0 !important;
     box-shadow: none !important;
 }
+
+
+/* CONTACTOS — composição geométrica modular na paleta da identidade visual. */
+#contacto.contacto-dados-only {
+    --contact-stone: #E7E3DC;
+    --contact-navy: #14213D;
+    --contact-burgundy: #7A1F2B;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+    column-gap: clamp(40px, 8vw, 120px);
+    overflow: hidden;
+    padding: clamp(88px, 10vw, 140px) var(--page-gutter);
+    background: var(--contact-navy) !important;
+    color: var(--contact-stone) !important;
+}
+
+#contacto.contacto-dados-only::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 12%;
+    left: max(-100px, -7vw);
+    width: clamp(210px, 27vw, 360px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(231, 227, 220, 0.32);
+    border-radius: 50%;
+    background:
+        linear-gradient(90deg, transparent 49.7%, rgba(231, 227, 220, 0.24) 49.7% 50.3%, transparent 50.3%),
+        linear-gradient(0deg, transparent 49.7%, rgba(231, 227, 220, 0.24) 49.7% 50.3%, transparent 50.3%);
+    pointer-events: none;
+}
+
+#contacto.contacto-dados-only::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: calc(12% + clamp(105px, 13.5vw, 180px));
+    left: clamp(8px, 6vw, 82px);
+    width: clamp(70px, 9vw, 120px);
+    height: clamp(70px, 9vw, 120px);
+    background: var(--contact-burgundy);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+#contacto .contacto-heading {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+}
+
+#contacto .contacto-heading .eyebrow {
+    margin: 0;
+    color: var(--contact-stone) !important;
+    letter-spacing: 0.18em;
+}
+
+#contacto .contacto-dados {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 clamp(24px, 4vw, 58px);
+    min-width: 0;
+}
+
+#contacto .contacto-item {
+    min-width: 0;
+    padding: 18px 0 20px;
+    border-top: 1px solid rgba(231, 227, 220, 0.38);
+}
+
+#contacto .contacto-item > span {
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(231, 227, 220, 0.68) !important;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+#contacto .contacto-item a,
+#contacto .contacto-item p {
+    display: inline-block;
+    max-width: 100%;
+    margin: 0;
+    color: var(--contact-stone) !important;
+    font-size: clamp(14px, 1.25vw, 17px);
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+#contacto .contacto-item a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 5px;
+    transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+#contacto .contacto-item a:hover,
+#contacto .contacto-item a:focus-visible {
+    color: var(--contact-stone) !important;
+    text-decoration-color: var(--contact-burgundy);
+}
+
+#contacto .contacto-item a:focus-visible {
+    outline: 2px solid var(--contact-stone);
+    outline-offset: 5px;
+}
+
+@media (max-width: 700px) {
+    #contacto.contacto-dados-only {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 38px;
+        padding-top: 88px;
+        padding-bottom: 88px;
+    }
+
+    #contacto.contacto-dados-only::before {
+        top: 5%;
+        left: auto;
+        right: -105px;
+        width: 205px;
+        opacity: 0.75;
+    }
+
+    #contacto.contacto-dados-only::after {
+        top: 5%;
+        left: auto;
+        right: 42px;
+        width: 58px;
+        height: 58px;
+    }
+
+    #contacto .contacto-dados {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    #contacto .contacto-item {
+        padding: 16px 0 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #contacto .contacto-item a {
+        transition: none;
+    }
+}
