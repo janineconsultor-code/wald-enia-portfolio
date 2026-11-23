@@ -1886,3 +1886,96 @@ main section [class*="block-number"] {
         width: min(100%, 430px);
     }
 }
+
+
+/* PEDIDO DE PROJETO — composição isolada para avaliação. */
+#pedido-projeto.ws-project-request {
+    --wsp-burgundy: #7B1F2C;
+    --wsp-cream: #E7E3DC;
+    --wsp-charcoal: #434345;
+    --wsp-graphic-width: clamp(280px, 38vw, 510px);
+    --wsp-graphic-x: 0px;
+    --wsp-graphic-y: 0px;
+    --wsp-graphic-rotation: -4deg;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+    grid-template-areas: "content visual";
+    align-items: center;
+    gap: clamp(35px, 6vw, 100px);
+    overflow: hidden;
+}
+#pedido-projeto.ws-project-request .ws-project-request__content {
+    grid-area: content;
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+#pedido-projeto.ws-project-request .ws-project-request__description {
+    max-width: 440px;
+    margin-top: 26px;
+    line-height: 1.7;
+}
+#pedido-projeto.ws-project-request .ws-project-request__button {
+    position: relative;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 30px;
+    background: var(--wsp-burgundy);
+    color: var(--wsp-cream);
+}
+#pedido-projeto.ws-project-request .ws-project-request__visual {
+    grid-area: visual;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: var(--wsp-graphic-width);
+    aspect-ratio: 1 / 1;
+    justify-self: end;
+    align-self: center;
+    transform: translate(var(--wsp-graphic-x), var(--wsp-graphic-y)) rotate(var(--wsp-graphic-rotation));
+}
+#pedido-projeto.ws-project-request .ws-project-request__svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+@media (max-width: 900px) {
+    #pedido-projeto.ws-project-request {
+        grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr);
+        gap: 28px;
+    }
+    #pedido-projeto.ws-project-request .ws-project-request__visual {
+        --wsp-graphic-width: 360px;
+    }
+}
+@media (max-width: 700px) {
+    #pedido-projeto.ws-project-request {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "content" "visual";
+        gap: 38px;
+        align-items: start;
+    }
+    #pedido-projeto.ws-project-request .ws-project-request__content,
+    #pedido-projeto.ws-project-request .ws-project-request__description {
+        width: 100%;
+        max-width: 100%;
+    }
+    #pedido-projeto.ws-project-request .ws-project-request__visual {
+        width: min(78vw, 330px);
+        max-width: 100%;
+        justify-self: end;
+        margin: 0;
+    }
+}
+@media (max-width: 380px) {
+    #pedido-projeto.ws-project-request { gap: 30px; }
+    #pedido-projeto.ws-project-request .ws-project-request__visual {
+        width: min(72vw, 270px);
+    }
+}
