@@ -2098,3 +2098,36 @@ main section [class*="block-number"] {
 #pedido-projeto.ws-project-request .ws-project-request__svg {
     display: none !important;
 }
+
+/* PEDIDO DE PROJETO — remoção definitiva de qualquer grafismo residual. */
+#pedido-projeto::before,
+#pedido-projeto::after,
+main > section#pedido-projeto::before,
+main > section#pedido-projeto::after {
+    content: none !important;
+    display: none !important;
+    visibility: hidden !important;
+    background: none !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+}
+
+#pedido-projeto,
+#pedido-projeto * {
+    background-image: none !important;
+}
+
+#pedido-projeto .bauhaus-graphic,
+#pedido-projeto [class*="graphic"],
+#pedido-projeto [class*="grafismo"],
+#pedido-projeto [class*="ornament"],
+#pedido-projeto [class*="decoration"],
+#pedido-projeto svg,
+#pedido-projeto img:not(.profile-image) {
+    display: none !important;
+    visibility: hidden !important;
+}
