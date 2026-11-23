@@ -1740,154 +1740,6 @@ main section [class*="block-number"] {
 }
 
 
-/* INSPIRAÇÕES — cartões modulares com SVG vectorial.
-   Regras limitadas a #inspiracoes; não alteram outras secções. */
-#inspiracoes.ws-inspirations {
-    --wsi-burgundy: #7B1F2C;
-    --wsi-stone: #E7E3DC;
-    --wsi-charcoal: #434345;
-    position: relative;
-    isolation: isolate;
-}
-#inspiracoes.ws-inspirations .ws-inspirations__heading {
-    position: relative;
-    max-width: 760px;
-}
-#inspiracoes.ws-inspirations .ws-inspirations__index {
-    display: inline-block;
-    margin: 0 0 22px;
-    color: var(--wsi-burgundy);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .14em;
-    line-height: 1;
-}
-#inspiracoes.ws-inspirations .ws-inspirations__grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(22px, 3vw, 46px) clamp(16px, 2.4vw, 34px);
-    margin-top: clamp(42px, 6vw, 78px);
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card {
-    display: flex;
-    min-width: 0;
-    flex-direction: column;
-    gap: 18px;
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card__visual {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: var(--wsi-stone);
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card__visual svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card__copy h3 {
-    margin: 0 0 8px;
-    color: var(--wsi-charcoal);
-    font-size: clamp(19px, 2vw, 25px);
-    font-weight: 500;
-    line-height: 1.15;
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card__copy p {
-    margin: 0;
-    color: var(--wsi-charcoal);
-    font-size: 11px;
-    line-height: 1.55;
-    letter-spacing: .035em;
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card:nth-child(2) {
-    padding-top: clamp(18px, 3.2vw, 46px);
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card:nth-child(3) {
-    padding-top: clamp(36px, 5.5vw, 78px);
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card:nth-child(4) {
-    margin-top: clamp(-18px, -1.5vw, -8px);
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card:nth-child(5) {
-    padding-top: clamp(16px, 2.5vw, 34px);
-}
-@media (max-width: 900px) {
-    #inspiracoes.ws-inspirations .ws-inspirations__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px 22px;
-    }
-    #inspiracoes.ws-inspirations .ws-inspiration-card:nth-child(n) {
-        padding-top: 0;
-        margin-top: 0;
-    }
-    #inspiracoes.ws-inspirations .ws-inspiration-card:nth-child(2n) {
-        padding-top: 26px;
-    }
-}
-@media (max-width: 600px) {
-    #inspiracoes.ws-inspirations .ws-inspirations__grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 34px;
-        margin-top: 38px;
-    }
-    #inspiracoes.ws-inspirations .ws-inspiration-card:nth-child(n) {
-        padding-top: 0;
-        margin-top: 0;
-    }
-    #inspiracoes.ws-inspirations .ws-inspiration-card {
-        width: min(100%, 430px);
-        gap: 14px;
-    }
-    #inspiracoes.ws-inspirations .ws-inspiration-card__visual {
-        width: 100%;
-    }
-    #inspiracoes.ws-inspirations .ws-inspiration-card__copy h3 {
-        font-size: 22px;
-    }
-    #inspiracoes.ws-inspirations .ws-inspiration-card__copy p {
-        font-size: 12px;
-    }
-}
-
-
-/* INSPIRAÇÕES — refinamento isolado dos cinco módulos SVG. */
-#inspiracoes.ws-inspirations .ws-inspirations__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: start;
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card__visual {
-    display: block;
-    position: relative;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #E7E3DC;
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card__visual svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-#inspiracoes.ws-inspirations .ws-inspiration-card__visual path,
-#inspiracoes.ws-inspirations .ws-inspiration-card__visual circle {
-    stroke: none;
-}
-@media (max-width: 900px) {
-    #inspiracoes.ws-inspirations .ws-inspirations__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-@media (max-width: 600px) {
-    #inspiracoes.ws-inspirations .ws-inspirations__grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 34px;
-    }
-    #inspiracoes.ws-inspirations .ws-inspiration-card {
-        width: min(100%, 430px);
-    }
-}
-
-
 /* PEDIDO DE PROJETO — composição isolada para avaliação. */
 #pedido-projeto.ws-project-request {
     --wsp-burgundy: #7B1F2C;
@@ -1977,5 +1829,83 @@ main section [class*="block-number"] {
     #pedido-projeto.ws-project-request { gap: 30px; }
     #pedido-projeto.ws-project-request .ws-project-request__visual {
         width: min(72vw, 270px);
+    }
+}
+
+
+/* INSPIRAÇÕES — cartões tipográficos sem grafismos. Regras exclusivas da secção. */
+#inspiracoes.ws-inspirations {
+    position: relative;
+    isolation: isolate;
+}
+#inspiracoes.ws-inspirations::before,
+#inspiracoes.ws-inspirations::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+#inspiracoes.ws-inspirations .ws-inspirations__heading {
+    position: relative;
+    max-width: 760px;
+}
+#inspiracoes.ws-inspirations .ws-inspirations__index {
+    display: inline-block;
+    margin: 0 0 22px;
+    color: var(--color-stone, #E7E3DC);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    line-height: 1;
+}
+#inspiracoes.ws-inspirations .ws-inspirations__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 42px 32px;
+    margin-top: clamp(38px, 5vw, 64px);
+}
+#inspiracoes.ws-inspirations .ws-inspiration-card {
+    display: block;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+#inspiracoes.ws-inspirations .ws-inspiration-card__copy {
+    display: block;
+    min-width: 0;
+}
+#inspiracoes.ws-inspirations .ws-inspiration-card__copy h3 {
+    margin: 0 0 10px;
+    color: var(--color-stone, #E7E3DC);
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 500;
+    line-height: 1.15;
+}
+#inspiracoes.ws-inspirations .ws-inspiration-card__copy p {
+    margin: 0;
+    color: var(--color-stone, #E7E3DC);
+    font-size: 12px;
+    line-height: 1.55;
+    letter-spacing: .025em;
+}
+@media (max-width: 900px) {
+    #inspiracoes.ws-inspirations .ws-inspirations__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 34px 24px;
+    }
+}
+@media (max-width: 600px) {
+    #inspiracoes.ws-inspirations .ws-inspirations__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        margin-top: 34px;
+    }
+    #inspiracoes.ws-inspirations .ws-inspiration-card__copy h3 {
+        font-size: 22px;
+    }
+    #inspiracoes.ws-inspirations .ws-inspiration-card__copy p {
+        font-size: 12px;
     }
 }
