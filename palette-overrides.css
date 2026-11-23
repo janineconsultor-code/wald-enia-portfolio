@@ -1347,3 +1347,40 @@
     content: none !important;
     display: none !important;
 }
+
+
+/* LIMPEZA GLOBAL — retirar grafismos decorativos e numerações dos blocos.
+   Mantêm-se fotografias e imagens que fazem parte dos projectos do portefólio. */
+.bauhaus-graphic,
+main section .bauhaus-graphic,
+main section [class*="section-number"],
+main section [class*="process-number"],
+main section [class*="block-number"],
+main section [class*="section-index"],
+main section [data-section-number],
+main section [data-block-number] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+main > section::before,
+main > section::after,
+main > section#hero::before,
+main > section#hero::after,
+main > section#sobre::before,
+main > section#sobre::after,
+main > section#processo-criativo::before,
+main > section#processo-criativo::after,
+main > section#inspiracoes::before,
+main > section#inspiracoes::after,
+main > section#projetos::before,
+main > section#projetos::after,
+main > section#pedido-projeto::before,
+main > section#pedido-projeto::after,
+main > section#contacto::before,
+main > section#contacto::after {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
