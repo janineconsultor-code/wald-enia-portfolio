@@ -1909,3 +1909,10 @@ main section [class*="block-number"] {
         font-size: 12px;
     }
 }
+
+/* Garantia de cartões exclusivamente tipográficos: sem SVGs, imagens ou módulos visuais. */
+#inspiracoes.ws-inspirations .ws-inspiration-card svg,
+#inspiracoes.ws-inspirations .ws-inspiration-card img,
+#inspiracoes.ws-inspirations .ws-inspiration-card__visual {
+    display: none !important;
+}
