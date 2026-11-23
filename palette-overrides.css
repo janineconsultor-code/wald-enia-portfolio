@@ -1288,29 +1288,27 @@
     }
 }
 
-/* MENU HAMBÚRGUER — texto em cinza-pedra sobre fundo azul-noite. */
-@media (max-width: 900px) {
+/* AJUSTES EXCLUSIVOS PARA SMARTPHONE. */
+@media (max-width: 700px) {
+    /* Menu hambúrguer: texto em cinza-pedra sobre fundo azul-noite. */
     .main-nav,
     .main-nav a,
     .main-nav a:link,
-    .main-nav a:visited {
-        color: var(--color-stone) !important;
-    }
-
+    .main-nav a:visited,
     .main-nav a:hover,
     .main-nav a:focus-visible,
     .main-nav a:active {
         color: var(--color-stone) !important;
     }
-}
 
-/* SELECÇÃO DE TEXTO — realce em cinza-pedra com texto azul-noite. */
-::selection {
-    background: var(--color-stone);
-    color: var(--color-navy);
-}
+    /* Selecção de texto: realce cinza-pedra e texto azul-noite. */
+    ::selection {
+        background: var(--color-stone);
+        color: var(--color-navy);
+    }
 
-::-moz-selection {
-    background: var(--color-stone);
-    color: var(--color-navy);
+    ::-moz-selection {
+        background: var(--color-stone);
+        color: var(--color-navy);
+    }
 }
