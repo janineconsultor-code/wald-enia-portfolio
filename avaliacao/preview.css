@@ -170,3 +170,32 @@ body.project-modal-open{overflow:hidden}
 body.prebriefing-open{overflow:hidden}
 @media(max-width:820px){.hero-profile{grid-template-columns:minmax(100px,.6fr) minmax(0,1.4fr)}#contacto.contacto{grid-template-columns:1fr}#contacto .contacto-dados{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.hero-profile{grid-template-columns:1fr}.hero-profile-photo{max-width:220px}.prebriefing .form-grid{grid-template-columns:1fr}.prebriefing .form-field-full{grid-column:auto}#contacto .contacto-dados{grid-template-columns:1fr}}
+
+/* Navegação sanduíche da versão de avaliação */
+.sticky-navbar{z-index:1100}
+.nav-container{position:relative}
+.menu-toggle{width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer}
+.menu-toggle span{display:block;width:19px;height:2px;background:currentColor;transition:transform .2s,opacity .2s}
+.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(7px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-7px) rotate(-45deg)}
+.nav-links{position:absolute;top:calc(100% + 14px);right:0;z-index:1101;display:flex;flex-direction:column;gap:0;min-width:230px;padding:10px;background:var(--bg-cream);border:1px solid var(--border);box-shadow:0 16px 40px rgba(20,33,61,.16)}
+.nav-links[hidden]{display:none!important}
+.nav-links a{display:block;padding:12px 14px;text-decoration:none;color:var(--text);border-bottom:1px solid var(--border);font-size:.92rem}
+.nav-links a:last-child{border-bottom:0}
+.nav-links a:hover,.nav-links a:focus-visible{background:var(--bg-surface);color:var(--burgundy)}
+/* Contactos completos e visíveis na página de avaliação */
+.contact-details{padding:clamp(58px,8vw,90px) 0;background:var(--bg-surface);border-top:1px solid var(--border)}
+.contact-details-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:40px;align-items:start}
+.contact-details-heading h2{font:600 clamp(1.8rem,3vw,2.5rem)/1.15 var(--serif);max-width:12ch}
+.contact-details-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 32px}
+.contact-detail{display:flex;flex-direction:column;gap:7px;min-width:0}
+.contact-detail>span{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;font-weight:650;color:var(--burgundy)}
+.contact-detail a,.contact-detail p{font-size:.92rem;color:var(--text);overflow-wrap:anywhere}
+.contact-detail a{text-decoration:none}
+.contact-detail a:hover{text-decoration:underline;color:var(--burgundy)}
+/* O bloco inicial é editorial e pessoal, sem imagem de capa de projecto */
+.hero-grid{grid-template-columns:1fr 1fr}
+.hero-profile{width:100%;max-width:590px}
+.hero-profile-photo{max-width:220px}
+@media(max-width:760px){.contact-details-grid{grid-template-columns:1fr}.contact-details-list{grid-template-columns:1fr}.hero-grid{grid-template-columns:1fr}.hero-profile{max-width:100%}}
