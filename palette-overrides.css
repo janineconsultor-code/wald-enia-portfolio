@@ -2566,3 +2566,28 @@ main > section#pedido-projeto::after {
 .feedback-published[hidden]{display:none!important}
 .feedback-published-list{display:grid;gap:16px}
 @media(max-width:760px){.feedback-layout{grid-template-columns:1fr}.feedback-fields{grid-template-columns:1fr}.feedback-field-full{grid-column:auto}}
+
+
+/* HERO — versão tipográfica, sem grafismo lateral. */
+#hero.ws-hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "content";
+}
+#hero.ws-hero .ws-hero__content {
+    grid-area: content;
+    width: 100%;
+    max-width: 760px;
+}
+#hero.ws-hero .ws-hero__visual {
+    display: none !important;
+}
+@media (max-width: 700px) {
+    #hero.ws-hero {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "content";
+        gap: 0;
+    }
+    #hero.ws-hero .ws-hero__content {
+        grid-area: content;
+    }
+}
