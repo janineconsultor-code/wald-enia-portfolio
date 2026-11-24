@@ -2629,3 +2629,11 @@ main > section#pedido-projeto::after {
         opacity: 0.22 !important;
     }
 }
+
+
+/* CONTACTOS — manter a secção sem grafismos decorativos. */
+#contacto::before,
+#contacto::after {
+    content: none !important;
+    display: none !important;
+}
