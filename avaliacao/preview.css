@@ -66,3 +66,16 @@ a{color:inherit}
 .feedback-fields input,.feedback-fields textarea{width:100%;font:inherit;color:var(--text);background:var(--bg-surface);border:1px solid rgba(67,67,69,.35);border-radius:2px;padding:12px;outline-offset:3px}
 .feedback-fields input:focus,.feedback-fields textarea:focus{outline:2px solid var(--burgundy);border-color:var(--burgundy)}
 .feedback-fields textarea{resize:vertical;min-height:130px}
+
+/* Sobre mim: secção integrada na grelha editorial da nova pré-visualização */
+.about-section{padding:clamp(64px,8vw,100px) 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr);gap:clamp(36px,7vw,92px);align-items:center}
+.about-portrait{max-width:390px}
+.about-portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 35%;background:var(--bg-surface)}
+.about-portrait>p{padding-top:13px;font-size:.9rem;font-weight:600;letter-spacing:.01em}
+.about-portrait>p span{display:block;color:var(--muted);font-size:.78rem;font-weight:400}
+.about-copy{max-width:690px}
+.about-copy .eyebrow{margin-bottom:15px}
+.about-copy h2{font:600 clamp(2rem,4vw,3.25rem)/1.12 var(--serif);max-width:13ch;margin-bottom:24px}
+.about-copy>p{max-width:65ch;color:var(--muted);margin:0 0 16px}
+@media(max-width:700px){.about-grid{grid-template-columns:1fr;gap:30px}.about-portrait{max-width:280px}.about-copy h2{max-width:16ch}}
