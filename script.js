@@ -191,6 +191,13 @@ function hideBriefing() {
     }
 }
 
+if (briefingModal) {
+    // Estado inicial determinístico: o questionário nunca aparece ao carregar a landing page.
+    briefingModal.classList.remove("is-open");
+    briefingModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("prebriefing-open");
+}
+
 if (openBriefing && briefingModal && closeBriefingButton) {
     openBriefing.addEventListener("click", showBriefing);
     closeBriefingButton.addEventListener("click", hideBriefing);
