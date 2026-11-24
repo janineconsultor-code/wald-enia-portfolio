@@ -16,10 +16,17 @@
     <a href="#inicio" class="brand-logo" aria-label="Waldênia Silva, início">
       <span class="brand-mark" aria-hidden="true">W</span><span class="brand-name">Waldênia Silva</span>
     </a>
-    <nav class="nav-links" aria-label="Navegação principal">
-      <a href="#sobre">Sobre mim</a><a href="#projetos">Projectos</a><a href="#feedback">Feedback</a><a href="#pedido-projeto">Pedir projecto</a><a href="#contacto">Contactos</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="evaluation-navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="evaluation-navigation" aria-label="Navegação principal" hidden>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#projetos">Projectos</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#pedido-projeto">Pedir projecto</a>
+      <a href="#contacto">Contactos</a>
     </nav>
-    <a href="https://www.behance.net/janineferreira5" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Behance</a>
   </div>
 </header>
 <main>
@@ -356,51 +363,21 @@
         </div>
 
     </section>
-<section id="contacto" class="contacto contacto-dados-only">
-        <div class="contacto-grafismo" aria-hidden="true">
-            <svg viewBox="0 0 420 360" role="presentation" focusable="false">
-                <circle cx="250" cy="160" r="132" fill="none" stroke="#E7E3DC" stroke-width="1.5" opacity=".72"/>
-                <circle cx="250" cy="160" r="92" fill="none" stroke="#E7E3DC" stroke-width="1" opacity=".35"/>
-                <path d="M118 160H382M250 28V292" fill="none" stroke="#E7E3DC" stroke-width="1" opacity=".42"/>
-                <path d="M250 28A132 132 0 0 1 382 160H250Z" fill="#7A1F2B"/>
-                <rect x="28" y="250" width="84" height="84" fill="#E7E3DC"/>
-                <rect x="49" y="271" width="42" height="42" fill="#14213D"/>
-                <circle cx="250" cy="160" r="12" fill="#E7E3DC"/>
-                <path d="M250 160L382 160" stroke="#14213D" stroke-width="3"/>
-            </svg>
-        </div>
-        <div class="contacto-heading"><p class="eyebrow" data-pt="CONTACTOS" data-en="CONTACTS">CONTACTOS</p></div>
-        <div class="contacto-dados">
-            <div class="contacto-item">
-                <span data-pt="E-mail" data-en="Email">E-mail</span>
-                <a href="mailto:janine.consultor@outlook.pt">janine.consultor@outlook.pt</a>
-            </div>
-
-            <div class="contacto-item">
-                <span>WhatsApp</span>
-                <a href="https://wa.me/351925431560" target="_blank" rel="noopener noreferrer">+351 925 431 560</a>
-            </div>
-
-            <div class="contacto-item">
-                <span>LinkedIn</span>
-                <a href="https://www.linkedin.com/in/wald%C3%AAnia-janine-ferreira-silva-a0419a47/"
-                    target="_blank" rel="noopener noreferrer">Waldênia Janine Ferreira Silva</a>
-            </div>
-
-            <div class="contacto-item">
-                <span>Behance</span>
-                <a href="https://www.behance.net/janineferreira5"
-                    target="_blank" rel="noopener noreferrer"
-                    data-pt="Ver portefólio no Behance ↗"
-                    data-en="View portfolio on Behance ↗">Ver portefólio no Behance ↗</a>
-            </div>
-
-            <div class="contacto-item">
-                <span data-pt="Localização" data-en="Location">Localização</span>
-                <p>Lisboa, Portugal</p>
-            </div>
-        </div>
-    </section>
+<section id="contacto" class="contact-section contact-details">
+  <div class="container contact-details-grid">
+    <div class="contact-details-heading">
+      <span class="eyebrow">Contactos</span>
+      <h2>Vamos manter o contacto.</h2>
+    </div>
+    <div class="contact-details-list">
+      <div class="contact-detail"><span>E-mail</span><a href="mailto:janine.consultor@outlook.pt">janine.consultor@outlook.pt</a></div>
+      <div class="contact-detail"><span>WhatsApp</span><a href="https://wa.me/351925431560" target="_blank" rel="noopener noreferrer">+351 925 431 560</a></div>
+      <div class="contact-detail"><span>LinkedIn</span><a href="https://www.linkedin.com/in/wald%C3%AAnia-janine-ferreira-silva-a0419a47/" target="_blank" rel="noopener noreferrer">Waldênia Janine Ferreira Silva</a></div>
+      <div class="contact-detail"><span>Behance</span><a href="https://www.behance.net/janineferreira5" target="_blank" rel="noopener noreferrer">Ver portefólio no Behance ↗</a></div>
+      <div class="contact-detail"><span>Localização</span><p>Lisboa, Portugal</p></div>
+    </div>
+  </div>
+</section>
 </main>
 <footer class="site-footer"><div class="container footer-grid">
   <div class="footer-brand"><span class="brand-mark" aria-hidden="true">W</span><span>Waldênia Silva — Design de Comunicação Gráfica</span></div>
@@ -1562,6 +1539,22 @@
    const fieldId=wrapper.dataset.showWhen.split(':')[0],field=document.getElementById(fieldId);
    if(field)field.addEventListener('change',update);
  });
+})();
+</script>
+<script>
+(function(){
+ const toggle=document.querySelector('.menu-toggle');
+ const nav=document.getElementById('evaluation-navigation');
+ if(!toggle||!nav)return;
+ function closeMenu(){nav.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menu');}
+ toggle.addEventListener('click',()=>{
+   const opening=nav.hidden;
+   nav.hidden=!opening;
+   toggle.setAttribute('aria-expanded',String(opening));
+   toggle.setAttribute('aria-label',opening?'Fechar menu':'Abrir menu');
+ });
+ nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu();});
 })();
 </script>
 </body></html>
