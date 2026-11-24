@@ -220,3 +220,13 @@ body{background:var(--stone-grey);color:var(--text)}
 #feedback .section-header::before,#feedback .section-header::after{
  content:none!important;display:none!important;background-image:none!important;mask:none!important
 }
+
+
+/* MODELO DE AVALIAÇÃO — estado fechado do pré-briefing e dos grupos condicionais */
+#pre-briefing { display: none !important; }
+#pre-briefing.is-open { display: flex !important; }
+#pre-briefing[aria-hidden="true"]:not(.is-open) { display: none !important; }
+#pre-briefing .form-conditional[hidden],
+#pre-briefing .conditional-detail[hidden],
+#pre-briefing [data-service-group][hidden],
+#pre-briefing [data-show-when][hidden] { display: none !important; visibility: hidden !important; }
