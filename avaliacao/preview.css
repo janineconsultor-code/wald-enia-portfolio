@@ -230,3 +230,60 @@ body{background:var(--stone-grey);color:var(--text)}
 #pre-briefing .conditional-detail[hidden],
 #pre-briefing [data-service-group][hidden],
 #pre-briefing [data-show-when][hidden] { display: none !important; visibility: hidden !important; }
+
+
+/* HIERARQUIA CROMÁTICA — identidade azul-marinho, bordô e cinza-pedra */
+.hero-section {
+  background: var(--bg-cream);
+  color: var(--navy);
+  border-bottom: 1px solid rgba(20,33,61,.18);
+}
+.hero-content .eyebrow,
+.hero-profile-copy .eyebrow,
+.section-header .eyebrow { color: var(--burgundy); }
+.hero-content h1,
+.hero-profile-copy h2,
+.hero-profile-copy h2 span { color: var(--navy); }
+.hero-sub,
+.hero-profile-copy p { color: rgba(20,33,61,.78); }
+.hero-profile {
+  padding: clamp(18px, 2.5vw, 28px);
+  background: var(--bg-surface);
+  border: 1px solid rgba(20,33,61,.16);
+  border-top: 4px solid var(--burgundy);
+}
+.hero-profile-photo {
+  border: 1px solid rgba(20,33,61,.24);
+  background: var(--stone-grey);
+}
+.hero-profile-signature {
+  border-top-color: rgba(122,31,43,.35);
+}
+.hero-profile-signature strong { color: var(--navy); }
+.project-card { border-color: rgba(20,33,61,.16); }
+.project-card-info { background: var(--bg-surface); }
+.project-card-category,
+.project-card-action { color: var(--burgundy); }
+.project-card-title { color: var(--navy); }
+#feedback { background: var(--stone-grey); }
+#pedido-projeto {
+  background: var(--navy);
+  color: var(--stone-grey);
+  border-top: 5px solid var(--burgundy);
+}
+#pedido-projeto .ws-project-request__button {
+  background: var(--stone-grey);
+  color: var(--navy);
+  border: 1px solid var(--stone-grey);
+}
+#pedido-projeto .ws-project-request__button:hover {
+  background: var(--burgundy);
+  color: var(--stone-grey);
+  border-color: var(--burgundy);
+}
+.contact-details {
+  background: var(--bg-surface);
+  border-top: 5px solid var(--navy);
+}
+.contact-detail > span { color: var(--burgundy); }
+.contact-detail a, .contact-detail p { color: var(--navy); }
