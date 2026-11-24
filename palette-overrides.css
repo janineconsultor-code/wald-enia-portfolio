@@ -2384,3 +2384,107 @@ main > section#pedido-projeto::after {
         opacity: .62 !important;
     }
 }
+
+
+/* AJUSTE PUBLICADO — CONTACTOS: grafismo modular visível e hierarquia clara. */
+#contacto.contacto-dados-only::before,
+#contacto.contacto-dados-only::after {
+    content: none !important;
+    display: none !important;
+}
+
+#contacto.contacto-dados-only {
+    grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
+    column-gap: clamp(44px, 8vw, 120px);
+    min-height: 520px;
+}
+
+#contacto.contacto-dados-only > .contacto-heading {
+    align-self: start;
+    padding-top: 4px;
+}
+
+#contacto.contacto-dados-only .contacto-heading .eyebrow {
+    font-family: "Bodoni Moda", Georgia, serif !important;
+    font-size: clamp(38px, 5vw, 66px) !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.045em !important;
+    line-height: 1.02 !important;
+    text-transform: none !important;
+    color: var(--contact-stone) !important;
+}
+
+#contacto.contacto-dados-only > .contacto-grafismo {
+    top: auto !important;
+    left: clamp(0px, 2vw, 28px) !important;
+    right: auto !important;
+    bottom: 7% !important;
+    width: clamp(230px, 30vw, 370px) !important;
+    min-width: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+#contacto.contacto-dados-only > .contacto-grafismo svg {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+#contacto.contacto-dados-only > .contacto-dados {
+    align-self: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 clamp(24px, 4vw, 58px);
+}
+
+#contacto.contacto-dados-only .contacto-item {
+    min-height: 104px;
+    padding: 20px 0 22px;
+    border-top: 1px solid rgba(231, 227, 220, 0.48);
+}
+
+#contacto.contacto-dados-only .contacto-item > span {
+    color: rgba(231, 227, 220, 0.72) !important;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+}
+
+#contacto.contacto-dados-only .contacto-item a,
+#contacto.contacto-dados-only .contacto-item p {
+    color: #E7E3DC !important;
+    font-size: clamp(14px, 1.15vw, 16px);
+    line-height: 1.55;
+}
+
+@media (max-width: 700px) {
+    #contacto.contacto-dados-only {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 28px;
+        min-height: 0;
+        padding-top: 76px;
+        padding-bottom: 72px;
+    }
+
+    #contacto.contacto-dados-only .contacto-heading .eyebrow {
+        font-size: clamp(36px, 11vw, 52px) !important;
+    }
+
+    #contacto.contacto-dados-only > .contacto-grafismo {
+        top: 54px !important;
+        left: auto !important;
+        right: -78px !important;
+        bottom: auto !important;
+        width: 220px !important;
+        opacity: 0.48 !important;
+    }
+
+    #contacto.contacto-dados-only > .contacto-dados {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    #contacto.contacto-dados-only .contacto-item {
+        min-height: 0;
+        padding: 16px 0 18px;
+    }
+}
