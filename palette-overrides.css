@@ -2514,3 +2514,26 @@ main > section#pedido-projeto::after {
     height: auto !important;
     overflow: visible !important;
 }
+
+
+/* CORREÇÃO DE CASCATA — modal e questionários condicionais.
+   O estado HTML hidden prevalece sobre qualquer display definido nos estilos. */
+#pre-briefing {
+    display: none !important;
+}
+
+#pre-briefing.is-open {
+    display: flex !important;
+}
+
+#pre-briefing[aria-hidden="true"]:not(.is-open) {
+    display: none !important;
+}
+
+#pre-briefing .form-conditional[hidden],
+#pre-briefing .conditional-detail[hidden],
+#pre-briefing [data-service-group][hidden],
+#pre-briefing [data-show-when][hidden] {
+    display: none !important;
+    visibility: hidden !important;
+}
