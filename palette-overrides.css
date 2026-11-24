@@ -2591,3 +2591,41 @@ main > section#pedido-projeto::after {
         grid-area: content;
     }
 }
+
+
+/* TESTE VISUAL — CONTACTOS: padronagem modular minimalista. */
+#contacto.contacto-dados-only > .contacto-grafismo {
+    position: absolute !important;
+    z-index: 1 !important;
+    left: clamp(0px, 2vw, 28px) !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 7% !important;
+    width: clamp(210px, 25vw, 300px) !important;
+    min-width: 0 !important;
+    height: auto !important;
+    opacity: 0.92 !important;
+    transform: none !important;
+    pointer-events: none !important;
+}
+#contacto.contacto-dados-only > .contacto-grafismo svg {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: hidden !important;
+    shape-rendering: geometricPrecision;
+}
+#contacto.contacto-dados-only > .contacto-heading,
+#contacto.contacto-dados-only > .contacto-dados {
+    position: relative !important;
+    z-index: 2 !important;
+}
+@media (max-width: 700px) {
+    #contacto.contacto-dados-only > .contacto-grafismo {
+        left: -28px !important;
+        right: auto !important;
+        bottom: 1.5% !important;
+        width: 178px !important;
+        opacity: 0.22 !important;
+    }
+}
