@@ -2537,3 +2537,31 @@ main > section#pedido-projeto::after {
     display: none !important;
     visibility: hidden !important;
 }
+
+
+/* AJUSTE DE NAVEGAÇÃO — botões de regresso visíveis no fim de cada secção */
+.section-return { position:relative; z-index:2; width:min(var(--page-width),calc(100% - 2 * var(--page-gutter))); max-width:none; margin:42px auto 0; }
+.section-return .text-link,.section-return .text-link:link,.section-return .text-link:visited {
+ min-height:42px; padding:11px 17px; border:1px solid var(--color-burgundy); background:var(--color-stone); color:var(--color-navy);
+ text-decoration:none; font-size:10px; font-weight:600; letter-spacing:.08em; line-height:1.2;
+}
+.section-return .text-link:hover,.section-return .text-link:focus-visible { border-color:var(--color-burgundy); background:var(--color-burgundy); color:var(--color-stone); }
+#sobre .section-return .text-link,#processo-criativo .section-return .text-link,#inspiracoes .section-return .text-link,#contacto .section-return .text-link {
+ border-color:var(--color-stone); background:var(--color-stone); color:var(--color-navy);
+}
+#sobre .section-return .text-link:hover,#processo-criativo .section-return .text-link:hover,#inspiracoes .section-return .text-link:hover,#contacto .section-return .text-link:hover {
+ border-color:var(--color-burgundy); background:var(--color-burgundy); color:var(--color-stone);
+}
+#pedido-projeto .section-return .text-link { border-color:var(--color-stone); background:var(--color-stone); color:var(--color-navy); }
+.site-footer {
+ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px 28px;
+ padding:24px var(--page-gutter); background:var(--color-navy); color:var(--color-stone); border-top:1px solid rgba(231,227,220,.35);
+}
+.site-footer p { margin:0; color:var(--color-stone); }
+.site-footer a { margin-left:auto; color:var(--color-stone); text-decoration:none; border-bottom:1px solid var(--color-burgundy); padding:5px 0; font-size:11px; letter-spacing:.04em; }
+.site-footer a:hover,.site-footer a:focus-visible { color:var(--color-stone); border-bottom-color:var(--color-stone); }
+@media(max-width:700px) {
+ .section-return { justify-content:flex-start; margin-top:30px; }
+ .site-footer { align-items:flex-start; flex-direction:column; }
+ .site-footer a { margin-left:0; }
+}
