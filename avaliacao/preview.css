@@ -199,3 +199,24 @@ body.prebriefing-open{overflow:hidden}
 .hero-profile{width:100%;max-width:590px}
 .hero-profile-photo{max-width:220px}
 @media(max-width:760px){.contact-details-grid{grid-template-columns:1fr}.contact-details-list{grid-template-columns:1fr}.hero-grid{grid-template-columns:1fr}.hero-profile{max-width:100%}}
+
+/* Paleta oficial da identidade: cinza-pedra, azul-marinho e bordô */
+:root{--bg-cream:#E7E3DC;--bg-surface:#F3F0EA;--navy:#14213D;--burgundy:#7A1F2B;--stone-grey:#E7E3DC;--text:#434345;--muted:#68686B;--border:rgba(67,67,69,.15)}
+body{background:var(--stone-grey);color:var(--text)}
+.sticky-navbar{background:rgba(231,227,220,.96);border-color:var(--border)}
+.about-section,.ws-inspirations,#contacto.contact-details{background:var(--bg-surface)}
+.thinking-section,#feedback{background:var(--stone-grey)}
+#pedido-projeto{background:var(--navy);color:var(--stone-grey)}
+#pedido-projeto .eyebrow{color:var(--stone-grey)}
+#pedido-projeto .ws-project-request__button{background:var(--stone-grey);color:var(--navy)}
+.btn-primary,.prebriefing .form-submit{background:var(--burgundy);color:var(--stone-grey)}
+.nav-links,.project-modal-dialog,.prebriefing-modal-content{background:var(--bg-surface);border-color:var(--border)}
+.menu-toggle{color:var(--navy);border-color:var(--border)}
+.menu-toggle span{background:var(--navy)}
+/* Remover grafismos decorativos dos blocos Pedir projecto e Feedback */
+#pedido-projeto::before,#pedido-projeto::after,
+#pedido-projeto .ws-project-request__content::before,#pedido-projeto .ws-project-request__content::after,
+#feedback::before,#feedback::after,#feedback .container::before,#feedback .container::after,
+#feedback .section-header::before,#feedback .section-header::after{
+ content:none!important;display:none!important;background-image:none!important;mask:none!important
+}
