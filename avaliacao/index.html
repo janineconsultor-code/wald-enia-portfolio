@@ -52,8 +52,26 @@
 
 <section class="section" id="projetos">
 <div class="container">
-  <header class="section-header"><h2>Projectos seleccionados</h2><p>Três trabalhos que demonstram abordagens distintas à identidade, à edição e à direcção de arte.</p></header>
-  <article class="project-row" id="a-malta">
+  <header class="section-header"><h2>Projectos seleccionados</h2><p>Seleccione um projecto para consultar o conceito, o desenvolvimento e as aplicações visuais.</p></header>
+  <div class="project-card-grid"><button type="button" class="project-card" data-open-modal="modal-0" aria-haspopup="dialog">
+  <span class="project-card-image"><img src="../Imagem/A-Malta/A%20Malta-1.png" alt="Capa de apresentação do projecto A Malta" loading="lazy"></span>
+  <span class="project-card-info"><span class="project-card-category">Identidade Visual · Packaging</span><span class="project-card-title">A Malta</span><span class="project-card-action">Ver projecto <span aria-hidden="true">↗</span></span></span>
+</button>
+<button type="button" class="project-card" data-open-modal="modal-1" aria-haspopup="dialog">
+  <span class="project-card-image"><img src="../Imagem/Origem/Revista%20Origem%20final_Capa.png" alt="Capa de apresentação do projecto ORIGEM" loading="lazy"></span>
+  <span class="project-card-info"><span class="project-card-category">Design Editorial</span><span class="project-card-title">ORIGEM</span><span class="project-card-action">Ver projecto <span aria-hidden="true">↗</span></span></span>
+</button>
+<button type="button" class="project-card" data-open-modal="modal-2" aria-haspopup="dialog">
+  <span class="project-card-image"><img src="../Chocolate-01.png" alt="Capa de apresentação do projecto Pedaços de Cacau" loading="lazy"></span>
+  <span class="project-card-info"><span class="project-card-category">Direcção de Arte · Packaging</span><span class="project-card-title">Pedaços de Cacau</span><span class="project-card-action">Ver projecto <span aria-hidden="true">↗</span></span></span>
+</button></div>
+</div>
+</section>
+<div class="project-modal" id="modal-0" aria-hidden="true">
+  <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title-0" tabindex="-1">
+    <button class="project-modal-close" type="button" aria-label="Fechar apresentação">×</button>
+    <div class="project-modal-heading"><span class="project-tag">Identidade Visual · Packaging</span><h2 id="modal-title-0">A Malta</h2></div>
+    <article class="project-row" id="a-malta">
     <div class="project-info">
       <span class="project-tag">Identidade Visual · Packaging</span>
       <h3>A Malta — Vinhos de Sintra</h3>
@@ -68,7 +86,14 @@
     <figure><img src="../Imagem/A-Malta/A%20Malta-3.png" alt="Aplicação da identidade A Malta, imagem 3"></figure>
     <figure><img src="../Imagem/A-Malta/A%20Malta-4.png" alt="Aplicação da identidade A Malta, imagem 4"></figure>
   </div>
-  <article class="project-row reverse" id="origem">
+    <button class="project-modal-back" type="button">← Voltar aos projectos</button>
+  </div>
+</div>
+<div class="project-modal" id="modal-1" aria-hidden="true">
+  <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title-1" tabindex="-1">
+    <button class="project-modal-close" type="button" aria-label="Fechar apresentação">×</button>
+    <div class="project-modal-heading"><span class="project-tag">Design Editorial</span><h2 id="modal-title-1">ORIGEM</h2></div>
+    <article class="project-row reverse" id="origem">
     <div class="project-info">
       <span class="project-tag">Design Editorial</span>
       <h3>ORIGEM — Revista</h3>
@@ -83,7 +108,14 @@
     <figure><img src="../Imagem/Origem/Revista%20Origem%20final-03.png" alt="Composição editorial da revista ORIGEM"></figure>
     <figure><img src="../Imagem/Origem/Revista%20corrigido-04.png" alt="Página revista ORIGEM, detalhe 4"></figure>
   </div>
-  <article class="project-row" id="pedacos-de-cacau" style="margin-top:92px">
+    <button class="project-modal-back" type="button">← Voltar aos projectos</button>
+  </div>
+</div>
+<div class="project-modal" id="modal-2" aria-hidden="true">
+  <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title-2" tabindex="-1">
+    <button class="project-modal-close" type="button" aria-label="Fechar apresentação">×</button>
+    <div class="project-modal-heading"><span class="project-tag">Direcção de Arte · Packaging</span><h2 id="modal-title-2">Pedaços de Cacau</h2></div>
+    <article class="project-row" id="pedacos-de-cacau">
     <div class="project-info">
       <span class="project-tag">Direcção de Arte · Packaging</span>
       <h3>Pedaços de Cacau</h3>
@@ -98,8 +130,9 @@
     <figure><img src="../Chocolate-03.png" alt="Aplicação de embalagem Pedaços de Cacau, imagem 3"></figure>
     <figure><img src="../Chocolate-04.png" alt="Aplicação de embalagem Pedaços de Cacau, imagem 4"></figure>
   </div>
+    <button class="project-modal-back" type="button">← Voltar aos projectos</button>
+  </div>
 </div>
-</section>
 <section class="section feedback-section" id="feedback">
   <div class="container">
     <header class="section-header">
@@ -130,4 +163,31 @@
   <div class="footer-links"><a href="https://www.behance.net/janineferreira5" target="_blank" rel="noopener noreferrer">Behance</a><a href="https://github.com/janineconsultor-code" target="_blank" rel="noopener noreferrer">GitHub</a></div>
   <p class="copyright">© 2026 Waldênia Silva.</p>
 </div></footer>
+<script>
+(function(){
+  const triggers=document.querySelectorAll('[data-open-modal]');
+  let lastTrigger=null;
+  function openModal(id,trigger){
+    const modal=document.getElementById(id);
+    if(!modal)return;
+    lastTrigger=trigger;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('project-modal-open');
+    const dialog=modal.querySelector('.project-modal-dialog');
+    if(dialog)dialog.focus();
+  }
+  function closeModal(modal){
+    if(!modal)return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+    if(!document.querySelector('.project-modal.is-open'))document.body.classList.remove('project-modal-open');
+    if(lastTrigger){lastTrigger.focus();lastTrigger=null;}
+  }
+  triggers.forEach(trigger=>trigger.addEventListener('click',()=>openModal(trigger.dataset.openModal,trigger)));
+  document.querySelectorAll('.project-modal-close,.project-modal-back').forEach(button=>button.addEventListener('click',()=>closeModal(button.closest('.project-modal'))));
+  document.querySelectorAll('.project-modal').forEach(modal=>modal.addEventListener('click',event=>{if(event.target===modal)closeModal(modal);}));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){const open=document.querySelector('.project-modal.is-open');if(open)closeModal(open);}});
+})();
+</script>
 </body></html>
