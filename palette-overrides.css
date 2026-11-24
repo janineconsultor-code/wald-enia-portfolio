@@ -2488,3 +2488,29 @@ main > section#pedido-projeto::after {
         padding: 16px 0 18px;
     }
 }
+
+
+/* FIX DEFINITIVO — garantir renderização do SVG de Contactos na publicação. */
+#contacto.contacto-dados-only > .contacto-grafismo {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    top: auto !important;
+    left: clamp(0px, 2vw, 28px) !important;
+    right: auto !important;
+    bottom: 7% !important;
+    width: clamp(230px, 30vw, 370px) !important;
+    min-width: 0 !important;
+    height: auto !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: none !important;
+}
+#contacto.contacto-dados-only > .contacto-grafismo svg {
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+}
