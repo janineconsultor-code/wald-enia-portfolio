@@ -37,6 +37,7 @@
         <a href="#processo-criativo" data-pt="Processo" data-en="Process">Processo</a>
         <a href="#inspiracoes" data-pt="Inspirações" data-en="Inspiration">Inspirações</a>
         <a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a>
+        <a href="#feedback" data-pt="Feedback" data-en="Feedback">Feedback</a>
         <a href="#contacto" data-pt="Contacto" data-en="Contact">Contacto</a>
         <a href="./privacidade.html" data-pt="Privacidade" data-en="Privacy">Privacidade</a>
     </nav>
@@ -370,6 +371,82 @@
                 data-pt="↑ Voltar ao menu" data-en="↑ Back to menu">↑ Voltar ao menu</a>
         </div>
     </section>
+
+<section id="feedback" class="feedback-section">
+    <div class="feedback-container">
+        <header class="feedback-header">
+            <p class="eyebrow" data-pt="RECOMENDAÇÕES" data-en="RECOMMENDATIONS">RECOMENDAÇÕES</p>
+            <h2>Feedback</h2>
+            <p data-pt="Este espaço destina-se a professores e clientes que pretendam partilhar uma avaliação ou comentário sobre um projecto desenvolvido comigo. Cada submissão é recebida para análise e não fica automaticamente pública."
+                data-en="This space is for teachers and clients who wish to share an evaluation or comment about a project developed with me. Every submission is received for review and is not published automatically.">
+                Este espaço destina-se a professores e clientes que pretendam partilhar uma avaliação ou comentário sobre um projecto desenvolvido comigo. Cada submissão é recebida para análise e não fica automaticamente pública.
+            </p>
+        </header>
+
+        <div class="feedback-layout">
+            <div class="feedback-intro">
+                <h3 data-pt="Enviar feedback" data-en="Submit feedback">Enviar feedback</h3>
+                <p data-pt="Depois de receber a mensagem, irei analisar o conteúdo. A publicação só será feita após validação e autorização expressa do autor."
+                    data-en="After receiving the message, I will review its content. It will only be published after validation and the author's explicit permission.">
+                    Depois de receber a mensagem, irei analisar o conteúdo. A publicação só será feita após validação e autorização expressa do autor.
+                </p>
+            </div>
+
+            <form class="feedback-form" id="feedback-form"
+                action="https://formsubmit.co/janine.consultor@outlook.pt"
+                method="POST">
+                <input type="hidden" name="_subject" value="Feedback | Portefólio Waldênia Silva">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="feedback-honeypot" aria-hidden="true">
+
+                <div class="feedback-fields">
+                    <div class="feedback-field">
+                        <label for="feedback-nome" data-pt="Nome *" data-en="Name *">Nome *</label>
+                        <input id="feedback-nome" name="Nome" type="text" autocomplete="name" required>
+                    </div>
+                    <div class="feedback-field">
+                        <label for="feedback-relacao" data-pt="Relação profissional *" data-en="Professional relationship *">Relação profissional *</label>
+                        <input id="feedback-relacao" name="Relação profissional" type="text"
+                            placeholder="Ex.: Docente, cliente, colaborador/a"
+                            data-placeholder-pt="Ex.: Docente, cliente, colaborador/a"
+                            data-placeholder-en="E.g. Teacher, client, collaborator" required>
+                    </div>
+                    <div class="feedback-field feedback-field-full">
+                        <label for="feedback-mensagem" data-pt="Feedback *" data-en="Feedback *">Feedback *</label>
+                        <textarea id="feedback-mensagem" name="Feedback" rows="6" required></textarea>
+                    </div>
+                    <label class="feedback-consent feedback-field-full">
+                        <input type="checkbox" name="Autorização para publicação"
+                            value="Autorizo a publicação do comentário e do meu nome após validação">
+                        <span data-pt="Autorizo a publicação do meu comentário e do meu nome no portefólio, apenas após validação."
+                            data-en="I authorise publication of my comment and name in the portfolio, only after review.">
+                            Autorizo a publicação do meu comentário e do meu nome no portefólio, apenas após validação.
+                        </span>
+                    </label>
+                </div>
+
+                <p class="feedback-privacy-note"
+                    data-pt="A autorização é opcional. Se não seleccionar esta opção, o feedback será recebido para análise, mas não será publicado. A submissão não garante a publicação."
+                    data-en="Permission is optional. If you do not select this option, your feedback will be received for review but will not be published. Submission does not guarantee publication.">
+                    A autorização é opcional. Se não seleccionar esta opção, o feedback será recebido para análise, mas não será publicado. A submissão não garante a publicação.
+                </p>
+                <button class="feedback-submit" type="submit" data-pt="Enviar feedback" data-en="Submit feedback">Enviar feedback</button>
+            </form>
+        </div>
+
+        <div class="feedback-published" id="feedback-publicado" hidden>
+            <h3 data-pt="Feedback publicado" data-en="Published feedback">Feedback publicado</h3>
+            <div class="feedback-published-list">
+                <!-- Adicionar aqui apenas comentários recebidos, validados e autorizados para publicação. -->
+            </div>
+        </div>
+
+        <div class="section-return">
+            <a href="#hero" class="text-link" data-pt="↑ Voltar ao menu" data-en="↑ Back to menu">↑ Voltar ao menu</a>
+        </div>
+    </div>
+</section>
 
 <section id="pedido-projeto" class="contacto contacto-pedido ws-project-request">
         <div class="ws-project-request__content">
