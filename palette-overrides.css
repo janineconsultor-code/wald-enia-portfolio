@@ -2859,3 +2859,14 @@ main > section#pedido-projeto::after {
         font-size: clamp(42px, 11vw, 58px) !important;
     }
 }
+
+
+/* TIPOGRAFIA DOS TÍTULOS — Bodoni Moda exclusiva do nome no Hero. */
+#processo-criativo .process-header h2,
+#projetos .portfolio-header h2,
+#inspiracoes .ws-inspirations__heading h2,
+#feedback .feedback-header h2,
+#pedido-projeto .ws-project-request__content h2,
+#contacto.contacto-dados-only .contacto-heading h2 {
+    font-family: "Times New Roman", Times, serif !important;
+}
