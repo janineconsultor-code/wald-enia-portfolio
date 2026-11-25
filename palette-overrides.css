@@ -3017,10 +3017,18 @@ html body main section#contacto.contacto-dados-only > .contacto-heading > h2 {
     }
 }
 
-/* PUBLICACAO 25-11-2026 — selector final isolado para o título CONTACTOS. */
+/* Ajuste final — CONTACTOS à escala dos restantes títulos de secção. */
 html body main section#contacto.contacto-dados-only > .contacto-heading > h2[data-pt="CONTACTOS"] {
     font-family: "Bodoni Moda", Georgia, serif !important;
+    font-size: clamp(50px, 6.5vw, 90px) !important;
     font-style: normal !important;
     font-weight: 600 !important;
+    line-height: 0.94 !important;
+    letter-spacing: -0.065em !important;
     font-synthesis: none;
+}
+@media (max-width: 650px) {
+    html body main section#contacto.contacto-dados-only > .contacto-heading > h2[data-pt="CONTACTOS"] {
+        font-size: clamp(39px, 10vw, 52px) !important;
+    }
 }
