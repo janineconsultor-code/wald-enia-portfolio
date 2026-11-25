@@ -3017,10 +3017,10 @@ html body main section#contacto.contacto-dados-only > .contacto-heading > h2 {
     }
 }
 
-/* Ajuste final — CONTACTOS à escala dos restantes títulos de secção. */
+/* Ajuste final — CONTACTOS com escala 20% inferior à dos restantes títulos de secção. */
 html body main section#contacto.contacto-dados-only > .contacto-heading > h2[data-pt="CONTACTOS"] {
     font-family: "Bodoni Moda", Georgia, serif !important;
-    font-size: clamp(50px, 6.5vw, 90px) !important;
+    font-size: clamp(44px, 5.6vw, 80px) !important;
     font-style: normal !important;
     font-weight: 600 !important;
     line-height: 0.94 !important;
@@ -3029,6 +3029,6 @@ html body main section#contacto.contacto-dados-only > .contacto-heading > h2[dat
 }
 @media (max-width: 650px) {
     html body main section#contacto.contacto-dados-only > .contacto-heading > h2[data-pt="CONTACTOS"] {
-        font-size: clamp(39px, 10vw, 52px) !important;
+        font-size: clamp(38px, 9.6vw, 60px) !important;
     }
 }
