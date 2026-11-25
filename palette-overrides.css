@@ -3016,3 +3016,11 @@ html body main section#contacto.contacto-dados-only > .contacto-heading > h2 {
         font-size: clamp(48px, 12vw, 75px) !important;
     }
 }
+
+/* PUBLICACAO 25-11-2026 — selector final isolado para o título CONTACTOS. */
+html body main section#contacto.contacto-dados-only > .contacto-heading > h2[data-pt="CONTACTOS"] {
+    font-family: "Bodoni Moda", Georgia, serif !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-synthesis: none;
+}
