@@ -2741,3 +2741,14 @@ main > section#pedido-projeto::after {
     background: #E7E3DC;
     color: #14213D;
 }
+
+
+/* CORRECÇÃO DE GRELHA — alinhar Processo e Inspirações pela mesma margem
+   do cabeçalho de Portefólio, sem alterar a escala nem a composição interna. */
+#processo-criativo .process-header,
+#inspiracoes.ws-inspirations .ws-inspirations__heading {
+    width: 100% !important;
+    max-width: var(--page-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
