@@ -2881,3 +2881,11 @@ main > section#pedido-projeto::after {
         font-size: clamp(39px, 10vw, 52px) !important;
     }
 }
+
+
+/* CORRECÇÃO DEFINITIVA — CONTACTOS usa a mesma família sem serifa dos restantes blocos. Bodoni Moda fica apenas no nome do Hero. */
+#contacto.contacto-dados-only .contacto-heading h2 {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+}
