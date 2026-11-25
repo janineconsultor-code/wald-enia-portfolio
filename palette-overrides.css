@@ -2843,10 +2843,10 @@ main > section#pedido-projeto::after {
 }
 
 
-/* CONTACTOS — reproduzir a tipografia exacta do título Feedback. */
+/* CONTACTOS — tipografia igual à dos restantes títulos; Bodoni Moda fica reservado ao nome no Hero. */
 #contacto.contacto-dados-only .contacto-heading h2 {
     margin: 0 !important;
-    font-family: var(--serif) !important;
+    font-family: Arial, Helvetica, sans-serif !important;
     font-size: clamp(55px, 7vw, 105px) !important;
     font-weight: 600 !important;
     line-height: 0.91 !important;
