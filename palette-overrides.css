@@ -2870,3 +2870,14 @@ main > section#pedido-projeto::after {
 #contacto.contacto-dados-only .contacto-heading h2 {
     font-family: "Times New Roman", Times, serif !important;
 }
+
+
+/* CONTACTOS — redução ligeira da escala, mantendo a tipografia comum às secções. */
+#contacto.contacto-dados-only .contacto-heading h2 {
+    font-size: clamp(50px, 6.3vw, 94px) !important;
+}
+@media (max-width: 700px) {
+    #contacto.contacto-dados-only .contacto-heading h2 {
+        font-size: clamp(39px, 10vw, 52px) !important;
+    }
+}
