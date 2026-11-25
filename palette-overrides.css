@@ -2918,3 +2918,83 @@ html body #contacto.contacto-dados-only .contacto-heading h2 {
         font-size: clamp(50px, 12vw, 75px) !important;
     }
 }
+
+
+/* TIPOGRAFIA DA IDENTIDADE — fontes alojadas localmente no próprio projecto. */
+@font-face {
+    font-family: "Lato";
+    src: url("./assets/fonts/Lato-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("./assets/fonts/Lato-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("./assets/fonts/Lato-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("./assets/fonts/Lato-SemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("./assets/fonts/Lato-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("./assets/fonts/Lato-Black.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Bodoni Moda";
+    src: url("./assets/fonts/BodoniModa-Variable.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400 900;
+    font-display: swap;
+}
+
+html body {
+    font-family: "Lato", Arial, sans-serif;
+}
+html body button,
+html body input,
+html body select,
+html body textarea {
+    font-family: inherit;
+}
+
+/* Bodoni Moda nos títulos editoriais; Lato mantém a leitura corrente e funcional. */
+html body #hero h1,
+html body #sobre h2,
+html body #processo-criativo h2,
+html body #projetos h2,
+html body #inspiracoes h2,
+html body #feedback h2,
+html body #pedido-projeto h2,
+html body #contacto.contacto-dados-only .contacto-heading h2,
+html body .project-modal-content h2 {
+    font-family: "Bodoni Moda", Georgia, serif !important;
+}
+
+/* Contactos mantém a escala e a composição aprovadas; altera-se apenas a família tipográfica. */
+html body #contacto.contacto-dados-only .contacto-heading h2 {
+    font-family: "Bodoni Moda", Georgia, serif !important;
+}
