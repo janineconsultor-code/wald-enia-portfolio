@@ -2889,3 +2889,12 @@ main > section#pedido-projeto::after {
     font-style: normal !important;
     font-weight: 600 !important;
 }
+
+
+/* FIX FINAL 25-11-2026 — CONTACTOS: remover Bodoni Moda do título. */
+html body #contacto.contacto-dados-only .contacto-heading h2[data-pt="CONTACTOS"] {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: 600 !important;
+}
